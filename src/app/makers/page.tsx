@@ -13,18 +13,23 @@ export const metadata = {
 export const revalidate = 60;
 
 export default async function MakersPage() {
-  const makers = await prisma.maker.findMany({
-    include: {
-      products: {
-        where: { isPublished: true },
-        take: 3,
-        include: {
-          images: { where: { isPrimary: true } },
+  let makers: any[] = [];
+  try {
+    makers = await prisma.maker.findMany({
+      include: {
+        products: {
+          where: { isPublished: true },
+          take: 3,
+          include: {
+            images: { where: { isPrimary: true } },
+          },
         },
       },
-    },
-    orderBy: { createdAt: "asc" },
-  });
+      orderBy: { createdAt: "asc" },
+    });
+  } catch (error) {
+    console.warn("Failed to load makers:", error);
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">

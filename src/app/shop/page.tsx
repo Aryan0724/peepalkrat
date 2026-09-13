@@ -15,29 +15,43 @@ export default async function ShopPage({
 }: {
   searchParams?: { category?: string; collection?: string; q?: string };
 }) {
-  const [products, categories, collections, makers] = await Promise.all([
-    prisma.product.findMany({
-      where: { isPublished: true },
-      include: {
-        category: true,
-        maker: true,
-        images: { orderBy: { order: "asc" } },
-      },
-      orderBy: { createdAt: "desc" },
-    }),
-    prisma.category.findMany({
-      select: { id: true, name: true, slug: true },
-      orderBy: { name: "asc" },
-    }),
-    prisma.collection.findMany({
-      select: { id: true, name: true, slug: true },
-      orderBy: { name: "asc" },
-    }),
-    prisma.maker.findMany({
-      select: { id: true, name: true, slug: true },
-      orderBy: { name: "asc" },
-    }),
-  ]);
+  let products: any[] = [];
+  let categories: any[] = [];
+  let collections: any[] = [];
+  let makers: any[] = [];
+
+  try {
+    const [prods, cats, cols, maks] = await Promise.all([
+      prisma.product.findMany({
+        where: { isPublished: true },
+        include: {
+          category: true,
+          maker: true,
+          images: { orderBy: { order: "asc" } },
+        },
+        orderBy: { createdAt: "desc" },
+      }),
+      prisma.category.findMany({
+        select: { id: true, name: true, slug: true },
+        orderBy: { name: "asc" },
+      }),
+      prisma.collection.findMany({
+        select: { id: true, name: true, slug: true },
+        orderBy: { name: "asc" },
+      }),
+      prisma.maker.findMany({
+        select: { id: true, name: true, slug: true },
+        orderBy: { name: "asc" },
+      }),
+    ]);
+
+    products = prods;
+    categories = cats;
+    collections = cols;
+    makers = maks;
+  } catch (error) {
+    console.warn("Using fallback shop state:", error);
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF8F5]">

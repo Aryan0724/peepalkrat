@@ -14,8 +14,15 @@ export const metadata = {
 export const revalidate = 60;
 
 export default async function ImpactPage() {
-  const makersCount = await prisma.maker.count();
-  const productsCount = await prisma.product.count({ where: { isPublished: true } });
+  let makersCount = 8;
+  let productsCount = 20;
+
+  try {
+    makersCount = await prisma.maker.count();
+    productsCount = await prisma.product.count({ where: { isPublished: true } });
+  } catch (error) {
+    console.warn("Using fallback impact metrics:", error);
+  }
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">

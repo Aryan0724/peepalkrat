@@ -15,38 +15,42 @@ import { Button } from "@/components/ui/button";
 export const revalidate = 60;
 
 export default async function HomePage() {
-  // 1. Fetch featured products with relations
-  const featuredProducts = await prisma.product.findMany({
-    where: {
-      isPublished: true,
-      isFeatured: true,
-    },
-    include: {
-      category: true,
-      maker: true,
-      images: {
-        orderBy: { order: "asc" },
-      },
-    },
-    take: 8,
-  });
+  let featuredProducts: any[] = [];
+  let collections: any[] = [];
+  let makers: any[] = [];
+  let categories: any[] = [];
 
-  // 2. Fetch featured collections
-  const collections = await prisma.collection.findMany({
-    where: { isFeatured: true },
-    take: 4,
-  });
+  try {
+    const [prods, cols, maks, cats] = await Promise.all([
+      prisma.product.findMany({
+        where: { isPublished: true, isFeatured: true },
+        include: {
+          category: true,
+          maker: true,
+          images: { orderBy: { order: "asc" } },
+        },
+        take: 8,
+      }),
+      prisma.collection.findMany({
+        where: { isFeatured: true },
+        take: 4,
+      }),
+      prisma.maker.findMany({
+        where: { isFeatured: true },
+        take: 4,
+      }),
+      prisma.category.findMany({
+        take: 6,
+      }),
+    ]);
 
-  // 3. Fetch featured makers
-  const makers = await prisma.maker.findMany({
-    where: { isFeatured: true },
-    take: 4,
-  });
-
-  // 4. Fetch craft categories
-  const categories = await prisma.category.findMany({
-    take: 6,
-  });
+    featuredProducts = prods;
+    collections = cols;
+    makers = maks;
+    categories = cats;
+  } catch (error) {
+    console.warn("Using fallback homepage state:", error);
+  }
 
   return (
     <div className="w-full">
