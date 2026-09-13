@@ -1,0 +1,303 @@
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model User {
+  id           String    @id @default(uuid())
+  email        String    @unique
+  passwordHash String
+  name         String
+  role         String    @default("STAFF") // ADMIN, STAFF, CUSTOMER
+  avatar       String?
+  createdAt    DateTime  @default(now())
+  updatedAt    DateTime  @updatedAt
+}
+
+model Customer {
+  id          String    @id @default(uuid())
+  email       String    @unique
+  phone       String?
+  firstName   String
+  lastName    String
+  totalSpent  Float     @default(0.0)
+  ordersCount Int       @default(0)
+  addresses   Address[]
+  orders      Order[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Address {
+  id          String    @id @default(uuid())
+  customerId  String
+  customer    Customer  @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  type        String    @default("SHIPPING") // SHIPPING, BILLING
+  fullName    String
+  phone       String?
+  line1       String
+  line2       String?
+  city        String
+  state       String
+  postalCode  String
+  country     String    @default("IN")
+  isDefault   Boolean   @default(false)
+  createdAt   DateTime  @default(now())
+}
+
+model Category {
+  id          String     @id @default(uuid())
+  name        String
+  slug        String     @unique
+  description String?
+  image       String?
+  parentId    String?
+  parent      Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id])
+  children    Category[] @relation("CategoryHierarchy")
+  products    Product[]
+  createdAt   DateTime   @default(now())
+  updatedAt   DateTime   @updatedAt
+}
+
+model Collection {
+  id          String    @id @default(uuid())
+  name        String
+  slug        String    @unique
+  description String?
+  image       String?
+  bannerImage String?
+  isFeatured  Boolean   @default(false)
+  products    Product[]
+  createdAt   DateTime  @default(now())
+  updatedAt   DateTime  @updatedAt
+}
+
+model Maker {
+  id                 String    @id @default(uuid())
+  name               String
+  slug               String    @unique
+  title              String    // e.g. "Master Phulkari Artisan", "Dhurrie Weaver"
+  photo              String
+  villageDistrict    String    // e.g. "Panipat, Haryana", "Jhajjar, Haryana"
+  craftSkill         String    // e.g. "Handloom Kilims", "Resham Thread Embroidery"
+  biography          String
+  quote              String?
+  videoUrl           String?
+  verifiedImpactData String?   // JSON string with certified metrics
+  isFeatured         Boolean   @default(false)
+  products           Product[]
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+}
+
+model Product {
+  id                 String           @id @default(uuid())
+  sku                String           @unique
+  name               String
+  slug               String           @unique
+  description        String
+  shortDescription   String?
+  price              Float
+  compareAtPrice     Float?
+  costPrice          Float?
+  currency           String           @default("INR")
+  
+  categoryId         String
+  category           Category         @relation(fields: [categoryId], references: [id])
+  
+  collectionId       String?
+  collection         Collection?      @relation(fields: [collectionId], references: [id])
+  
+  makerId            String?
+  maker              Maker?           @relation(fields: [makerId], references: [id])
+
+  tags               String?          // Comma-separated tags
+  isFeatured         Boolean          @default(false)
+  isPublished        Boolean          @default(true)
+  
+  inventory          Int              @default(10)
+  lowStockThreshold  Int              @default(3)
+  
+  material           String?
+  dimensions         String?
+  weight             String?
+  careInstructions   String?
+  shippingInfo       String?
+  productionLocation String?          // Specific village/block in Haryana
+  
+  storySnippet       String?          // The story behind this piece
+  impactNotes        String?          // Certified impact statement
+  
+  seoTitle           String?
+  seoDescription     String?
+  
+  images             ProductImage[]
+  variants           ProductVariant[]
+  reviews            Review[]
+  orderItems         OrderItem[]
+  
+  createdAt          DateTime         @default(now())
+  updatedAt          DateTime         @updatedAt
+}
+
+model ProductImage {
+  id        String   @id @default(uuid())
+  productId String
+  product   Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  url       String
+  altText   String?
+  isPrimary Boolean  @default(false)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+model ProductVariant {
+  id             String      @id @default(uuid())
+  productId      String
+  product        Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku            String?
+  name           String      // e.g. "Standard / Rust Brown", "Large / Ivory"
+  size           String?
+  color          String?
+  material       String?
+  price          Float?
+  compareAtPrice Float?
+  inventory      Int         @default(5)
+  orderItems     OrderItem[]
+  createdAt      DateTime    @default(now())
+  updatedAt      DateTime    @updatedAt
+}
+
+model Cart {
+  id         String     @id @default(uuid())
+  sessionId  String     @unique
+  customerId String?
+  items      CartItem[]
+  createdAt  DateTime   @default(now())
+  updatedAt  DateTime   @updatedAt
+}
+
+model CartItem {
+  id        String   @id @default(uuid())
+  cartId    String
+  cart      Cart     @relation(fields: [cartId], references: [id], onDelete: Cascade)
+  productId String
+  variantId String?
+  quantity  Int      @default(1)
+  price     Float
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model Order {
+  id                    String      @id @default(uuid())
+  orderNumber           String      @unique
+  customerId            String?
+  customer              Customer?   @relation(fields: [customerId], references: [id])
+  customerEmail         String
+  customerPhone         String?
+  
+  shippingName          String
+  shippingAddressLine1  String
+  shippingAddressLine2  String?
+  shippingCity          String
+  shippingState         String
+  shippingPostalCode    String
+  shippingCountry       String      @default("India")
+  
+  subtotal              Float
+  discount              Float       @default(0.0)
+  couponCode            String?
+  tax                   Float       @default(0.0)
+  shippingFee           Float       @default(0.0)
+  total                 Float
+  currency              String      @default("INR")
+  
+  paymentMethod         String      @default("SIMULATED") // UPI, CARDS, RAZORPAY, STRIPE, COD, SIMULATED
+  paymentStatus         String      @default("PENDING")   // PENDING, PAID, FAILED, REFUNDED
+  paymentReference      String?
+  
+  fulfillmentStatus     String      @default("PENDING")   // PENDING, PROCESSING, PACKED, SHIPPED, DELIVERED, CANCELLED
+  trackingNumber        String?
+  trackingCarrier       String?
+  notes                 String?
+  
+  items                 OrderItem[]
+  createdAt             DateTime    @default(now())
+  updatedAt             DateTime    @updatedAt
+}
+
+model OrderItem {
+  id         String          @id @default(uuid())
+  orderId    String
+  order      Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productId  String
+  product    Product         @relation(fields: [productId], references: [id])
+  variantId  String?
+  variant    ProductVariant? @relation(fields: [variantId], references: [id])
+  name       String
+  sku        String?
+  price      Float
+  quantity   Int
+  total      Float
+  imageUrl   String?
+  createdAt  DateTime        @default(now())
+}
+
+model Coupon {
+  id            String    @id @default(uuid())
+  code          String    @unique
+  description   String?
+  discountType  String    @default("PERCENTAGE") // PERCENTAGE, FIXED
+  discountValue Float
+  minOrderValue Float     @default(0.0)
+  maxDiscount   Float?
+  startsAt      DateTime  @default(now())
+  expiresAt     DateTime?
+  usageLimit    Int?
+  usageCount    Int       @default(0)
+  isActive      Boolean   @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+}
+
+model Review {
+  id            String   @id @default(uuid())
+  productId     String
+  product       Product  @relation(fields: [productId], references: [id], onDelete: Cascade)
+  customerName  String
+  customerEmail String?
+  rating        Int      @default(5)
+  title         String?
+  comment       String
+  isApproved    Boolean  @default(true)
+  createdAt     DateTime @default(now())
+}
+
+model ContentBlock {
+  id        String   @id @default(uuid())
+  key       String   @unique // e.g. "hero_headline", "impact_stats", "brand_manifesto"
+  type      String   @default("TEXT") // TEXT, BANNER, STORY, STATISTIC
+  title     String?
+  subtitle  String?
+  content   String?
+  imageUrl  String?
+  linkUrl   String?
+  isActive  Boolean  @default(true)
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}
+
+model SiteSetting {
+  id        String   @id @default(uuid())
+  key       String   @unique
+  value     String
+  group     String   @default("GENERAL") // GENERAL, PAYMENTS, SHIPPING, CURRENCY, SEO
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+}

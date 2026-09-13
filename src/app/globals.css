@@ -1,0 +1,77 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 40 33% 97%;
+    --foreground: 20 14% 11%;
+    --border: 33 22% 87%;
+    --primary: 16 60% 49%;
+    --primary-foreground: 40 33% 97%;
+  }
+
+  body {
+    background-color: #FAF8F5;
+    color: #1C1917;
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+/* Cultural subtle accents & patterns */
+.pattern-jaali {
+  background-image: radial-gradient(#C85A32 0.75px, transparent 0.75px), radial-gradient(#C85A32 0.75px, #FAF8F5 0.75px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  opacity: 0.08;
+}
+
+.pattern-weave {
+  background: repeating-linear-gradient(
+    45deg,
+    rgba(200, 90, 50, 0.03),
+    rgba(200, 90, 50, 0.03) 1px,
+    transparent 1px,
+    transparent 8px
+  );
+}
+
+.border-deckled {
+  border-style: solid;
+  border-image: linear-gradient(to right, #DA846A, #D4A338, #4A6B52) 1;
+}
+
+/* Custom smooth scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF8F5;
+}
+::-webkit-scrollbar-thumb {
+  background: #D7CCC0;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C85A32;
+}
+
+/* Hide scrollbar for tabs/carousels */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
