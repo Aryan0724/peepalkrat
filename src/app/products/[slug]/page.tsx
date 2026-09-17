@@ -7,6 +7,8 @@ import { ProductGallery } from "@/components/product/product-gallery";
 import { ProductDetailsClient } from "@/components/product/product-details-client";
 import { ProductCard } from "@/components/shop/product-card";
 
+import { ProductBundleBox } from "@/components/product/product-bundle-box";
+
 interface ProductPageProps {
   params: { slug: string };
 }
@@ -45,6 +47,18 @@ export default async function ProductPage({ params }: ProductPageProps) {
         where: { isApproved: true },
         orderBy: { createdAt: "desc" },
       },
+      recommendations: {
+        include: {
+          recommendedProduct: {
+            include: {
+              category: true,
+              maker: true,
+              images: { orderBy: { order: "asc" } },
+            },
+          },
+        },
+        orderBy: { order: "asc" },
+      },
     },
   });
 
@@ -52,10 +66,31 @@ export default async function ProductPage({ params }: ProductPageProps) {
     notFound();
   }
 
-  // Fetch related products
-  const relatedProducts = await prisma.product.findMany({
+  // Format curated recommendations for bundle box
+  const bundleRecommendations = (product.recommendations || [])
+    .filter((r) => r.recommendedProduct && r.recommendedProduct.isPublished)
+    .map((r) => ({
+      id: r.recommendedProduct.id,
+      name: r.recommendedProduct.name,
+      slug: r.recommendedProduct.slug,
+      price: r.recommendedProduct.price,
+      compareAtPrice: r.recommendedProduct.compareAtPrice,
+      imageUrl:
+        r.recommendedProduct.images[0]?.url ||
+        "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
+      makerName: r.recommendedProduct.maker?.name,
+      note: r.note,
+    }));
+
+  // Curated companion products to show in showcase
+  const curatedProducts = (product.recommendations || [])
+    .filter((r) => r.recommendedProduct && r.recommendedProduct.isPublished)
+    .map((r) => r.recommendedProduct);
+
+  // Fallback related products if no recommendations or fewer than 4
+  const fallbackRelated = await prisma.product.findMany({
     where: {
-      id: { not: product.id },
+      id: { notIn: [product.id, ...curatedProducts.map((p) => p.id)] },
       isPublished: true,
       OR: [
         { categoryId: product.categoryId },
@@ -67,8 +102,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
       maker: true,
       images: { orderBy: { order: "asc" } },
     },
-    take: 4,
+    take: Math.max(0, 4 - curatedProducts.length),
   });
+
+  const displayRelatedProducts = [...curatedProducts, ...fallbackRelated].slice(0, 4);
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
@@ -109,18 +146,40 @@ export default async function ProductPage({ params }: ProductPageProps) {
             <ProductDetailsClient product={product as any} />
           </div>
         </div>
+
+        {/* Frequently Bought Together Bundle Box (Admin Curated Recommendations) */}
+        {bundleRecommendations.length > 0 && (
+          <ProductBundleBox
+            currentProduct={{
+              id: product.id,
+              name: product.name,
+              slug: product.slug,
+              price: product.price,
+              compareAtPrice: product.compareAtPrice,
+              imageUrl:
+                product.images[0]?.url ||
+                "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=800&q=80",
+              makerName: product.maker?.name,
+            }}
+            recommendations={bundleRecommendations}
+          />
+        )}
       </div>
 
-      {/* Related Products Section */}
-      {relatedProducts.length > 0 && (
+      {/* Recommended & Related Products Section */}
+      {displayRelatedProducts.length > 0 && (
         <section className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 border-t border-stone-200">
           <div className="flex justify-between items-end mb-10">
             <div>
               <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-1">
-                You May Also Cherish
+                {curatedProducts.length > 0
+                  ? "Curated Pairings & Recommendations"
+                  : "You May Also Cherish"}
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
-                Related Handcrafted Pieces
+                {curatedProducts.length > 0
+                  ? "Handcrafted Companion Pieces"
+                  : "Related Handcrafted Pieces"}
               </h2>
             </div>
             <Link
@@ -132,7 +191,7 @@ export default async function ProductPage({ params }: ProductPageProps) {
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {relatedProducts.map((p) => (
+            {displayRelatedProducts.map((p) => (
               <ProductCard key={p.id} product={p as any} />
             ))}
           </div>

@@ -10,15 +10,43 @@ export default async function AdminEditProductPage({
 }: {
   params: { id: string };
 }) {
-  const [product, categories, collections, makers] = await Promise.all([
+  const [product, categories, collections, makers, allProducts] = await Promise.all([
     prisma.product.findUnique({
       where: { id: params.id },
-      include: { images: true, variants: true },
+      include: {
+        images: { orderBy: { order: "asc" } },
+        variants: true,
+        recommendations: {
+          include: {
+            recommendedProduct: {
+              select: {
+                id: true,
+                name: true,
+                sku: true,
+                price: true,
+                images: { where: { isPrimary: true }, select: { url: true } },
+              },
+            },
+          },
+          orderBy: { order: "asc" },
+        },
+      },
     }),
     prisma.category.findMany({ select: { id: true, name: true }, orderBy: { name: "asc" } }),
     prisma.collection.findMany({ select: { id: true, name: true }, orderBy: { name: "asc" } }),
     prisma.maker.findMany({
       select: { id: true, name: true, villageDistrict: true },
+      orderBy: { name: "asc" },
+    }),
+    prisma.product.findMany({
+      where: { id: { not: params.id } },
+      select: {
+        id: true,
+        name: true,
+        sku: true,
+        price: true,
+        images: { where: { isPrimary: true }, select: { url: true } },
+      },
       orderBy: { name: "asc" },
     }),
   ]);
@@ -31,6 +59,7 @@ export default async function AdminEditProductPage({
       categories={categories}
       collections={collections}
       makers={makers}
+      allProducts={allProducts as any}
     />
   );
 }

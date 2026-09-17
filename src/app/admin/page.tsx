@@ -9,6 +9,7 @@ import {
   ArrowUpRight,
   TrendingUp,
   Clock,
+  CheckCircle2,
 } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { formatPrice } from "@/lib/currency";
@@ -25,6 +26,10 @@ export default async function AdminDashboardPage() {
     makersCount,
     lowStockProducts,
     customersCount,
+    deliveredOrdersCount,
+    shippedOrdersCount,
+    processingOrdersCount,
+    itemsAggregate,
   ] = await Promise.all([
     prisma.order.count(),
     prisma.order.findMany({
@@ -43,7 +48,15 @@ export default async function AdminDashboardPage() {
       select: { id: true, name: true, sku: true, inventory: true, price: true },
     }),
     prisma.customer.count(),
+    prisma.order.count({ where: { fulfillmentStatus: "DELIVERED" } }),
+    prisma.order.count({ where: { fulfillmentStatus: "SHIPPED" } }),
+    prisma.order.count({ where: { fulfillmentStatus: "PROCESSING" } }),
+    prisma.orderItem.aggregate({
+      _sum: { quantity: true },
+    }),
   ]);
+
+  const totalItemsSold = itemsAggregate._sum.quantity || 0;
 
   // Compute revenue & AOV
   const paidOrders = await prisma.order.findMany({
@@ -53,6 +66,7 @@ export default async function AdminDashboardPage() {
 
   const totalRevenue = paidOrders.reduce((sum, o) => sum + o.total, 0);
   const averageOrderValue = paidOrders.length > 0 ? Math.round(totalRevenue / paidOrders.length) : 0;
+  const deliveryRate = totalOrdersCount > 0 ? Math.round((deliveredOrdersCount / totalOrdersCount) * 100) : 100;
 
   return (
     <div className="space-y-8">
@@ -63,7 +77,7 @@ export default async function AdminDashboardPage() {
             Executive Operations Overview
           </h1>
           <p className="text-xs text-stone-500 mt-1">
-            Haryana artisan enterprise metrics, live orders, and catalog health.
+            Haryana artisan enterprise metrics, live orders, items sold, and catalog health.
           </p>
         </div>
 
@@ -83,8 +97,44 @@ export default async function AdminDashboardPage() {
         </div>
       </div>
 
-      {/* KPI Cards Grid */}
+      {/* Primary KPI Metrics Grid */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+        {/* Total Orders Done */}
+        <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-stone-400">
+            <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+              Orders Done (Delivered)
+            </span>
+            <span className="p-1.5 rounded-full bg-emerald-50 text-emerald-700">
+              <CheckCircle2 className="w-4 h-4" />
+            </span>
+          </div>
+          <div className="font-serif text-2xl sm:text-3xl font-medium text-emerald-800">
+            {deliveredOrdersCount}
+            <span className="text-sm font-sans font-normal text-stone-400 ml-2">/ {totalOrdersCount} total</span>
+          </div>
+          <p className="text-[11px] text-stone-500 font-medium">
+            {deliveryRate}% fulfillment success rate
+          </p>
+        </div>
+
+        {/* Total Things/Items Sold */}
+        <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
+          <div className="flex items-center justify-between text-stone-400">
+            <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
+              Items / Things Sold
+            </span>
+            <span className="p-1.5 rounded-full bg-terracotta-50 text-terracotta-700">
+              <Package className="w-4 h-4" />
+            </span>
+          </div>
+          <div className="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
+            {totalItemsSold}
+            <span className="text-sm font-sans font-normal text-stone-400 ml-1.5">pieces</span>
+          </div>
+          <p className="text-[11px] text-stone-400">Artisan units crafted & dispatched</p>
+        </div>
+
         {/* Total Revenue */}
         <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-stone-400">
@@ -98,49 +148,64 @@ export default async function AdminDashboardPage() {
           <div className="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
             {formatPrice(totalRevenue, "INR")}
           </div>
-          <p className="text-[11px] text-stone-400">Lifetime paid commerce volume</p>
+          <p className="text-[11px] text-stone-400">AOV: {formatPrice(averageOrderValue, "INR")}</p>
         </div>
 
-        {/* Orders Count */}
+        {/* Active Makers & Catalog */}
         <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
           <div className="flex items-center justify-between text-stone-400">
             <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-              Total Orders
+              Makers & Catalog
             </span>
-            <ShoppingBag className="w-4 h-4 text-terracotta-600" />
-          </div>
-          <div className="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
-            {totalOrdersCount}
-          </div>
-          <p className="text-[11px] text-stone-400">Average Order: {formatPrice(averageOrderValue, "INR")}</p>
-        </div>
-
-        {/* Active Makers */}
-        <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-stone-400">
-            <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-              Active Makers
-            </span>
-            <Users className="w-4 h-4 text-mustard-500" />
+            <Users className="w-4 h-4 text-mustard-600" />
           </div>
           <div className="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
             {makersCount}
+            <span className="text-sm font-sans font-normal text-stone-400 ml-1.5">artisans</span>
           </div>
-          <p className="text-[11px] text-stone-400">Direct women artisan profiles in Haryana</p>
+          <p className="text-[11px] text-stone-400">{productsCount} published catalog items</p>
         </div>
+      </div>
 
-        {/* Catalog Items */}
-        <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-xs space-y-2">
-          <div className="flex items-center justify-between text-stone-400">
-            <span className="text-xs font-semibold uppercase tracking-wider text-stone-500">
-              Live Products
+      {/* Order Status Breakdown Pipeline */}
+      <div className="bg-white p-5 rounded-sm border border-stone-200 shadow-xs">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-xs uppercase tracking-wider text-stone-500 font-semibold">
+            Order Fulfillment Pipeline Status
+          </span>
+          <Link href="/admin/orders" className="text-xs font-semibold text-terracotta-700 hover:text-terracotta-900">
+            Manage All Orders →
+          </Link>
+        </div>
+        <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-1">
+          <div className="p-3 bg-stone-50 rounded-xs border border-stone-200/80">
+            <span className="text-[10px] uppercase tracking-wider text-stone-500 font-semibold block">
+              1. Processing / Crafting
             </span>
-            <Package className="w-4 h-4 text-peepal-700" />
+            <span className="text-xl font-serif text-amber-800 font-medium">{processingOrdersCount}</span>
+            <span className="text-[10px] text-stone-400 block mt-0.5">Being packed in Haryana</span>
           </div>
-          <div className="font-serif text-2xl sm:text-3xl font-medium text-charcoal">
-            {productsCount}
+          <div className="p-3 bg-stone-50 rounded-xs border border-stone-200/80">
+            <span className="text-[10px] uppercase tracking-wider text-stone-500 font-semibold block">
+              2. Shipped / In Transit
+            </span>
+            <span className="text-xl font-serif text-blue-800 font-medium">{shippedOrdersCount}</span>
+            <span className="text-[10px] text-stone-400 block mt-0.5">With courier partners</span>
           </div>
-          <p className="text-[11px] text-stone-400">Across 8 craft disciplines</p>
+          <div className="p-3 bg-emerald-50/50 rounded-xs border border-emerald-200/60">
+            <span className="text-[10px] uppercase tracking-wider text-emerald-800 font-semibold block">
+              3. Delivered (Done)
+            </span>
+            <span className="text-xl font-serif text-emerald-800 font-medium">{deliveredOrdersCount}</span>
+            <span className="text-[10px] text-emerald-600 block mt-0.5">Successfully completed</span>
+          </div>
+          <div className="p-3 bg-stone-50 rounded-xs border border-stone-200/80">
+            <span className="text-[10px] uppercase tracking-wider text-stone-500 font-semibold block">
+              4. Total Patrons
+            </span>
+            <span className="text-xl font-serif text-charcoal font-medium">{customersCount}</span>
+            <span className="text-[10px] text-stone-400 block mt-0.5">Registered buyers</span>
+          </div>
         </div>
       </div>
 

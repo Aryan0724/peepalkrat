@@ -33,6 +33,8 @@ export async function POST(req: NextRequest) {
       description,
       shortDescription,
       inventory,
+      lowStockThreshold,
+      costPrice,
       material,
       dimensions,
       weight,
@@ -41,6 +43,7 @@ export async function POST(req: NextRequest) {
       storySnippet,
       impactNotes,
       images, // array of url strings
+      recommendations, // array of recommended product IDs or objects
       isFeatured,
     } = body;
 
@@ -61,12 +64,14 @@ export async function POST(req: NextRequest) {
         slug: `${slug}-${Math.floor(100 + Math.random() * 900)}`,
         price: Number(price),
         compareAtPrice: compareAtPrice ? Number(compareAtPrice) : null,
+        costPrice: costPrice ? Number(costPrice) : null,
         categoryId,
         collectionId: collectionId || null,
         makerId: makerId || null,
         description: description || name,
         shortDescription: shortDescription || null,
         inventory: Number(inventory) || 10,
+        lowStockThreshold: Number(lowStockThreshold) || 3,
         material: material || null,
         dimensions: dimensions || null,
         weight: weight || null,
@@ -85,6 +90,29 @@ export async function POST(req: NextRequest) {
         },
       },
     });
+
+    // Create initial recommendations if provided
+    if (Array.isArray(recommendations) && recommendations.length > 0) {
+      const validRecs = recommendations
+        .map((r: any, idx: number) => {
+          const recId = typeof r === "string" ? r : r.recommendedProductId;
+          const note = typeof r === "object" ? r.note || null : null;
+          if (!recId || recId === product.id) return null;
+          return {
+            productId: product.id,
+            recommendedProductId: recId,
+            note,
+            order: idx,
+          };
+        })
+        .filter(Boolean) as { productId: string; recommendedProductId: string; note: string | null; order: number }[];
+
+      if (validRecs.length > 0) {
+        await prisma.productRecommendation.createMany({
+          data: validRecs,
+        });
+      }
+    }
 
     return NextResponse.json({ success: true, product });
   } catch (err: any) {
