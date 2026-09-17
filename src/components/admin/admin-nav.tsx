@@ -33,7 +33,7 @@ export function AdminNav() {
     { href: "/admin/collections", label: "Collections", icon: Layers },
     { href: "/admin/customers", label: "Customers", icon: Users },
     { href: "/admin/coupons", label: "Coupons", icon: Tag },
-    { href: "/admin/content", label: "CMS & Content", icon: FileText },
+    { href: "/admin/content", label: "Pages & Content CMS", icon: FileText },
     { href: "/admin/settings", label: "Store Settings", icon: Settings },
   ];
 

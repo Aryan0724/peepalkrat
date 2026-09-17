@@ -19,9 +19,10 @@ export default async function HomePage() {
   let collections: any[] = [];
   let makers: any[] = [];
   let categories: any[] = [];
+  let contentBlocks: Record<string, any> = {};
 
   try {
-    const [prods, cols, maks, cats] = await Promise.all([
+    const [prods, cols, maks, cats, blocks] = await Promise.all([
       prisma.product.findMany({
         where: { isPublished: true, isFeatured: true },
         include: {
@@ -42,12 +43,20 @@ export default async function HomePage() {
       prisma.category.findMany({
         take: 6,
       }),
+      prisma.contentBlock.findMany({
+        where: { page: "home", isActive: true },
+      }),
     ]);
 
     featuredProducts = prods;
     collections = cols;
     makers = maks;
     categories = cats;
+    if (blocks) {
+      blocks.forEach((b) => {
+        contentBlocks[b.key] = b;
+      });
+    }
   } catch (error) {
     console.warn("Using fallback homepage state:", error);
   }
@@ -55,10 +64,10 @@ export default async function HomePage() {
   return (
     <div className="w-full">
       {/* 1. Cinematic Editorial Hero */}
-      <HeroSection />
+      <HeroSection data={contentBlocks["home_hero"]} />
 
       {/* 2. Philosophy & Agency Over Charity Manifesto */}
-      <ImpactManifesto />
+      <ImpactManifesto data={contentBlocks["home_manifesto"]} />
 
       {/* 3. Featured Curated Collections */}
       <section className="py-24 bg-[#FAF8F5] border-b border-stone-200">

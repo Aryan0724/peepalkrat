@@ -7,7 +7,13 @@ import { ArrowRight, Globe, Heart, Mail, ShieldCheck, Sparkles } from "lucide-re
 import { useCurrency } from "@/lib/currency-context";
 import { CurrencyCode } from "@/types";
 
-export function Footer() {
+export function Footer({
+  aboutBlock,
+  contactBlock,
+}: {
+  aboutBlock?: any;
+  contactBlock?: any;
+} = {}) {
   const pathname = usePathname();
   const { currency, setCurrency } = useCurrency();
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -73,10 +79,10 @@ export function Footer() {
               PEEPALKRAT
             </span>
             <p className="text-xs tracking-[0.25em] uppercase text-stone-400 font-semibold -mt-2">
-              For The People. By The People.
+              {aboutBlock?.subtitle || "For The People. By The People."}
             </p>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm pt-1">
-              A Haryana-rooted social commerce brand connecting discerning patrons globally with the timeless mastery and entrepreneurial power of rural women makers.
+              {aboutBlock?.content || "A Haryana-rooted social commerce brand connecting discerning patrons globally with the timeless mastery and entrepreneurial power of rural women makers."}
             </p>
 
             {/* Newsletter */}

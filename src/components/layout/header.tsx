@@ -18,7 +18,7 @@ import { useCart } from "@/lib/cart-context";
 import { useCurrency } from "@/lib/currency-context";
 import { CurrencyCode } from "@/types";
 
-export function Header() {
+export function Header({ announcement }: { announcement?: any }) {
   const pathname = usePathname();
   const { openCart, itemCount } = useCart();
   const { currency, setCurrency, currencyConfig } = useCurrency();
@@ -54,13 +54,13 @@ export function Header() {
       <div className="bg-charcoal text-khadi text-[11px] font-medium py-2 px-4 tracking-wider uppercase flex items-center justify-between border-b border-charcoal-light">
         <div className="hidden md:flex items-center space-x-2 text-stone-300">
           <Sparkles className="w-3 h-3 text-mustard-500" />
-          <span>Handcrafted in Haryana • Dignified Artisan Livelihoods</span>
+          <span>{announcement?.subtitle || "Handcrafted in Haryana • Dignified Artisan Livelihoods"}</span>
         </div>
         <div className="mx-auto md:mx-0 text-center text-stone-200">
-          Complimentary pan-India shipping on orders above ₹2,000
+          {announcement?.title || "Complimentary pan-India shipping on orders above ₹2,000"}
         </div>
         <div className="hidden md:flex items-center space-x-4">
-          <Link href="/impact" className="hover:text-terracotta-300 transition-colors">
+          <Link href={announcement?.linkUrl || "/impact"} className="hover:text-terracotta-300 transition-colors">
             Our Social Impact
           </Link>
           <span className="text-stone-600">|</span>

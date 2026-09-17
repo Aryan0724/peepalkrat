@@ -14,22 +14,36 @@ export const revalidate = 60;
 
 export default async function MakersPage() {
   let makers: any[] = [];
+  let contentBlocks: Record<string, any> = {};
+
   try {
-    makers = await prisma.maker.findMany({
-      include: {
-        products: {
-          where: { isPublished: true },
-          take: 3,
-          include: {
-            images: { where: { isPrimary: true } },
+    const [loadedMakers, blocks] = await Promise.all([
+      prisma.maker.findMany({
+        include: {
+          products: {
+            where: { isPublished: true },
+            take: 3,
+            include: {
+              images: { where: { isPrimary: true } },
+            },
           },
         },
-      },
-      orderBy: { createdAt: "asc" },
+        orderBy: { createdAt: "asc" },
+      }),
+      prisma.contentBlock.findMany({
+        where: { page: "makers", isActive: true },
+      }),
+    ]);
+
+    makers = loadedMakers;
+    blocks.forEach((b) => {
+      contentBlocks[b.key] = b;
     });
   } catch (error) {
-    console.warn("Failed to load makers:", error);
+    console.warn("Failed to load makers or content blocks:", error);
   }
+
+  const heroBlock = contentBlocks["makers_hero"];
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
@@ -38,13 +52,13 @@ export default async function MakersPage() {
         <div className="max-w-3xl mx-auto space-y-4">
           <div className="inline-flex items-center space-x-2 text-mustard-500 text-xs uppercase tracking-[0.25em] font-semibold">
             <Sparkles className="w-4 h-4" />
-            <span>The Living Foundation</span>
+            <span>{heroBlock?.subtitle || "The Living Foundation"}</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl font-light">
-            Meet the Makers of Haryana
+            {heroBlock?.title || "Meet the Makers of Haryana"}
           </h1>
           <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
-            People are not our marketing. People are our reason for being. Explore the stories, disciplines, and village workshops of the women who craft each PeepalKrat object.
+            {heroBlock?.content || "People are not our marketing. People are our reason for being. Explore the stories, disciplines, and village workshops of the women who craft each PeepalKrat object."}
           </p>
         </div>
       </div>

@@ -5,22 +5,36 @@ import Link from "next/link";
 import Image from "next/image";
 import { ArrowRight, CheckCircle2 } from "lucide-react";
 
-export function ImpactManifesto() {
+interface ImpactManifestoProps {
+  data?: {
+    title?: string | null;
+    subtitle?: string | null;
+    content?: string | null;
+    linkUrl?: string | null;
+  };
+}
+
+export function ImpactManifesto({ data }: ImpactManifestoProps = {}) {
+  const subtitle = data?.subtitle || "The Philosophy of PeepalKrat";
+  const title = data?.title || "Agency Over Charity.\nCraftsmanship Over Sympathy.";
+  const content =
+    data?.content ||
+    "When you purchase an object from PeepalKrat, you are not making a donation. You are acquiring a museum-caliber piece of living craft while actively partnering with women building financial autonomy across Haryana.";
+  const linkUrl = data?.linkUrl || "/makers";
+
   return (
     <section className="py-20 bg-[#FAF8F5] relative overflow-hidden border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16">
           <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-3">
-            The Philosophy of PeepalKrat
+            {subtitle}
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal leading-tight">
-            Agency Over Charity.
-            <br />
-            <span className="italic">Craftsmanship Over Sympathy.</span>
+          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal leading-tight whitespace-pre-line">
+            {title}
           </h2>
           <p className="mt-4 text-stone-600 text-sm sm:text-base leading-relaxed">
-            When you purchase an object from PeepalKrat, you are not making a donation. You are acquiring a museum-caliber piece of living craft while actively partnering with women building financial autonomy across Haryana.
+            {content}
           </p>
         </div>
 

@@ -6,13 +6,33 @@ import Image from "next/image";
 import { ArrowRight, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
-export function HeroSection() {
+interface HeroSectionProps {
+  data?: {
+    title?: string | null;
+    subtitle?: string | null;
+    content?: string | null;
+    linkUrl?: string | null;
+    imageUrl?: string | null;
+  };
+}
+
+export function HeroSection({ data }: HeroSectionProps) {
+  const title = data?.title || "FOR THE PEOPLE. BY THE PEOPLE.";
+  const subtitle = data?.subtitle || "Haryana Cultural Commerce Enterprise";
+  const content =
+    data?.content ||
+    "Every piece has a maker. Every maker has a story. When you buy here, you participate in someone’s autonomy and livelihood across rural Haryana.";
+  const linkUrl = data?.linkUrl || "/shop";
+  const bgImage =
+    data?.imageUrl ||
+    "https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=85";
+
   return (
     <section className="relative w-full min-h-[85vh] flex items-center justify-center overflow-hidden bg-charcoal">
       {/* Editorial Background Image with Cinematic Overlay */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="https://images.unsplash.com/photo-1600121848594-d8644e57abab?auto=format&fit=crop&w=2000&q=85"
+          src={bgImage}
           alt="Hands of Haryana woman weaver weaving pit-loom textile"
           fill
           priority
@@ -28,26 +48,22 @@ export function HeroSection() {
         {/* Cultural Brand Eyebrow */}
         <div className="inline-flex items-center space-x-2 px-4 py-1.5 rounded-full bg-white/10 backdrop-blur-md border border-white/15 text-khadi text-xs font-medium tracking-[0.25em] uppercase mb-8 animate-fade-in">
           <Sparkles className="w-3.5 h-3.5 text-mustard-500" />
-          <span>Haryana Cultural Commerce Enterprise</span>
+          <span>{subtitle}</span>
         </div>
 
         {/* Primary Slogan */}
-        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white leading-[1.08] mb-6">
-          FOR THE PEOPLE.
-          <br />
-          <span className="font-serif italic font-normal text-terracotta-200">
-            BY THE PEOPLE.
-          </span>
+        <h1 className="font-serif text-4xl sm:text-6xl md:text-7xl font-light tracking-tight text-white leading-[1.08] mb-6 whitespace-pre-line">
+          {title}
         </h1>
 
         {/* Supporting Narrative */}
         <p className="max-w-2xl mx-auto text-base sm:text-lg md:text-xl text-stone-200 font-light leading-relaxed mb-10">
-          Every piece has a maker. Every maker has a story. When you buy here, you participate in someone’s autonomy and livelihood across rural Haryana.
+          {content}
         </p>
 
         {/* Dual Call to Action */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-          <Link href="/shop" className="w-full sm:w-auto">
+          <Link href={linkUrl} className="w-full sm:w-auto">
             <Button
               size="lg"
               className="w-full sm:w-auto bg-terracotta-600 hover:bg-terracotta-700 text-white tracking-wider uppercase text-xs font-semibold px-9 h-13 shadow-lg"

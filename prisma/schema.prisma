@@ -283,6 +283,8 @@ model Review {
 model ContentBlock {
   id        String   @id @default(uuid())
   key       String   @unique // e.g. "hero_headline", "impact_stats", "brand_manifesto"
+  page      String   @default("home") // home, story, makers, impact, header, footer
+  section   String   @default("general") // hero, manifesto, banner, quote, stats, contact
   type      String   @default("TEXT") // TEXT, BANNER, STORY, STATISTIC
   title     String?
   subtitle  String?

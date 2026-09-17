@@ -16,13 +16,29 @@ export const revalidate = 60;
 export default async function ImpactPage() {
   let makersCount = 8;
   let productsCount = 20;
+  let contentBlocks: Record<string, any> = {};
 
   try {
-    makersCount = await prisma.maker.count();
-    productsCount = await prisma.product.count({ where: { isPublished: true } });
+    const [mCount, pCount, blocks] = await Promise.all([
+      prisma.maker.count(),
+      prisma.product.count({ where: { isPublished: true } }),
+      prisma.contentBlock.findMany({
+        where: { page: "impact", isActive: true },
+      }),
+    ]);
+
+    makersCount = mCount;
+    productsCount = pCount;
+    blocks.forEach((b) => {
+      contentBlocks[b.key] = b;
+    });
   } catch (error) {
     console.warn("Using fallback impact metrics:", error);
   }
+
+  const heroBlock = contentBlocks["impact_hero"];
+  const wagePillar = contentBlocks["impact_wage_pillar"];
+  const ecoPillar = contentBlocks["impact_eco_pillar"];
 
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
@@ -30,13 +46,13 @@ export default async function ImpactPage() {
       <div className="bg-charcoal text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center">
         <div className="max-w-3xl mx-auto space-y-4">
           <span className="text-xs uppercase tracking-[0.25em] text-mustard-500 font-semibold block">
-            Impact Transparency
+            {heroBlock?.subtitle || "Impact Transparency"}
           </span>
           <h1 className="font-serif text-3xl sm:text-5xl font-light">
-            Verified Community Impact
+            {heroBlock?.title || "Verified Community Impact"}
           </h1>
           <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
-            We measure our success not just by revenue, but by the dignity, financial autonomy, and environmental integrity returned to the rural communities of Haryana.
+            {heroBlock?.content || "We measure our success not just by revenue, but by the dignity, financial autonomy, and environmental integrity returned to the rural communities of Haryana."}
           </p>
         </div>
       </div>
