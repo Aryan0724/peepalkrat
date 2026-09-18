@@ -55,6 +55,9 @@ model Category {
   slug        String     @unique
   description String?
   image       String?
+  badge       String?    // e.g. "Festive", "New", "Popular"
+  isFeatured  Boolean    @default(false)
+  order       Int        @default(0)
   parentId    String?
   parent      Category?  @relation("CategoryHierarchy", fields: [parentId], references: [id])
   children    Category[] @relation("CategoryHierarchy")

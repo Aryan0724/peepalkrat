@@ -32,8 +32,8 @@ export default async function ShopPage({
         orderBy: { createdAt: "desc" },
       }),
       prisma.category.findMany({
-        select: { id: true, name: true, slug: true },
-        orderBy: { name: "asc" },
+        select: { id: true, name: true, slug: true, image: true, badge: true, isFeatured: true, order: true },
+        orderBy: [{ isFeatured: "desc" }, { order: "asc" }, { name: "asc" }],
       }),
       prisma.collection.findMany({
         select: { id: true, name: true, slug: true },

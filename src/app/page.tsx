@@ -4,6 +4,7 @@ import Image from "next/image";
 import { ArrowRight, Sparkles, Compass } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { HeroSection } from "@/components/home/hero-section";
+import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
 import { ImpactManifesto } from "@/components/home/impact-manifesto";
 import { MakerSpotlight } from "@/components/home/maker-spotlight";
 import { CulturalShowcase } from "@/components/home/cultural-showcase";
@@ -41,7 +42,8 @@ export default async function HomePage() {
         take: 4,
       }),
       prisma.category.findMany({
-        take: 6,
+        where: { isFeatured: true },
+        orderBy: { order: "asc" },
       }),
       prisma.contentBlock.findMany({
         where: { page: "home", isActive: true },
@@ -51,7 +53,13 @@ export default async function HomePage() {
     featuredProducts = prods;
     collections = cols;
     makers = maks;
-    categories = cats;
+    // Fallback to all categories if none featured
+    if (!cats || cats.length === 0) {
+      categories = await prisma.category.findMany({ take: 10 });
+    } else {
+      categories = cats;
+    }
+
     if (blocks) {
       blocks.forEach((b) => {
         contentBlocks[b.key] = b;
@@ -66,7 +74,14 @@ export default async function HomePage() {
       {/* 1. Cinematic Editorial Hero */}
       <HeroSection data={contentBlocks["home_hero"]} />
 
-      {/* 2. Philosophy & Agency Over Charity Manifesto */}
+      {/* 2. Pinklay-Style Circular Category / Story Discovery Strip */}
+      <CircularCategoryStrip
+        categories={categories}
+        subtitle="Handcrafted in Haryana"
+        title="Explore by Category"
+      />
+
+      {/* 3. Philosophy & Agency Over Charity Manifesto */}
       <ImpactManifesto data={contentBlocks["home_manifesto"]} />
 
       {/* 3. Featured Curated Collections */}

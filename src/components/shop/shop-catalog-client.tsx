@@ -1,6 +1,7 @@
 "use client";
 
-import React, { useState, useMemo } from "react";
+import React, { useState, useMemo, useRef } from "react";
+import Image from "next/image";
 import { useSearchParams } from "next/navigation";
 import {
   SlidersHorizontal,
@@ -9,6 +10,9 @@ import {
   RotateCcw,
   Sparkles,
   ChevronDown,
+  ChevronLeft,
+  ChevronRight,
+  Layers,
 } from "lucide-react";
 import { ProductCard } from "./product-card";
 import { useCurrency } from "@/lib/currency-context";
@@ -18,6 +22,8 @@ interface CategoryOption {
   id: string;
   name: string;
   slug: string;
+  image?: string | null;
+  badge?: string | null;
 }
 
 interface CollectionOption {
@@ -82,6 +88,7 @@ export function ShopCatalogClient({
   const [sortBy, setSortBy] = useState<string>("featured");
   const [maxPrice, setMaxPrice] = useState<number>(10000);
   const [mobileFilterOpen, setMobileFilterOpen] = useState(false);
+  const categoryStripRef = useRef<HTMLDivElement>(null);
 
   // Reset all filters
   const resetFilters = () => {
@@ -209,6 +216,139 @@ export function ShopCatalogClient({
               <option value="price-desc">Price: High to Low</option>
             </select>
           </div>
+        </div>
+      </div>
+
+      {/* Pinklay-Style Circular Category Quick-Navigation & Filter Bar */}
+      <div className="mb-10 pb-6 border-b border-stone-200/70 relative group">
+        <div className="flex items-center justify-between mb-3">
+          <span className="text-[10px] sm:text-[11px] uppercase tracking-[0.2em] font-semibold text-terracotta-700">
+            Browse by Craft Specialty
+          </span>
+          <div className="hidden md:flex items-center space-x-1">
+            <button
+              onClick={() => {
+                if (categoryStripRef.current) {
+                  categoryStripRef.current.scrollBy({ left: -240, behavior: "smooth" });
+                }
+              }}
+              aria-label="Scroll categories left"
+              className="w-7 h-7 rounded-full bg-white border border-stone-200 flex items-center justify-center text-charcoal hover:bg-stone-100 transition-colors shadow-xs"
+            >
+              <ChevronLeft className="w-3.5 h-3.5" />
+            </button>
+            <button
+              onClick={() => {
+                if (categoryStripRef.current) {
+                  categoryStripRef.current.scrollBy({ left: 240, behavior: "smooth" });
+                }
+              }}
+              aria-label="Scroll categories right"
+              className="w-7 h-7 rounded-full bg-white border border-stone-200 flex items-center justify-center text-charcoal hover:bg-stone-100 transition-colors shadow-xs"
+            >
+              <ChevronRight className="w-3.5 h-3.5" />
+            </button>
+          </div>
+        </div>
+
+        <div
+          ref={categoryStripRef}
+          className="flex items-start space-x-4 sm:space-x-6 overflow-x-auto pb-2 scroll-smooth snap-x px-1 scrollbar-none"
+          style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
+        >
+          {/* "All Items" circular bubble */}
+          <button
+            onClick={() => setSelectedCategory("all")}
+            className="group flex flex-col items-center flex-shrink-0 snap-start text-center focus:outline-none"
+            style={{ width: "80px" }}
+          >
+            <div
+              className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
+                selectedCategory === "all"
+                  ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105"
+                  : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
+              }`}
+            >
+              <div
+                className={`w-full h-full rounded-full flex items-center justify-center transition-colors ${
+                  selectedCategory === "all"
+                    ? "bg-terracotta-700 text-white"
+                    : "bg-sandstone/40 text-charcoal group-hover:bg-sandstone/70"
+                }`}
+              >
+                <Layers className="w-5 h-5" />
+              </div>
+            </div>
+            <span
+              className={`mt-2 text-[11px] font-medium leading-tight transition-colors ${
+                selectedCategory === "all"
+                  ? "text-terracotta-700 font-semibold"
+                  : "text-charcoal group-hover:text-terracotta-700"
+              }`}
+            >
+              All Pieces
+            </span>
+          </button>
+
+          {/* Category Bubbles */}
+          {categories.map((cat) => {
+            const isSelected = selectedCategory === cat.slug;
+
+            return (
+              <button
+                key={cat.id}
+                onClick={() => {
+                  if (isSelected) {
+                    setSelectedCategory("all");
+                  } else {
+                    setSelectedCategory(cat.slug);
+                  }
+                }}
+                className="group flex flex-col items-center flex-shrink-0 snap-start text-center focus:outline-none"
+                style={{ width: "84px" }}
+              >
+                <div className="relative">
+                  {cat.badge && (
+                    <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 z-20 bg-terracotta-600 text-white text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded-full shadow-xs whitespace-nowrap">
+                      {cat.badge}
+                    </span>
+                  )}
+                  <div
+                    className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
+                      isSelected
+                        ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105 shadow-sm"
+                        : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
+                    }`}
+                  >
+                    <div className="relative w-full h-full rounded-full overflow-hidden bg-stone-100">
+                      {cat.image ? (
+                        <Image
+                          src={cat.image}
+                          alt={cat.name}
+                          fill
+                          sizes="(max-width: 640px) 64px, 72px"
+                          className="object-cover transition-transform duration-500 group-hover:scale-115"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center text-stone-400 bg-sandstone/30">
+                          <Sparkles className="w-4 h-4 text-terracotta-500" />
+                        </div>
+                      )}
+                    </div>
+                  </div>
+                </div>
+                <span
+                  className={`mt-2 text-[11px] leading-tight font-medium line-clamp-2 transition-colors ${
+                    isSelected
+                      ? "text-terracotta-700 font-semibold"
+                      : "text-charcoal group-hover:text-terracotta-700"
+                  }`}
+                >
+                  {cat.name}
+                </span>
+              </button>
+            );
+          })}
         </div>
       </div>
 

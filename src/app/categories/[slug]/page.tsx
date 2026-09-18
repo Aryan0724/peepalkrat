@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { ProductCard } from "@/components/shop/product-card";
+import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
 
 interface CategoryPageProps {
   params: { slug: string };
@@ -22,19 +23,25 @@ export async function generateMetadata({ params }: CategoryPageProps) {
 }
 
 export default async function CategoryPage({ params }: CategoryPageProps) {
-  const category = await prisma.category.findUnique({
-    where: { slug: params.slug },
-    include: {
-      products: {
-        where: { isPublished: true },
-        include: {
-          category: true,
-          maker: true,
-          images: { orderBy: { order: "asc" } },
+  const [category, otherCategories] = await Promise.all([
+    prisma.category.findUnique({
+      where: { slug: params.slug },
+      include: {
+        products: {
+          where: { isPublished: true },
+          include: {
+            category: true,
+            maker: true,
+            images: { orderBy: { order: "asc" } },
+          },
         },
       },
-    },
-  });
+    }),
+    prisma.category.findMany({
+      where: { isFeatured: true },
+      orderBy: { order: "asc" },
+    }),
+  ]);
 
   if (!category) notFound();
 
@@ -96,6 +103,16 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
             ))}
           </div>
         )}
+      </div>
+
+      {/* Discovery Strip: Explore Other Categories */}
+      <div className="mt-20">
+        <CircularCategoryStrip
+          categories={otherCategories}
+          activeSlug={params.slug}
+          title="Explore Other Disciplines"
+          subtitle="Discover Haryana's Living Crafts"
+        />
       </div>
     </div>
   );
