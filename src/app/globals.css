@@ -51,6 +51,71 @@
   border-image: linear-gradient(to right, #DA846A, #D4A338, #4A6B52) 1;
 }
 
+/* Modern Classic Indian Luxury Design Elements */
+.jaali-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  margin: 2rem 0;
+}
+
+.jaali-divider::before,
+.jaali-divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #E7DFD5;
+}
+
+.jaali-divider-icon {
+  margin: 0 1rem;
+  color: #B84824;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.mewat-seal {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed #B84824;
+  outline: 2px solid rgba(184, 72, 36, 0.15);
+  outline-offset: 3px;
+  border-radius: 9999px;
+  padding: 0.5rem 1rem;
+  background: rgba(253, 245, 242, 0.85);
+  backdrop-filter: blur(4px);
+}
+
+.feminist-ribbon {
+  background: linear-gradient(135deg, #1C1917 0%, #2D4433 100%);
+  color: #FAF8F5;
+  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.15);
+}
+
+.gold-foil-text {
+  background: linear-gradient(135deg, #7C2F1A 0%, #B58525 50%, #7C2F1A 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.khadi-card {
+  background: #FFFFFF;
+  border: 1px solid #E7DFD5;
+  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.khadi-card:hover {
+  border-color: #B84824;
+  box-shadow: 0 20px 40px -15px rgba(28, 25, 23, 0.09);
+  transform: translateY(-2px);
+}
+
 /* Custom smooth scrollbars */
 ::-webkit-scrollbar {
   width: 6px;

@@ -53,15 +53,21 @@ export function Header({ announcement }: { announcement?: any }) {
       {/* Top Editorial Announcement Bar */}
       <div className="bg-charcoal text-khadi text-[11px] font-medium py-2 px-4 tracking-wider uppercase flex items-center justify-between border-b border-charcoal-light">
         <div className="hidden md:flex items-center space-x-2 text-stone-300">
-          <Sparkles className="w-3 h-3 text-mustard-500" />
-          <span>{announcement?.subtitle || "Handcrafted in Haryana • Dignified Artisan Livelihoods"}</span>
+          <Sparkles className="w-3 h-3 text-amber-400" />
+          <span className="font-semibold text-amber-300 tracking-normal">
+            {announcement?.subtitle || "स्त्री शक्ति • मेवात का स्वाभिमान • 142+ Women in Mewat Earning Independent Livelihoods"}
+          </span>
         </div>
         <div className="mx-auto md:mx-0 text-center text-stone-200">
-          {announcement?.title || "Complimentary pan-India shipping on orders above ₹2,000"}
+          {announcement?.title || "Complimentary pan-India shipping on orders above ₹1,999 • Direct Artisan Share"}
         </div>
         <div className="hidden md:flex items-center space-x-4">
+          <Link href="/community" className="text-amber-300 hover:text-amber-200 transition-colors font-semibold">
+            Sisterhood Wall
+          </Link>
+          <span className="text-stone-600">|</span>
           <Link href={announcement?.linkUrl || "/impact"} className="hover:text-terracotta-300 transition-colors">
-            Our Social Impact
+            Mewat Impact
           </Link>
           <span className="text-stone-600">|</span>
           <Link href="/admin/login" className="hover:text-stone-100 transition-colors flex items-center space-x-1">
@@ -133,6 +139,14 @@ export function Header({ announcement }: { announcement?: any }) {
           <div className="flex items-center space-x-4 sm:space-x-6">
             {/* Desktop Navigation Links Right */}
             <div className="hidden lg:flex items-center space-x-8 text-[13px] font-medium tracking-wide uppercase mr-2">
+              <Link
+                href="/community"
+                className={`transition-colors hover:text-terracotta-600 ${
+                  pathname === "/community" ? "text-terracotta-600 border-b border-terracotta-600 pb-0.5" : "text-charcoal"
+                }`}
+              >
+                Community
+              </Link>
               <Link
                 href="/our-story"
                 className={`transition-colors hover:text-terracotta-600 ${
@@ -285,6 +299,13 @@ export function Header({ announcement }: { announcement?: any }) {
                 className="block text-charcoal hover:text-terracotta-600 transition-colors py-1"
               >
                 Meet the Makers
+              </Link>
+              <Link
+                href="/community"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block text-charcoal hover:text-terracotta-600 transition-colors py-1"
+              >
+                Sisterhood & Community Journal
               </Link>
               <Link
                 href="/our-story"

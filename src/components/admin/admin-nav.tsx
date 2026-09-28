@@ -17,6 +17,7 @@ import {
   ExternalLink,
   Layers,
   Sparkles,
+  BarChart3,
 } from "lucide-react";
 
 export function AdminNav() {
@@ -25,6 +26,7 @@ export function AdminNav() {
 
   const navItems = [
     { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
+    { href: "/admin/analytics", label: "Mewat Analytics", icon: BarChart3 },
     { href: "/admin/products", label: "Products", icon: Package },
     { href: "/admin/makers", label: "Makers & Artisans", icon: Users },
     { href: "/admin/orders", label: "Orders", icon: ShoppingBag },

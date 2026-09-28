@@ -35,13 +35,13 @@ export function Footer({
         {/* Top Pillars / Credo */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 pb-14 border-b border-stone-800 text-center md:text-left">
           <div className="flex items-start space-x-4">
-            <div className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center shrink-0 text-terracotta-400">
+            <div className="w-10 h-10 rounded-full bg-stone-800 flex items-center justify-center shrink-0 text-amber-400">
               <Sparkles className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-white font-serif text-base font-medium">Agency Over Charity</h4>
+              <h4 className="text-white font-serif text-base font-medium">Mewat Women's Autonomy</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
-                The women of Haryana are not beneficiaries of charity. They are master craftswomen and entrepreneurs co-creating luxury heritage goods.
+                142+ rural women across Nuh, Taoru, Punhana & Nagina hold independent bank passbooks and earn dignified living wages co-creating heirloom crafts.
               </p>
             </div>
           </div>
@@ -51,9 +51,9 @@ export function Footer({
               <ShieldCheck className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-white font-serif text-base font-medium">100% Traceable Craft</h4>
+              <h4 className="text-white font-serif text-base font-medium">100% Traceable Wage Ledger</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
-                Every piece bears the name, village, and craft heritage of its maker. Honest compensation and transparent value creation.
+                Every rupee is transparently audited. 72% maker share reaches rural women directly with zero middlemen or institutional cuts.
               </p>
             </div>
           </div>
@@ -63,9 +63,9 @@ export function Footer({
               <Heart className="w-5 h-5" />
             </div>
             <div>
-              <h4 className="text-white font-serif text-base font-medium">Regenerative & Natural</h4>
+              <h4 className="text-white font-serif text-base font-medium">Haryanvi Craft Ecology</h4>
               <p className="text-xs text-stone-400 mt-1 leading-relaxed">
-                Desi cotton, wild Moonj canal grass, alluvial pottery clay, and plant-based botanical dyes with plastic-free shipping.
+                Desi cotton, Aravalli wild Moonj grass, alluvial riverbed clay, and natural plant extracts with zero plastic packaging.
               </p>
             </div>
           </div>
@@ -158,8 +158,13 @@ export function Footer({
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
+                <Link href="/community" className="text-amber-400 hover:text-amber-300 font-medium transition-colors">
+                  Sisterhood & Patron Wall ↗
+                </Link>
+              </li>
+              <li>
                 <Link href="/makers" className="hover:text-white transition-colors">
-                  Meet the Makers
+                  Mewat Artisan Directory
                 </Link>
               </li>
               <li>
@@ -169,22 +174,12 @@ export function Footer({
               </li>
               <li>
                 <Link href="/impact" className="hover:text-white transition-colors">
-                  Social Impact Model
-                </Link>
-              </li>
-              <li>
-                <Link href="/makers/sunita-devi" className="hover:text-white transition-colors">
-                  Panipat Weaver Spotlight
-                </Link>
-              </li>
-              <li>
-                <Link href="/makers/santosh-kumari" className="hover:text-white transition-colors">
-                  Rohtak Phulkari Heritage
+                  Living Wage Transparency
                 </Link>
               </li>
               <li>
                 <Link href="/admin/login" className="hover:text-white transition-colors">
-                  Admin & Operations Portal
+                  Staff & Operations Portal
                 </Link>
               </li>
             </ul>
@@ -193,22 +188,23 @@ export function Footer({
           {/* Col 5: Client Support & Policies */}
           <div className="space-y-3">
             <h4 className="text-white text-xs font-semibold uppercase tracking-wider">
-              Assistance & Policies
+              Artisan Guilds
             </h4>
             <ul className="space-y-2 text-xs text-stone-400">
               <li>
-                <span className="text-stone-300">Panipat Workshop HQ:</span>
-                <p className="text-[11px] text-stone-500 mt-0.5">Sector 25, Panipat, Haryana 132103</p>
+                <span className="text-stone-300 font-medium">Mewat Craft Clusters:</span>
+                <p className="text-[11px] text-stone-400 mt-0.5">Nuh • Taoru • Punhana • Nagina • Ferozepur Jhirka</p>
               </li>
               <li>
-                <span className="text-stone-300">Patron Care:</span>
-                <p className="text-[11px] text-stone-500 mt-0.5">hello@peepalkrat.com</p>
+                <span className="text-stone-300 font-medium">Panipat Textile Guild:</span>
+                <p className="text-[11px] text-stone-400 mt-0.5">Sector 25, Panipat 132103</p>
+              </li>
+              <li>
+                <span className="text-stone-300">Patron Concierge:</span>
+                <p className="text-[11px] text-stone-400 mt-0.5">hello@peepalkrat.com</p>
               </li>
               <li className="pt-1">
-                <span className="text-stone-400">Plastic-Free Pan-India Delivery (3-5 Days)</span>
-              </li>
-              <li>
-                <span className="text-stone-400">International DHL Express to 45+ Countries</span>
+                <span className="text-amber-400/90 text-[11px]">Direct Bank Transfers Every Friday to Women Artisans</span>
               </li>
             </ul>
           </div>

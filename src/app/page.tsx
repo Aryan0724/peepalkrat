@@ -5,7 +5,9 @@ import { ArrowRight, Sparkles, Compass } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { HeroSection } from "@/components/home/hero-section";
 import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
+import { MewatImpactPulse } from "@/components/home/mewat-impact-pulse";
 import { ImpactManifesto } from "@/components/home/impact-manifesto";
+import { MewatVoicesSection } from "@/components/home/mewat-voices-section";
 import { MakerSpotlight } from "@/components/home/maker-spotlight";
 import { CulturalShowcase } from "@/components/home/cultural-showcase";
 import { CustomerStories } from "@/components/home/customer-stories";
@@ -81,7 +83,10 @@ export default async function HomePage() {
         title="Explore by Category"
       />
 
-      {/* 3. Philosophy & Agency Over Charity Manifesto */}
+      {/* 3. Live Mewat Women Financial Autonomy Pulse & Impact Counter */}
+      <MewatImpactPulse />
+
+      {/* 4. Philosophy & Agency Over Charity Manifesto */}
       <ImpactManifesto data={contentBlocks["home_manifesto"]} />
 
       {/* 3. Featured Curated Collections */}
@@ -174,6 +179,9 @@ export default async function HomePage() {
 
       {/* 5. Meet the Makers Spotlight */}
       <MakerSpotlight makers={makers} />
+
+      {/* 5b. Voices of Mewat - Oral Testimonies & Feminist Empowerment */}
+      <MewatVoicesSection />
 
       {/* 6. Living Craft Geography of Haryana */}
       <CulturalShowcase />

@@ -8,6 +8,7 @@ import { ProductDetailsClient } from "@/components/product/product-details-clien
 import { ProductCard } from "@/components/shop/product-card";
 
 import { ProductBundleBox } from "@/components/product/product-bundle-box";
+import { MewatWageLedger } from "@/components/product/mewat-wage-ledger";
 
 interface ProductPageProps {
   params: { slug: string };
@@ -144,6 +145,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
           {/* Right Column: Details & Purchasing (5 cols) */}
           <div className="lg:col-span-5">
             <ProductDetailsClient product={product as any} />
+            <MewatWageLedger
+              priceInr={product.price}
+              originVillage={product.productionLocation}
+              makerName={product.maker?.name}
+            />
           </div>
         </div>
 
