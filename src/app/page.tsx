@@ -5,9 +5,11 @@ import { ArrowRight, Sparkles, Compass } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { HeroSection } from "@/components/home/hero-section";
 import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
+import { HaryanaFreedomSection } from "@/components/home/haryana-freedom-section";
 import { MewatImpactPulse } from "@/components/home/mewat-impact-pulse";
 import { ImpactManifesto } from "@/components/home/impact-manifesto";
 import { MewatVoicesSection } from "@/components/home/mewat-voices-section";
+import { SwadeshiEmailDispatch } from "@/components/home/swadeshi-email-dispatch";
 import { MakerSpotlight } from "@/components/home/maker-spotlight";
 import { CulturalShowcase } from "@/components/home/cultural-showcase";
 import { CustomerStories } from "@/components/home/customer-stories";
@@ -76,12 +78,15 @@ export default async function HomePage() {
       {/* 1. Cinematic Editorial Hero */}
       <HeroSection data={contentBlocks["home_hero"]} />
 
-      {/* 2. Pinklay-Style Circular Category / Story Discovery Strip */}
+      {/* 2. Imperial Swadeshi Craft Medallion Carousel (Fixed Tailwind sizing & gold borders) */}
       <CircularCategoryStrip
         categories={categories}
-        subtitle="Handcrafted in Haryana"
-        title="Explore by Category"
+        subtitle="हस्तकला एवं स्वदेशी शिल्प • Handcrafted in Haryana"
+        title="Explore by Guild Discipline"
       />
+
+      {/* 2b. The 1857 Swadeshi Continuum: Historic Rebellion to Women's Economic Sovereignty */}
+      <HaryanaFreedomSection />
 
       {/* 3. Live Mewat Women Financial Autonomy Pulse & Impact Counter */}
       <MewatImpactPulse />
@@ -227,6 +232,9 @@ export default async function HomePage() {
           </div>
         </div>
       </section>
+
+      {/* 7b. The Royal Postal Dispatch & Swadeshi Gazette (Artistic Email Representation) */}
+      <SwadeshiEmailDispatch />
 
       {/* 8. Patron Testimonials & Reviews */}
       <CustomerStories />

@@ -38,21 +38,21 @@ export function CulturalShowcase() {
   ];
 
   return (
-    <section className="py-24 bg-charcoal text-white relative overflow-hidden">
+    <section className="py-24 bg-[#0B132B] text-white relative overflow-hidden border-b border-[#C8A253]/30">
       {/* Subtle decorative weave pattern */}
-      <div className="absolute inset-0 opacity-5 pointer-events-none pattern-weave" />
+      <div className="absolute inset-0 opacity-10 pointer-events-none pattern-weave" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center space-x-2 text-mustard-500 text-xs uppercase tracking-[0.25em] font-semibold mb-3">
-            <Compass className="w-4 h-4" />
-            <span>Cultural Provenance</span>
+          <div className="inline-flex items-center space-x-2 text-[#DFBD69] text-[11px] uppercase tracking-[0.25em] font-cinzel font-semibold mb-3">
+            <Compass className="w-4 h-4 text-[#DFBD69]" />
+            <span>स्वाधीनता एवं शिल्प भूगोल • Cultural Provenance</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-4xl font-light leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-light leading-tight text-[#FAF6EE]">
             The Living Craft Geography of Haryana
           </h2>
-          <p className="mt-4 text-stone-300 text-sm leading-relaxed">
-            Haryana’s crafts are not relics of a forgotten past; they are living traditions adapted by self-reliant women for the contemporary home.
+          <p className="mt-4 text-stone-300 text-sm leading-relaxed font-light">
+            From the 1857 resistance strongholds of Rewari and Mewat to the ancient pit-looms of Panipat—each district represents a living lineage of Swadeshi craftsmanship.
           </p>
         </div>
 

@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, Eye, Check } from "lucide-react";
+import { Heart, ShoppingBag, Check, Sparkles } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { useCurrency } from "@/lib/currency-context";
 import { Badge } from "@/components/ui/badge";
@@ -73,11 +73,11 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative flex flex-col bg-white rounded-sm overflow-hidden border border-stone-200/80 hover:border-stone-400/80 transition-all duration-300 hover:shadow-card">
+    <div className="group relative flex flex-col bg-white rounded-xs overflow-hidden border border-[#EAE0CE] hover:border-[#C8A253] transition-all duration-300 hover:shadow-xl">
       {/* Product Image Frame */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[4/5] w-full overflow-hidden bg-stone-100"
+        className="relative block aspect-[4/5] w-full overflow-hidden bg-[#F4ECE0]"
       >
         <Image
           src={primaryImage}
@@ -99,19 +99,22 @@ export function ProductCard({ product }: ProductCardProps) {
         )}
 
         {/* Top Badges */}
-        <div className="absolute top-3 left-3 flex flex-col gap-1.5 z-10">
+        <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 z-10">
+          <span className="bg-[#0B132B]/90 backdrop-blur-xs text-[#DFBD69] text-[9px] font-cinzel font-semibold px-2 py-0.5 rounded-xs border border-[#C8A253]/50 uppercase tracking-wider">
+            Swadeshi Verified
+          </span>
           {discountPercent && (
-            <Badge variant="terracotta" className="text-[10px] font-bold">
+            <span className="bg-[#881C10] text-white text-[9px] font-bold px-2 py-0.5 rounded-xs uppercase tracking-wider">
               {discountPercent}% OFF
-            </Badge>
+            </span>
           )}
           {isLowStock && (
-            <Badge variant="mustard" className="text-[9px]">
-              Only {product.inventory} left
-            </Badge>
+            <span className="bg-[#C8A253] text-[#0B132B] text-[9px] font-bold px-2 py-0.5 rounded-xs uppercase tracking-wider">
+              Only {product.inventory} Left
+            </span>
           )}
           {isOutOfStock && (
-            <span className="bg-stone-900 text-white text-[10px] px-2 py-0.5 rounded-full font-medium uppercase tracking-wider">
+            <span className="bg-stone-900 text-white text-[9px] px-2 py-0.5 rounded-xs font-medium uppercase tracking-wider">
               Sold Out
             </span>
           )}
@@ -124,25 +127,25 @@ export function ProductCard({ product }: ProductCardProps) {
             e.stopPropagation();
             setIsWishlisted(!isWishlisted);
           }}
-          className={`absolute top-3 right-3 p-2 rounded-full bg-white/90 backdrop-blur-xs transition-all duration-200 hover:scale-110 z-10 shadow-xs ${
-            isWishlisted ? "text-terracotta-600" : "text-stone-400 hover:text-charcoal"
+          className={`absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 backdrop-blur-xs transition-all duration-200 hover:scale-110 z-10 shadow-sm border border-[#EAE0CE] ${
+            isWishlisted ? "text-[#881C10]" : "text-stone-400 hover:text-[#0B132B]"
           }`}
           aria-label="Add to wishlist"
         >
-          <Heart className={`w-4 h-4 ${isWishlisted ? "fill-current" : ""}`} />
+          <Heart className={`w-3.5 h-3.5 ${isWishlisted ? "fill-current" : ""}`} />
         </button>
 
         {/* Quick Add Overlay on Hover */}
-        <div className="absolute inset-x-3 bottom-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
+        <div className="absolute inset-x-2.5 bottom-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
           <button
             onClick={handleQuickAdd}
             disabled={isOutOfStock}
-            className={`w-full py-2.5 px-4 text-xs font-semibold uppercase tracking-wider rounded-sm transition-all shadow-md flex items-center justify-center space-x-1.5 ${
+            className={`w-full py-2.5 px-4 text-[11px] font-cinzel font-bold uppercase tracking-[0.16em] rounded-xs transition-all shadow-md flex items-center justify-center space-x-1.5 ${
               isAdded
-                ? "bg-peepal-700 text-white"
+                ? "bg-[#1A3323] text-white border border-[#DFBD69]"
                 : isOutOfStock
                 ? "bg-stone-300 text-stone-600 cursor-not-allowed"
-                : "bg-charcoal hover:bg-terracotta-700 text-white"
+                : "bg-[#0B132B] hover:bg-[#881C10] text-[#DFBD69] hover:text-white border border-[#C8A253]/60"
             }`}
           >
             {isAdded ? (
@@ -163,35 +166,35 @@ export function ProductCard({ product }: ProductCardProps) {
       </Link>
 
       {/* Card Content & Details */}
-      <div className="p-4 flex flex-col flex-1 justify-between space-y-2.5">
+      <div className="p-4 flex flex-col flex-1 justify-between space-y-2">
         <div>
           {/* Maker & Location attribution */}
           {product.maker && (
             <Link
               href={`/makers/${product.maker.slug}`}
-              className="text-[11px] text-terracotta-700 hover:text-terracotta-900 font-medium block truncate tracking-wide"
+              className="text-[10px] text-[#881C10] hover:text-[#68140B] font-medium block truncate tracking-wide font-cinzel"
             >
-              Crafted by {product.maker.name} • {product.maker.villageDistrict}
+              By {product.maker.name} • {product.maker.villageDistrict}
             </Link>
           )}
 
           {/* Product Name */}
-          <h3 className="font-serif text-sm font-medium text-charcoal line-clamp-1 mt-1 group-hover:text-terracotta-700 transition-colors">
+          <h3 className="font-serif text-sm font-medium text-[#0B132B] line-clamp-1 mt-1 group-hover:text-[#881C10] transition-colors">
             <Link href={`/products/${product.slug}`}>{product.name}</Link>
           </h3>
 
           {/* Category */}
           {product.category && (
-            <p className="text-[11px] text-stone-500 line-clamp-1 mt-0.5">
+            <p className="text-[10px] text-stone-500 line-clamp-1 mt-0.5">
               {product.category.name}
             </p>
           )}
         </div>
 
         {/* Price Row */}
-        <div className="pt-1 flex items-baseline justify-between border-t border-stone-100">
+        <div className="pt-2 flex items-baseline justify-between border-t border-[#EAE0CE]/70">
           <div className="flex items-baseline space-x-2">
-            <span className="text-sm font-semibold text-charcoal">
+            <span className="font-serif text-base font-semibold text-[#0B132B]">
               {format(product.price)}
             </span>
             {product.compareAtPrice && product.compareAtPrice > product.price && (
@@ -201,8 +204,8 @@ export function ProductCard({ product }: ProductCardProps) {
             )}
           </div>
 
-          <span className="text-[10px] text-stone-400 tracking-wider uppercase font-medium">
-            Heirloom
+          <span className="text-[9px] text-[#C8A253] font-cinzel font-bold tracking-wider uppercase">
+            72% Maker Share
           </span>
         </div>
       </div>

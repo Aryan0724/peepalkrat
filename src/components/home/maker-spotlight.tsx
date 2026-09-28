@@ -23,23 +23,23 @@ interface MakerSpotlightProps {
 
 export function MakerSpotlight({ makers }: MakerSpotlightProps) {
   return (
-    <section className="py-24 bg-sandstone/50 border-b border-stone-200">
+    <section className="py-24 bg-[#FAF6EE] border-b border-[#EAE0CE]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div>
-            <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-2">
-              The Living Hands of Haryana
+            <span className="text-[11px] uppercase tracking-[0.25em] text-[#881C10] font-cinzel font-semibold block mb-2">
+              The Living Hands of Swadeshi Heritage
             </span>
-            <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
-              Meet the Makers
+            <h2 className="font-serif text-3xl sm:text-4xl text-[#0B132B] font-normal">
+              Meet the Makers of Mewat & Haryana
             </h2>
           </div>
           <Link
             href="/makers"
-            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-charcoal hover:text-terracotta-700 font-semibold group"
+            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-[#0B132B] hover:text-[#881C10] font-cinzel font-semibold group"
           >
-            <span>View All 85+ Artisan Profiles</span>
+            <span>View All Artisan Profiles</span>
             <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

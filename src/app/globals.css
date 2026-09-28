@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700;800&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -14,8 +14,8 @@
   }
 
   body {
-    background-color: #FAF8F5;
-    color: #1C1917;
+    background-color: #FAF6EE;
+    color: #121216;
     font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -23,97 +23,138 @@
   }
 
   h1, h2, h3, .font-serif {
-    font-family: 'Playfair Display', Georgia, serif;
-    letter-spacing: -0.015em;
+    font-family: 'Cormorant Garamond', 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.01em;
+  }
+
+  .font-cormorant {
+    font-family: 'Cormorant Garamond', Georgia, serif;
+  }
+
+  .font-cinzel {
+    font-family: 'Cinzel', serif;
+    letter-spacing: 0.12em;
   }
 }
 
 /* Cultural subtle accents & patterns */
 .pattern-jaali {
-  background-image: radial-gradient(#C85A32 0.75px, transparent 0.75px), radial-gradient(#C85A32 0.75px, #FAF8F5 0.75px);
-  background-size: 30px 30px;
-  background-position: 0 0, 15px 15px;
-  opacity: 0.08;
+  background-image: radial-gradient(#C8A253 0.75px, transparent 0.75px), radial-gradient(#C8A253 0.75px, #FAF6EE 0.75px);
+  background-size: 28px 28px;
+  background-position: 0 0, 14px 14px;
+  opacity: 0.12;
 }
 
 .pattern-weave {
   background: repeating-linear-gradient(
     45deg,
-    rgba(200, 90, 50, 0.03),
-    rgba(200, 90, 50, 0.03) 1px,
+    rgba(167, 38, 24, 0.03),
+    rgba(167, 38, 24, 0.03) 1px,
     transparent 1px,
     transparent 8px
   );
 }
 
-.border-deckled {
-  border-style: solid;
-  border-image: linear-gradient(to right, #DA846A, #D4A338, #4A6B52) 1;
+/* Swadeshi & Haryana Independence Movement Visual Elements */
+.gold-foil-text {
+  background: linear-gradient(135deg, #A67C2E 0%, #DFBD69 35%, #F7E7B4 50%, #C8A253 75%, #7E5B1D 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
 }
 
-/* Modern Classic Indian Luxury Design Elements */
-.jaali-divider {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+.gold-foil-border {
+  border: 1px solid transparent;
+  border-image: linear-gradient(135deg, #C8A253, #DFBD69, #A67C2E) 1;
+}
+
+.gold-foil-box {
+  background: linear-gradient(135deg, rgba(200, 162, 83, 0.08) 0%, rgba(247, 231, 180, 0.15) 50%, rgba(166, 124, 46, 0.06) 100%);
+  border: 1px solid rgba(200, 162, 83, 0.4);
+}
+
+.swadeshi-seal {
   position: relative;
-  margin: 2rem 0;
-}
-
-.jaali-divider::before,
-.jaali-divider::after {
-  content: "";
-  flex: 1;
-  border-bottom: 1px solid #E7DFD5;
-}
-
-.jaali-divider-icon {
-  margin: 0 1rem;
-  color: #B84824;
-  font-size: 0.85rem;
-  letter-spacing: 0.15em;
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-}
-
-.mewat-seal {
   display: inline-flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  border: 1px dashed #B84824;
-  outline: 2px solid rgba(184, 72, 36, 0.15);
+  border: 1.5px dashed #C8A253;
+  outline: 2px solid rgba(200, 162, 83, 0.25);
   outline-offset: 3px;
   border-radius: 9999px;
-  padding: 0.5rem 1rem;
-  background: rgba(253, 245, 242, 0.85);
-  backdrop-filter: blur(4px);
+  padding: 0.6rem 1.4rem;
+  background: rgba(250, 246, 238, 0.95);
+  backdrop-filter: blur(8px);
+  box-shadow: 0 4px 15px rgba(11, 19, 43, 0.06);
 }
 
-.feminist-ribbon {
-  background: linear-gradient(135deg, #1C1917 0%, #2D4433 100%);
-  color: #FAF8F5;
-  box-shadow: 0 2px 8px rgba(28, 25, 23, 0.15);
+.rebellion-badge {
+  background: linear-gradient(135deg, #881C10 0%, #0B132B 100%);
+  color: #FAF6EE;
+  border: 1px solid rgba(223, 189, 105, 0.4);
+  box-shadow: 0 4px 14px rgba(136, 28, 16, 0.25);
 }
 
-.gold-foil-text {
-  background: linear-gradient(135deg, #7C2F1A 0%, #B58525 50%, #7C2F1A 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+/* Postal Dispatch Envelope & Email Representation */
+.postal-dispatch-envelope {
+  position: relative;
+  background: #FAF6EE;
+  border: 1px solid #EAE0CE;
+  box-shadow: 0 20px 45px -10px rgba(11, 19, 43, 0.12), 0 0 0 1px rgba(200, 162, 83, 0.2);
 }
 
-.khadi-card {
-  background: #FFFFFF;
-  border: 1px solid #E7DFD5;
-  box-shadow: 0 4px 20px -2px rgba(28, 25, 23, 0.04);
+.postal-dispatch-envelope::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: repeating-linear-gradient(
+    -45deg,
+    #881C10,
+    #881C10 12px,
+    #FAF6EE 12px,
+    #FAF6EE 16px,
+    #0B132B 16px,
+    #0B132B 28px,
+    #FAF6EE 28px,
+    #FAF6EE 32px
+  );
+}
+
+.wax-seal-btn {
+  background: radial-gradient(circle at 35% 35%, #A72618 0%, #68140B 75%, #4D0E07 100%);
+  color: #F7E7B4;
+  border: 1px solid rgba(223, 189, 105, 0.5);
+  box-shadow: 0 4px 12px rgba(104, 20, 11, 0.35), inset 0 1px 2px rgba(255, 255, 255, 0.3);
   transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
-.khadi-card:hover {
-  border-color: #B84824;
-  box-shadow: 0 20px 40px -15px rgba(28, 25, 23, 0.09);
-  transform: translateY(-2px);
+.wax-seal-btn:hover {
+  background: radial-gradient(circle at 35% 35%, #C73822 0%, #881C10 75%, #68140B 100%);
+  box-shadow: 0 6px 18px rgba(104, 20, 11, 0.45), inset 0 1px 3px rgba(255, 255, 255, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Archival museum cards */
+.archival-card {
+  background: #FFFFFF;
+  border: 1px solid #EAE0CE;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.archival-card:hover {
+  border-color: #C8A253;
+  box-shadow: 0 20px 40px -10px rgba(11, 19, 43, 0.1);
+  transform: translateY(-3px);
+}
+
+/* Gilded Medallion category avatar */
+.medallion-ring {
+  background: linear-gradient(135deg, #DFBD69 0%, #C8A253 50%, #84621E 100%);
+  box-shadow: 0 4px 14px rgba(200, 162, 83, 0.28);
 }
 
 /* Custom smooth scrollbars */
@@ -122,17 +163,16 @@
   height: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #FAF8F5;
+  background: #FAF6EE;
 }
 ::-webkit-scrollbar-thumb {
-  background: #D7CCC0;
+  background: #C8A253;
   border-radius: 9999px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #C85A32;
+  background: #881C10;
 }
 
-/* Hide scrollbar for tabs/carousels */
 .no-scrollbar::-webkit-scrollbar {
   display: none;
 }
