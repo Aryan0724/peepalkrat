@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -26,7 +26,7 @@ export function AdminNav() {
 
   const navItems = [
     { href: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
-    { href: "/admin/analytics", label: "Mewat Analytics", icon: BarChart3 },
+    { href: "/admin/analytics", label: "Ambala Analytics", icon: BarChart3 },
     { href: "/admin/products", label: "Products", icon: Package },
     { href: "/admin/makers", label: "Makers & Artisans", icon: Users },
     { href: "/admin/orders", label: "Orders", icon: ShoppingBag },
@@ -52,7 +52,7 @@ export function AdminNav() {
         <div className="p-6 border-b border-stone-800">
           <Link href="/admin" className="block">
             <span className="font-serif text-xl font-semibold tracking-wider text-white">
-              PEEPALKRAT
+              PEEPALKRAFT
             </span>
             <span className="block text-[9px] uppercase tracking-[0.25em] text-terracotta-400 font-semibold mt-0.5">
               Operations Console
