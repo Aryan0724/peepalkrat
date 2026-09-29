@@ -93,7 +93,7 @@ export function HeroSection({ data }: HeroSectionProps) {
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
 
           {/* ════ LEFT: Content ════ */}
-          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-16 lg:py-20 order-2 lg:order-1">
+          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20 order-1">
 
             {/* Craft origin tag with handwritten accent */}
             <div className="mb-6 relative inline-block">
@@ -208,7 +208,7 @@ export function HeroSection({ data }: HeroSectionProps) {
           </div>
 
           {/* ════ RIGHT: Artisan Spotlight Panel (Image Dominant) ════ */}
-          <div className="relative overflow-hidden min-h-[60vh] lg:min-h-0 order-1 lg:order-2 bg-[#1A1A1A]">
+          <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 order-2 bg-[#1A1A1A]">
             
             {/* Spinning Block-Print Seal of Authenticity */}
             <div className="absolute top-10 right-10 z-20 w-28 h-28 pointer-events-none select-none opacity-90 hidden sm:block">
