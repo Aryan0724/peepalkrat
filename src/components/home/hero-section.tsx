@@ -2,7 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, MapPin, ShieldCheck, Mail, CheckCircle2, TrendingUp } from "lucide-react";
+import { ArrowRight, Mail, CheckCircle2, TrendingUp } from "lucide-react";
 
 interface HeroSectionProps {
   data?: {
@@ -13,13 +13,6 @@ interface HeroSectionProps {
   };
 }
 
-const LIVE_STATS = [
-  { value: "142+", label: "Women Earning" },
-  { value: "₹2.1 Cr", label: "Wages Paid Out" },
-  { value: "12", label: "Villages Reached" },
-  { value: "48+", label: "Countries Shipped" },
-];
-
 const ARTISAN_SPOTLIGHT = [
   {
     name: "Sameena Begum",
@@ -27,9 +20,8 @@ const ARTISAN_SPOTLIGHT = [
     craft: "Pit-Loom Weaver",
     incomeBefore: "₹700",
     incomeAfter: "₹7,200",
-    years: "3 years",
+    years: "3 years with PeepalKrat",
     initials: "SB",
-    color: "#DFBD69",
   },
   {
     name: "Reshma Devi",
@@ -37,20 +29,27 @@ const ARTISAN_SPOTLIGHT = [
     craft: "Moonj Grass Artisan",
     incomeBefore: "₹900",
     incomeAfter: "₹5,800",
-    years: "2 years",
+    years: "2 years with PeepalKrat",
     initials: "RD",
-    color: "#FAF6EE",
   },
   {
     name: "Fatima Khatoon",
-    village: "Ferozpur Jhirka, Mewat",
+    village: "Ferozpur Jhirka",
     craft: "Phulkari Embroiderer",
     incomeBefore: "₹1,100",
     incomeAfter: "₹8,500",
-    years: "4 years",
+    years: "4 years with PeepalKrat",
     initials: "FK",
-    color: "#DFBD69",
   },
+];
+
+const TRUST_TICKER = [
+  "142+ Women Earning Living Wages in Mewat",
+  "Express Worldwide Delivery · 48+ Countries",
+  "72% Revenue Goes Directly to Artisans",
+  "Zero Middlemen · Direct Craft-to-Home",
+  "DHL Express 3–5 Days · Customs Pre-Cleared",
+  "100% Handmade · Haryana, India",
 ];
 
 export function HeroSection({ data }: HeroSectionProps) {
@@ -75,321 +74,213 @@ export function HeroSection({ data }: HeroSectionProps) {
   };
 
   return (
-    <section className="relative w-full overflow-hidden" style={{ background: "#FAF6EE" }}>
+    <>
+      {/* ── Announcement ticker ── */}
+      <div className="bg-[#1A1A1A] text-white overflow-hidden">
+        <div className="ticker-track py-2.5">
+          {[...TRUST_TICKER, ...TRUST_TICKER].map((item, i) => (
+            <span key={i} className="inline-flex items-center px-8 text-[11px] font-medium tracking-widest uppercase">
+              <span className="w-1 h-1 rounded-full bg-[#E87722] mr-8 flex-shrink-0" />
+              {item}
+            </span>
+          ))}
+        </div>
+      </div>
 
-      {/* ─── Subtle Jali Pattern Overlay (full bleed) ─── */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23C8A253' stroke-width='0.4' opacity='0.18'%3E%3Crect x='5' y='5' width='50' height='50' rx='2'/%3E%3Crect x='15' y='15' width='30' height='30' rx='1'/%3E%3Cline x1='5' y1='30' x2='15' y2='30'/%3E%3Cline x1='45' y1='30' x2='55' y2='30'/%3E%3Cline x1='30' y1='5' x2='30' y2='15'/%3E%3Cline x1='30' y1='45' x2='30' y2='55'/%3E%3Ccircle cx='30' cy='30' r='4'/%3E%3C/g%3E%3C/svg%3E")`,
-          backgroundSize: "60px 60px",
-        }}
-      />
+      {/* ── Main Hero ── */}
+      <section className="w-full" style={{ background: "#FFFCF8" }}>
+        <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
 
-      {/* ─── Main grid: extends full viewport width ─── */}
-      <div className="relative z-10 grid grid-cols-1 lg:grid-cols-12 min-h-[90vh]">
+          {/* ════ LEFT: Content ════ */}
+          <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-16 lg:py-20 order-2 lg:order-1">
 
-        {/* ════════════ LEFT PANEL ════════════ */}
-        <div className="lg:col-span-7 flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-20 space-y-9">
-
-          {/* Location + contact credibility row */}
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <div className="flex items-center space-x-2 text-[#881C10]">
-              <MapPin className="w-3.5 h-3.5 flex-shrink-0" />
-              <span className="text-[11px] font-cinzel font-semibold uppercase tracking-[0.22em]">
-                Mewat, Haryana, India · Est. 2021
+            {/* Craft origin tag */}
+            <div className="mb-6">
+              <span className="section-label">
+                Handcrafted in Mewat, Haryana · Est. 2021
               </span>
             </div>
-            {/* Business email — credibility signal */}
-            <a
-              href="mailto:hello@peepalkrat.com"
-              className="flex items-center space-x-1.5 text-[11px] text-stone-500 hover:text-[#881C10] transition-colors font-cinzel tracking-wide group"
-            >
-              <Mail className="w-3.5 h-3.5 group-hover:text-[#881C10] transition-colors" />
-              <span>hello@peepalkrat.com</span>
-            </a>
-          </div>
 
-          {/* Primary headline */}
-          <div className="space-y-5">
-            <h1 className="font-serif text-5xl sm:text-6xl lg:text-[4.5rem] xl:text-7xl font-light text-[#0B132B] leading-[1.05] tracking-tight">
+            {/* Primary headline */}
+            <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A] mb-6">
               {data?.title || (
                 <>
-                  Handcrafted in{" "}
-                  <span className="relative inline-block">
-                    Haryana.
-                    <span className="absolute -bottom-1 left-0 w-full h-[2px] bg-gradient-to-r from-[#C8A253] via-[#DFBD69] to-[#C8A253] hero-underline" />
-                  </span>
-                  <br />
-                  <em className="font-cormorant italic text-[#881C10]">
-                    Worn across the world.
-                  </em>
+                  Where every stitch funds a<br />
+                  <span className="italic text-[#E87722]">woman's independence.</span>
                 </>
               )}
             </h1>
 
-            <p className="font-cormorant text-xl sm:text-2xl text-stone-500 font-light italic max-w-lg leading-relaxed">
+            <p className="text-[#555] text-base sm:text-lg font-light leading-relaxed max-w-lg mb-10">
               {data?.subtitle ||
-                "Every piece you bring home sends a living wage directly into a woman's bank account in rural Mewat."}
+                "Authentic handcraft from 142+ women artisans across 12 villages of Mewat. Every purchase delivers a living wage directly — no middlemen, no charity."}
             </p>
-          </div>
 
-          {/* Live impact stats */}
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-x-6 gap-y-5 py-7 border-t border-b border-[#EAE0CE]">
-            {LIVE_STATS.map((s, i) => (
-              <div key={i}>
-                <div className="font-serif text-2xl sm:text-3xl font-medium text-[#0B132B]">
-                  {s.value}
+            {/* Impact numbers — clean row */}
+            <div className="flex flex-wrap gap-x-10 gap-y-5 mb-10 pb-10 border-b border-black/10">
+              {[
+                { n: "142+", l: "Women Earning" },
+                { n: "₹2.1 Cr", l: "Wages Paid" },
+                { n: "48+", l: "Countries" },
+                { n: "72%", l: "To Artisan" },
+              ].map((s) => (
+                <div key={s.l}>
+                  <div className="font-display text-2xl sm:text-3xl text-[#1A1A1A]">{s.n}</div>
+                  <div className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#888] mt-1">{s.l}</div>
                 </div>
-                <div className="text-[10px] font-cinzel uppercase tracking-widest text-stone-400 mt-1">
-                  {s.label}
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* CTA buttons */}
-          <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
-            <Link href="/shop" className="group">
-              <button className="w-full sm:w-auto px-8 py-4 bg-[#0B132B] text-[#FAF6EE] font-cinzel font-bold text-xs uppercase tracking-[0.2em] hover:bg-[#881C10] transition-colors duration-300 flex items-center justify-center space-x-2">
-                <span>Shop the Collection</span>
-                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
-            <Link href="/impact" className="group">
-              <button className="w-full sm:w-auto px-7 py-4 border border-[#0B132B]/25 text-[#0B132B] font-cinzel text-xs uppercase tracking-[0.16em] hover:border-[#C8A253] hover:text-[#881C10] transition-all duration-300 flex items-center justify-center">
-                Read the Impact Report
-              </button>
-            </Link>
-          </div>
-
-          {/* ─── Inline Email Signup — social proof ─── */}
-          <div className="border border-[#EAE0CE] bg-white/60 backdrop-blur-sm p-5 space-y-3">
-            <div className="flex items-baseline justify-between flex-wrap gap-2">
-              <span className="text-[11px] font-cinzel font-bold uppercase tracking-[0.22em] text-[#0B132B]">
-                The Artisan Dispatch
-              </span>
-              <span className="text-[10px] text-stone-400 font-serif italic">
-                4,200+ diaspora homes subscribed
-              </span>
+              ))}
             </div>
-            <p className="text-xs text-stone-500 font-light leading-relaxed">
-              Weekly: new arrivals, artisan income milestones, and early access to limited batches. No spam — unsubscribe anytime.
-            </p>
-            {subscribed ? (
-              <div className="flex items-center space-x-2 text-emerald-700 text-xs font-cinzel">
-                <CheckCircle2 className="w-4 h-4" />
-                <span>You're in. First dispatch arrives this week.</span>
+
+            {/* CTAs */}
+            <div className="flex flex-col sm:flex-row gap-3 mb-10">
+              <Link href="/shop">
+                <button className="btn-primary group w-full sm:w-auto">
+                  <span>Shop the Collection</span>
+                  <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                </button>
+              </Link>
+              <Link href="/impact">
+                <button className="btn-outline w-full sm:w-auto">
+                  Our Impact
+                </button>
+              </Link>
+            </div>
+
+            {/* Email signup — credibility */}
+            <div className="border-t border-black/8 pt-8">
+              <div className="flex items-baseline gap-3 mb-3">
+                <p className="text-[13px] font-semibold text-[#1A1A1A] tracking-wide">
+                  The Artisan Dispatch
+                </p>
+                <span className="text-[11px] text-[#888]">
+                  4,200+ subscribers
+                </span>
               </div>
-            ) : (
-              <form onSubmit={handleSubscribe} className="flex gap-2">
-                <div className="relative flex-1">
+              <p className="text-[12px] text-[#888] mb-4 font-light">
+                New arrivals, artisan income milestones & early access drops. Weekly. No spam.
+              </p>
+              {subscribed ? (
+                <div className="flex items-center gap-2 text-[13px] text-emerald-700 font-medium">
+                  <CheckCircle2 className="w-4 h-4" />
+                  You're in — first dispatch arrives this week.
+                </div>
+              ) : (
+                <form onSubmit={handleSubscribe} className="flex max-w-sm">
                   <input
                     type="email"
                     required
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     placeholder="your@email.com"
-                    className="w-full px-3.5 py-2.5 text-sm bg-white border border-[#EAE0CE] focus:outline-none focus:border-[#C8A253] text-stone-800 placeholder:text-stone-300 font-light"
+                    className="email-strip-input flex-1 text-sm"
+                    style={{ borderRight: "none" }}
                   />
-                </div>
-                <button
-                  type="submit"
-                  className="px-5 py-2.5 bg-[#C8A253] text-[#0B132B] font-cinzel font-bold text-[11px] uppercase tracking-wider hover:bg-[#DFBD69] transition-colors flex items-center space-x-1.5"
-                >
-                  <Mail className="w-3.5 h-3.5" />
-                  <span>Join</span>
-                </button>
-              </form>
-            )}
-          </div>
-
-          {/* Trust bar */}
-          <div className="flex flex-wrap items-center gap-4 text-[10px] text-stone-400 font-cinzel uppercase tracking-wider">
-            <span className="flex items-center space-x-1">
-              <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
-              <span>Fair wage verified</span>
-            </span>
-            <span className="text-stone-300">·</span>
-            <span>DHL Express Worldwide</span>
-            <span className="text-stone-300">·</span>
-            <span>Customs Pre-Cleared</span>
-            <span className="text-stone-300">·</span>
-            <span>No Middlemen</span>
-          </div>
-        </div>
-
-        {/* ════════════ RIGHT PANEL — dark editorial ════════════ */}
-        <div
-          className="lg:col-span-5 relative flex flex-col min-h-[65vh] lg:min-h-0"
-          style={{ background: "#0B132B" }}
-        >
-          {/* Subtle Phulkari diagonal pattern overlay */}
-          <div
-            className="absolute inset-0 pointer-events-none opacity-[0.04]"
-            style={{
-              backgroundImage: `repeating-linear-gradient(
-                45deg,
-                #DFBD69 0px,
-                #DFBD69 1px,
-                transparent 1px,
-                transparent 24px
-              )`,
-            }}
-          />
-
-          {/* Corner filigree accents */}
-          <div className="absolute top-0 right-0 w-16 h-16 border-t-[1.5px] border-r-[1.5px] border-[#C8A253]/40 pointer-events-none" />
-          <div className="absolute bottom-0 left-0 w-16 h-16 border-b-[1.5px] border-l-[1.5px] border-[#C8A253]/40 pointer-events-none" />
-
-          {/* Header strip */}
-          <div className="px-8 pt-10 pb-5 border-b border-[#C8A253]/15 relative z-10">
-            <div className="flex items-center justify-between">
-              <div>
-                <div className="text-[9px] font-cinzel font-semibold uppercase tracking-[0.35em] text-[#DFBD69]/70 mb-1">
-                  Live · Updates Every Week
-                </div>
-                <div className="text-[13px] font-cinzel font-bold uppercase tracking-[0.18em] text-[#DFBD69]">
-                  Women Behind Your Purchase
-                </div>
-              </div>
-              {/* Pulsing live indicator */}
-              <div className="flex items-center space-x-1.5">
-                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
-                <span className="text-[9px] font-cinzel text-emerald-400 uppercase tracking-widest">
-                  Live
-                </span>
-              </div>
+                  <button
+                    type="submit"
+                    className="btn-saffron px-5 text-[11px] flex items-center gap-1.5 flex-shrink-0"
+                  >
+                    <Mail className="w-3.5 h-3.5" />
+                    Join
+                  </button>
+                </form>
+              )}
+              <p className="text-[11px] text-[#aaa] mt-2">
+                ✉ hello@peepalkrat.com &nbsp;·&nbsp; orders@peepalkrat.com
+              </p>
             </div>
           </div>
 
-          {/* Artisan card — crossfade */}
-          <div className="flex-1 px-8 py-8 flex flex-col justify-center relative z-10" key={tick}>
-            <div style={{ animation: "heroFadeIn 0.7s cubic-bezier(0.22, 1, 0.36, 1)" }}>
+          {/* ════ RIGHT: Artisan Spotlight Panel ════ */}
+          <div
+            className="relative overflow-hidden min-h-[55vh] lg:min-h-0 order-1 lg:order-2"
+            style={{ background: "#F0E9DE" }}
+          >
+            {/* Large craft-pattern SVG watermark */}
+            <svg
+              className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
+              viewBox="0 0 400 400"
+              preserveAspectRatio="xMidYMid slice"
+            >
+              <defs>
+                <pattern id="paisley" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <path
+                    d="M40 10 C55 10 70 25 70 40 C70 55 55 70 40 70 C25 70 10 55 10 40 C10 25 25 10 40 10Z M40 20 C50 20 60 30 60 40 C60 50 50 60 40 60 C30 60 20 50 20 40 C20 30 30 20 40 20Z"
+                    fill="none"
+                    stroke="#1A1A1A"
+                    strokeWidth="0.8"
+                  />
+                  <circle cx="40" cy="40" r="4" fill="#1A1A1A" opacity="0.5" />
+                </pattern>
+              </defs>
+              <rect width="400" height="400" fill="url(#paisley)" />
+            </svg>
 
-              {/* Monogram avatar */}
-              <div
-                className="w-14 h-14 rounded-full border border-[#C8A253]/50 flex items-center justify-center mb-7"
-                style={{ background: "rgba(200,162,83,0.08)" }}
-              >
-                <span className="font-serif text-lg text-[#DFBD69] font-medium">
-                  {artisan.initials}
+            {/* Artisan card content */}
+            <div
+              className="relative z-10 flex flex-col h-full p-8 sm:p-12"
+              key={tick}
+              style={{ animation: "fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both" }}
+            >
+              {/* Header */}
+              <div className="mb-auto">
+                <span className="section-label mb-8 block">
+                  Women Behind Your Purchase
                 </span>
-              </div>
 
-              {/* Income transformation — the core message */}
-              <div className="mb-7 pb-7 border-b border-white/8">
-                <div className="text-[9px] font-cinzel uppercase tracking-[0.35em] text-stone-600 mb-3">
-                  Monthly Income · Before → Now
+                {/* Monogram */}
+                <div
+                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
+                  style={{ background: "#1A1A1A" }}
+                >
+                  <span className="font-display text-lg text-white">{artisan.initials}</span>
                 </div>
-                <div className="flex items-end space-x-4">
-                  <div>
-                    <div className="text-xl font-serif text-stone-600 line-through leading-none">
-                      {artisan.incomeBefore}
-                    </div>
-                    <div className="text-[9px] text-stone-600 mt-1 font-cinzel uppercase tracking-wider">
-                      Before
-                    </div>
-                  </div>
-                  <TrendingUp className="w-5 h-5 text-[#DFBD69] mb-1 flex-shrink-0" />
-                  <div>
-                    <div
-                      className="font-serif leading-none"
-                      style={{ fontSize: "clamp(2rem, 4vw, 3rem)", color: artisan.color }}
-                    >
-                      {artisan.incomeAfter}
-                    </div>
-                    <div className="text-[9px] text-[#DFBD69] mt-1 font-cinzel uppercase tracking-wider">
-                      / month today
-                    </div>
-                  </div>
-                </div>
-              </div>
 
-              {/* Artisan identity */}
-              <div className="space-y-4">
-                <div>
-                  <div className="font-cinzel font-bold text-base text-white leading-none">
-                    {artisan.name}
+                {/* Income transformation */}
+                <div className="mb-8">
+                  <div className="section-label mb-3">Monthly Income · Before → Now</div>
+                  <div className="flex items-end gap-4">
+                    <span className="font-display text-xl text-[#999] line-through">{artisan.incomeBefore}</span>
+                    <TrendingUp className="w-5 h-5 text-[#E87722] mb-1 flex-shrink-0" />
+                    <span className="font-display text-5xl text-[#1A1A1A]">{artisan.incomeAfter}</span>
                   </div>
-                  <div className="text-stone-400 text-xs mt-1.5">
-                    {artisan.craft}
-                  </div>
-                  <div className="text-stone-500 text-[11px] mt-0.5 flex items-center space-x-1">
-                    <MapPin className="w-3 h-3" />
-                    <span>{artisan.village}</span>
+                  <div className="text-[11px] text-[#888] mt-2 font-medium tracking-widest uppercase">
+                    / month today
                   </div>
                 </div>
 
-                <div className="text-[11px] text-stone-500 font-light leading-relaxed border-l border-[#C8A253]/30 pl-3">
-                  Active artisan partner for{" "}
-                  <span className="text-[#DFBD69] font-medium">{artisan.years}</span>
-                  {" "}— sole signing authority on her bank account
+                {/* Identity */}
+                <div className="border-t border-black/10 pt-6 space-y-2">
+                  <div className="font-semibold text-[#1A1A1A] text-base">{artisan.name}</div>
+                  <div className="text-[13px] text-[#666]">{artisan.craft}</div>
+                  <div className="text-[13px] text-[#888]">{artisan.village}</div>
+                  <div className="text-[12px] text-[#888] font-light border-l-2 border-[#E87722] pl-3 mt-4">
+                    {artisan.years} — sole signing authority on her bank account
+                  </div>
                 </div>
               </div>
 
-              {/* Progress indicator */}
-              <div className="flex items-center space-x-2 mt-8">
+              {/* Progress indicators */}
+              <div className="flex items-center gap-2 mt-8">
                 {ARTISAN_SPOTLIGHT.map((_, i) => (
                   <button
                     key={i}
-                    onClick={() => { setActiveArtisan(i); setTick(t => t + 1); }}
-                    className={`h-[2px] transition-all duration-500 ${
-                      i === activeArtisan
-                        ? "w-10 bg-[#DFBD69]"
-                        : "w-4 bg-white/15 hover:bg-white/35"
-                    }`}
-                    aria-label={`View ${ARTISAN_SPOTLIGHT[i].name}`}
+                    onClick={() => { setActiveArtisan(i); setTick((t) => t + 1); }}
+                    className="h-[2px] transition-all duration-500 cursor-pointer"
+                    style={{
+                      width: i === activeArtisan ? 32 : 12,
+                      background: i === activeArtisan ? "#1A1A1A" : "rgba(26,26,26,0.2)",
+                    }}
+                    aria-label={ARTISAN_SPOTLIGHT[i].name}
                   />
                 ))}
-                <span className="text-[9px] font-cinzel text-stone-600 ml-2 uppercase tracking-widest">
+                <span className="text-[10px] text-[#999] ml-2 tracking-widest uppercase font-medium">
                   {activeArtisan + 1} / {ARTISAN_SPOTLIGHT.length}
                 </span>
               </div>
             </div>
           </div>
-
-          {/* Bottom strip — contact + shipping */}
-          <div className="px-8 py-5 border-t border-[#C8A253]/15 relative z-10" style={{ background: "rgba(19,34,71,0.5)" }}>
-            <div className="grid grid-cols-2 gap-4">
-              <div>
-                <div className="text-[9px] font-cinzel uppercase tracking-[0.25em] text-stone-500 mb-1">
-                  Write to us
-                </div>
-                <a
-                  href="mailto:orders@peepalkrat.com"
-                  className="text-[11px] font-serif text-[#DFBD69] hover:text-white transition-colors"
-                >
-                  orders@peepalkrat.com
-                </a>
-              </div>
-              <div className="text-right">
-                <div className="text-[9px] font-cinzel uppercase tracking-[0.25em] text-stone-500 mb-1">
-                  Express Delivery
-                </div>
-                <div className="text-[11px] font-serif text-[#DFBD69]">
-                  3–5 Days · 48+ Countries
-                </div>
-              </div>
-            </div>
-          </div>
         </div>
-      </div>
-
-      <style jsx>{`
-        @keyframes heroFadeIn {
-          from { opacity: 0; transform: translateY(12px); }
-          to   { opacity: 1; transform: translateY(0); }
-        }
-        .hero-underline {
-          transform-origin: left;
-          animation: underlineGrow 1s cubic-bezier(0.22, 1, 0.36, 1) 0.4s both;
-        }
-        @keyframes underlineGrow {
-          from { transform: scaleX(0); }
-          to   { transform: scaleX(1); }
-        }
-      `}</style>
-    </section>
+      </section>
+    </>
   );
 }

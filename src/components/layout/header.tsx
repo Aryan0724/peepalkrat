@@ -49,115 +49,77 @@ export function Header({ announcement }: { announcement?: any }) {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full transition-all duration-300">
-      {/* Top Editorial Announcement Bar */}
-      <div className="bg-[#070C19] text-[#FAF6EE] text-[11px] font-medium py-2 px-4 tracking-wider uppercase flex items-center justify-between border-b border-[#C8A253]/30">
-        <div className="hidden md:flex items-center space-x-2 text-stone-300">
-          <Sparkles className="w-3.5 h-3.5 text-[#DFBD69]" />
-          <span className="font-cinzel font-semibold text-[#DFBD69] tracking-widest text-[10px]">
-            {announcement?.subtitle || "1857 स्वाधीनता से 2026 स्त्री स्वराज्य • 142+ Women in Mewat Earning Living Wages"}
-          </span>
-        </div>
-        <div className="mx-auto md:mx-0 text-center text-stone-300 text-[10px] tracking-widest uppercase">
-          {announcement?.title || "Express Worldwide Delivery (3–5 Days) to US, UK, Canada, UAE & 45+ Countries • 100% Direct Maker Living Wage"}
-        </div>
-        <div className="hidden md:flex items-center space-x-4 text-[10px] uppercase font-cinzel">
-          <Link href="/community" className="text-[#DFBD69] hover:text-white transition-colors font-semibold">
-            Sisterhood Wall
-          </Link>
-          <span className="text-[#C8A253]/40">|</span>
-          <Link href={announcement?.linkUrl || "/impact"} className="text-stone-300 hover:text-[#DFBD69] transition-colors">
-            Mewat Ledger
-          </Link>
-          <span className="text-[#C8A253]/40">|</span>
-          <Link href="/admin/login" className="text-stone-300 hover:text-white transition-colors flex items-center space-x-1">
-            <User className="w-3 h-3 text-[#DFBD69]" />
-            <span>Staff Portal</span>
-          </Link>
-        </div>
-      </div>
-
-      {/* Main Header Container */}
+    <header className="sticky top-0 z-40 w-full">
+      {/* Main Header — iTokri style: warm cream, clean, minimal */}
       <div
-        className={`w-full bg-[#FAF6EE]/98 backdrop-blur-md transition-all duration-300 border-b ${
-          isScrolled
-            ? "py-3 shadow-md border-[#C8A253]/30"
-            : "py-4.5 border-[#EAE0CE]"
+        className={`w-full transition-all duration-300 border-b ${
+          isScrolled ? "py-3 shadow-sm border-black/10" : "py-4 border-black/8"
         }`}
+        style={{ background: "#FFFCF8" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-[#0B132B] hover:text-[#881C10] transition-colors"
+            className="lg:hidden p-2 text-[#1A1A1A] hover:text-[#E87722] transition-colors"
             aria-label="Open mobile menu"
           >
             <Menu className="w-6 h-6" />
           </button>
 
           {/* Desktop Navigation Links Left */}
-          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-cinzel font-semibold tracking-[0.16em] uppercase">
+          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555]">
             <Link
               href="/shop"
-              className={`transition-colors hover:text-[#881C10] ${
-                pathname === "/shop" ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
-              }`}
+              className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/shop" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
             >
               Shop
             </Link>
             <Link
               href="/collections/panipat-heritage-weaves"
-              className={`transition-colors hover:text-[#881C10] ${
-                pathname.startsWith("/collections") ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
-              }`}
+              className={`transition-colors hover:text-[#1A1A1A] ${pathname.startsWith("/collections") ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
             >
               Collections
             </Link>
             <Link
               href="/makers"
-              className={`transition-colors hover:text-[#881C10] ${
-                pathname.startsWith("/makers") ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
-              }`}
+              className={`transition-colors hover:text-[#1A1A1A] ${pathname.startsWith("/makers") ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
             >
-              Artisan Guild
+              Artisans
             </Link>
           </nav>
 
           {/* Centered Brand Identity */}
           <div className="text-center">
             <Link href="/" className="inline-block group">
-              <span className="block font-serif text-2xl sm:text-3xl font-semibold tracking-[0.08em] text-[#0B132B] group-hover:text-[#881C10] transition-colors">
-                PEEPALKRAT
+              <span className="block font-display text-2xl sm:text-3xl font-normal tracking-tight text-[#1A1A1A] group-hover:text-[#E87722] transition-colors">
+                PeepalKrat
               </span>
-              <span className="block text-[8px] sm:text-[9px] uppercase tracking-[0.28em] text-[#C8A253] font-cinzel font-bold -mt-0.5 group-hover:text-[#881C10]">
-                Mewat & Haryana • Swadeshi Freedom Guild
+              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium -mt-0.5">
+                Mewat · Haryana
               </span>
             </Link>
           </div>
 
           {/* Right Navigation & Utility Actions */}
-          <div className="flex items-center space-x-4 sm:space-x-6">
+          <div className="flex items-center space-x-4 sm:space-x-5">
             {/* Desktop Navigation Links Right */}
-            <div className="hidden lg:flex items-center space-x-8 text-[12px] font-cinzel font-semibold tracking-[0.16em] uppercase mr-2">
+            <div className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555] mr-2">
               <Link
                 href="/community"
-                className={`transition-colors hover:text-[#881C10] ${
-                  pathname === "/community" ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
-                }`}
+                className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/community" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
               >
                 Community
               </Link>
               <Link
                 href="/our-story"
-                className={`transition-colors hover:text-[#881C10] ${
-                  pathname === "/our-story" ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
-                }`}
+                className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/our-story" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
               >
-                1857 Story
+                Our Story
               </Link>
               <Link
                 href="/impact"
-                className={`transition-colors hover:text-[#881C10] ${
+                className={`transition-colors hover:text-[#1A1A1A] ${
                   pathname === "/impact" ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
                 }`}
               >
