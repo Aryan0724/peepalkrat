@@ -95,19 +95,30 @@ export function HeroSection({ data }: HeroSectionProps) {
           {/* ════ LEFT: Content ════ */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-16 lg:py-20 order-2 lg:order-1">
 
-            {/* Craft origin tag */}
-            <div className="mb-6">
-              <span className="section-label">
+            {/* Craft origin tag with handwritten accent */}
+            <div className="mb-6 relative inline-block">
+              <span className="section-label bg-[#E87722]/10 text-[#E87722] px-3 py-1 rounded-sm border border-[#E87722]/20">
                 Handcrafted in Ambala City, Haryana
               </span>
+              <div className="absolute -top-5 -right-16 transform rotate-[15deg] font-handwritten text-2xl text-[#1A1A1A]">
+                100% Genuine
+                {/* Hand-drawn squiggly arrow */}
+                <svg className="w-8 h-8 absolute -bottom-4 -left-6 transform -rotate-45 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+              </div>
             </div>
 
             {/* Primary headline */}
-            <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A] mb-6">
+            <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A] mb-6 relative">
               {data?.title || (
                 <>
                   Where every stitch funds a<br />
-                  <span className="italic text-[#E87722]">woman's independence.</span>
+                  <span className="relative inline-block">
+                    <span className="italic text-[#E87722] relative z-10">woman's independence.</span>
+                    {/* Hand-drawn underline SVG */}
+                    <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#F5C89A] z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <path d="M0,5 Q50,10 100,2" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
+                    </svg>
+                  </span>
                 </>
               )}
             </h1>
