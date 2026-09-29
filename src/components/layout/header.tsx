@@ -91,11 +91,30 @@ export function Header({ announcement }: { announcement?: any }) {
 
           {/* Centered Brand Identity */}
           <div className="text-center">
-            <Link href="/" className="inline-block group">
-              <span className="block font-display text-2xl sm:text-3xl font-normal tracking-tight text-[#1A1A1A] group-hover:text-[#E87722] transition-colors">
-                PeepalKrat
-              </span>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium -mt-0.5">
+            <Link href="/" className="inline-flex flex-col items-center group">
+              <div className="flex items-center space-x-2">
+                {/* Peepal Leaf Logo (Matching Storefront Sign) */}
+                <svg
+                  viewBox="0 0 100 100"
+                  className="w-8 h-8 text-[#5E5063] group-hover:text-[#E87722] transition-colors"
+                  fill="currentColor"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path d="M50 95 C 45 80, 10 70, 10 40 C 10 15, 30 5, 50 20 C 70 5, 90 15, 90 40 C 90 70, 55 80, 50 95 Z" />
+                  <path
+                    d="M50 20 L50 90 M50 40 L30 30 M50 50 L25 45 M50 60 L30 65 M50 40 L70 30 M50 50 L75 45 M50 60 L70 65"
+                    stroke="#FFFCF8"
+                    strokeWidth="2"
+                    fill="none"
+                    strokeLinecap="round"
+                  />
+                  <path d="M50 20 L50 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
+                </svg>
+                <span className="block font-display text-2xl sm:text-3xl font-normal tracking-tight text-[#1A1A1A] group-hover:text-[#E87722] transition-colors pt-1">
+                  PeepalKraft
+                </span>
+              </div>
+              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium mt-0.5">
                 Ambala City · Haryana
               </span>
             </Link>
@@ -239,7 +258,7 @@ export function Header({ announcement }: { announcement?: any }) {
           <div className="fixed inset-y-0 left-0 w-4/5 max-w-sm bg-white shadow-xl flex flex-col p-6 z-50 animate-slide-up">
             <div className="flex justify-between items-center pb-5 border-b border-stone-200">
               <div>
-                <span className="font-serif text-xl font-semibold text-charcoal">PEEPALKRAT</span>
+                <span className="font-serif text-xl font-semibold text-charcoal">PeepalKraft</span>
                 <span className="block text-[8px] uppercase tracking-widest text-stone-400">Haryana Heritage</span>
               </div>
               <button
@@ -306,7 +325,7 @@ export function Header({ announcement }: { announcement?: any }) {
 
             <div className="border-t border-stone-200 pt-4 text-xs text-stone-500">
               <p className="italic">“When needle and loom meet patience, our autonomy awakens.”</p>
-              <p className="text-[10px] text-stone-400 mt-2">© 2026 PeepalKrat Enterprise</p>
+              <p className="text-[10px] text-stone-400 mt-2">© 2026 PeepalKraft Enterprise</p>
             </div>
           </div>
         </div>

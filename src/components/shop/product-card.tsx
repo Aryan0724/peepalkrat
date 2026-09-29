@@ -3,7 +3,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Heart, ShoppingBag, Check, Sparkles } from "lucide-react";
+import { Heart, ShoppingBag, Check } from "lucide-react";
 import { useCart } from "@/lib/cart-context";
 import { useCurrency } from "@/lib/currency-context";
 import { Badge } from "@/components/ui/badge";
@@ -11,15 +11,16 @@ import { Badge } from "@/components/ui/badge";
 interface ProductCardProps {
   product: {
     id: string;
-    sku: string;
+    sku?: string;
     name: string;
     slug: string;
     price: number;
+    currency?: string;
     compareAtPrice?: number | null;
-    category?: { name: string; slug: string } | null;
-    maker?: { name: string; slug: string; villageDistrict: string } | null;
-    images: { url: string; altText?: string | null; isPrimary: boolean }[];
-    inventory: number;
+    category?: { name: string; slug?: string } | null;
+    maker?: { name: string; slug?: string; villageDistrict?: string } | null;
+    images: { url: string; altText?: string | null; isPrimary?: boolean }[];
+    inventory?: number;
     lowStockThreshold?: number;
     shortDescription?: string | null;
   };
@@ -41,11 +42,9 @@ export function ProductCard({ product }: ProductCardProps) {
       ? product.images[1]?.url
       : primaryImage;
 
-  const isLowStock =
-    product.inventory > 0 &&
-    product.inventory <= (product.lowStockThreshold || 3);
-
-  const isOutOfStock = product.inventory <= 0;
+  const inventory = product.inventory || 10; // Default if undefined
+  const isLowStock = inventory > 0 && inventory <= (product.lowStockThreshold || 3);
+  const isOutOfStock = inventory <= 0;
 
   const discountPercent =
     product.compareAtPrice && product.compareAtPrice > product.price
@@ -73,140 +72,105 @@ export function ProductCard({ product }: ProductCardProps) {
   };
 
   return (
-    <div className="group relative flex flex-col bg-white rounded-xs overflow-hidden border border-[#EAE0CE] hover:border-[#C8A253] transition-all duration-300 hover:shadow-xl">
+    <div className="group relative flex flex-col bg-transparent">
       {/* Product Image Frame */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[4/5] w-full overflow-hidden bg-[#F4ECE0]"
+        className="relative block aspect-[3/4] w-full overflow-hidden bg-[#F5F0E8] mb-4"
       >
         <Image
           src={primaryImage}
           alt={product.name}
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-          className={`object-cover transition-opacity duration-500 group-hover:scale-105 group-hover:opacity-0 ${
-            hoverImage !== primaryImage ? "" : "group-hover:opacity-100"
-          }`}
+          className="object-cover transition-transform duration-700 group-hover:scale-105"
         />
-        {hoverImage !== primaryImage && (
-          <Image
-            src={hoverImage}
-            alt={`${product.name} alternate view`}
-            fill
-            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-            className="object-cover transition-all duration-500 opacity-0 group-hover:opacity-100 group-hover:scale-105"
-          />
-        )}
-
-        {/* Top Badges */}
-        <div className="absolute top-2.5 left-2.5 flex flex-col gap-1.5 z-10">
-          <span className="bg-[#0B132B]/90 backdrop-blur-xs text-[#DFBD69] text-[9px] font-cinzel font-semibold px-2 py-0.5 rounded-xs border border-[#C8A253]/50 uppercase tracking-wider">
-            Swadeshi Verified
-          </span>
+        
+        {/* Badges */}
+        <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {discountPercent && (
-            <span className="bg-[#881C10] text-white text-[9px] font-bold px-2 py-0.5 rounded-xs uppercase tracking-wider">
-              {discountPercent}% OFF
-            </span>
+            <Badge className="bg-[#E87722] hover:bg-[#E87722] text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5">
+              -{discountPercent}%
+            </Badge>
           )}
-          {isLowStock && (
-            <span className="bg-[#C8A253] text-[#0B132B] text-[9px] font-bold px-2 py-0.5 rounded-xs uppercase tracking-wider">
-              Only {product.inventory} Left
-            </span>
-          )}
-          {isOutOfStock && (
-            <span className="bg-stone-900 text-white text-[9px] px-2 py-0.5 rounded-xs font-medium uppercase tracking-wider">
+          {isOutOfStock ? (
+            <Badge className="bg-[#1A1A1A]/80 hover:bg-[#1A1A1A]/80 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
               Sold Out
-            </span>
-          )}
+            </Badge>
+          ) : isLowStock ? (
+            <Badge className="bg-[#E87722]/90 hover:bg-[#E87722]/90 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
+              Only {inventory} Left
+            </Badge>
+          ) : null}
         </div>
 
         {/* Wishlist Button */}
         <button
           onClick={(e) => {
             e.preventDefault();
-            e.stopPropagation();
             setIsWishlisted(!isWishlisted);
           }}
-          className={`absolute top-2.5 right-2.5 p-2 rounded-full bg-white/90 backdrop-blur-xs transition-all duration-200 hover:scale-110 z-10 shadow-sm border border-[#EAE0CE] ${
-            isWishlisted ? "text-[#881C10]" : "text-stone-400 hover:text-[#0B132B]"
-          }`}
-          aria-label="Add to wishlist"
+          className="absolute top-2 right-2 p-2 rounded-full bg-white/60 hover:bg-white backdrop-blur-md transition-colors z-10"
         >
-          <Heart className={`w-3.5 h-3.5 ${isWishlisted ? "fill-current" : ""}`} />
+          <Heart
+            className={`w-4 h-4 transition-colors ${
+              isWishlisted ? "fill-[#E87722] text-[#E87722]" : "text-[#1A1A1A]"
+            }`}
+          />
         </button>
 
-        {/* Quick Add Overlay on Hover */}
-        <div className="absolute inset-x-2.5 bottom-2.5 opacity-0 group-hover:opacity-100 transition-opacity duration-200 z-10">
-          <button
-            onClick={handleQuickAdd}
-            disabled={isOutOfStock}
-            className={`w-full py-2.5 px-4 text-[11px] font-cinzel font-bold uppercase tracking-[0.16em] rounded-xs transition-all shadow-md flex items-center justify-center space-x-1.5 ${
-              isAdded
-                ? "bg-[#1A3323] text-white border border-[#DFBD69]"
-                : isOutOfStock
-                ? "bg-stone-300 text-stone-600 cursor-not-allowed"
-                : "bg-[#0B132B] hover:bg-[#881C10] text-[#DFBD69] hover:text-white border border-[#C8A253]/60"
-            }`}
-          >
-            {isAdded ? (
-              <>
-                <Check className="w-3.5 h-3.5" />
-                <span>Added to Bag</span>
-              </>
-            ) : isOutOfStock ? (
-              <span>Out of Stock</span>
-            ) : (
-              <>
-                <ShoppingBag className="w-3.5 h-3.5" />
-                <span>Quick Add</span>
-              </>
-            )}
-          </button>
-        </div>
+        {/* Quick Add Overlay */}
+        {!isOutOfStock && (
+          <div className="absolute inset-x-0 bottom-0 p-3 translate-y-full group-hover:translate-y-0 transition-transform duration-300 z-10">
+            <button
+              onClick={handleQuickAdd}
+              disabled={isAdded}
+              className={`w-full py-2.5 px-4 text-xs font-sans font-medium uppercase tracking-wider transition-colors flex items-center justify-center ${
+                isAdded
+                  ? "bg-[#1A1A1A] text-white"
+                  : "bg-white/95 hover:bg-white text-[#1A1A1A] shadow-sm backdrop-blur-md"
+              }`}
+            >
+              {isAdded ? (
+                <>
+                  <Check className="w-3.5 h-3.5 mr-2" /> Added
+                </>
+              ) : (
+                <>
+                  <ShoppingBag className="w-3.5 h-3.5 mr-2" /> Quick Add
+                </>
+              )}
+            </button>
+          </div>
+        )}
       </Link>
 
-      {/* Card Content & Details */}
-      <div className="p-4 flex flex-col flex-1 justify-between space-y-2">
-        <div>
-          {/* Maker & Location attribution */}
-          {product.maker && (
-            <Link
-              href={`/makers/${product.maker.slug}`}
-              className="text-[10px] text-[#881C10] hover:text-[#68140B] font-medium block truncate tracking-wide font-cinzel"
-            >
-              By {product.maker.name} • {product.maker.villageDistrict}
+      {/* Product Info */}
+      <div className="flex flex-col flex-1 px-1">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            {product.maker && (
+              <p className="text-[10px] text-[#888] font-sans uppercase tracking-widest mb-1">
+                {product.maker.name}
+              </p>
+            )}
+            <Link href={`/products/${product.slug}`} className="group-hover:text-[#E87722] transition-colors">
+              <h3 className="font-sans text-[13px] text-[#1A1A1A] leading-snug line-clamp-2">
+                {product.name}
+              </h3>
             </Link>
-          )}
-
-          {/* Product Name */}
-          <h3 className="font-serif text-sm font-medium text-[#0B132B] line-clamp-1 mt-1 group-hover:text-[#881C10] transition-colors">
-            <Link href={`/products/${product.slug}`}>{product.name}</Link>
-          </h3>
-
-          {/* Category */}
-          {product.category && (
-            <p className="text-[10px] text-stone-500 line-clamp-1 mt-0.5">
-              {product.category.name}
-            </p>
-          )}
-        </div>
-
-        {/* Price Row */}
-        <div className="pt-2 flex items-baseline justify-between border-t border-[#EAE0CE]/70">
-          <div className="flex items-baseline space-x-2">
-            <span className="font-serif text-base font-semibold text-[#0B132B]">
+          </div>
+          
+          <div className="text-right flex-shrink-0">
+            <div className="font-display text-[15px] text-[#1A1A1A]">
               {format(product.price)}
-            </span>
+            </div>
             {product.compareAtPrice && product.compareAtPrice > product.price && (
-              <span className="text-xs text-stone-400 line-through">
+              <div className="font-sans text-[11px] text-[#888] line-through">
                 {format(product.compareAtPrice)}
-              </span>
+              </div>
             )}
           </div>
-
-          <span className="text-[9px] text-[#C8A253] font-cinzel font-bold tracking-wider uppercase">
-            72% Maker Share
-          </span>
         </div>
       </div>
     </div>
