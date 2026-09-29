@@ -31,7 +31,7 @@ export function CustomerStories() {
       {/* Decorative illustration from iTokri uploaded by user */}
       <div className="absolute top-20 right-10 lg:right-32 w-64 h-64 opacity-20 lg:opacity-10 pointer-events-none hidden md:block">
         <Image
-          src="/peepalkraft/illustrations/people-on-rug.png"
+          src="/peepalkraft/illustrations/women-on-rug.jpg"
           alt="People on rug illustration"
           fill
           className="object-contain"

@@ -21,7 +21,7 @@ export function SwadeshiEmailDispatch() {
       {/* Hand-drawn village landscape banner */}
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px]">
         <Image
-          src="/peepalkraft/illustrations/village-landscape.png"
+          src="/peepalkraft/illustrations/village-landscape.jpg"
           alt="Indian Village Scene Illustration"
           fill
           className="object-cover md:object-contain object-bottom opacity-90"

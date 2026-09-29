@@ -51,7 +51,7 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
       {/* Decorative illustration from iTokri uploaded by user */}
       <div className="absolute bottom-0 left-0 w-64 lg:w-96 aspect-square opacity-20 pointer-events-none hidden md:block">
         <Image
-          src="/peepalkraft/illustrations/woman-under-tree.png"
+          src="/peepalkraft/illustrations/artisan-under-tree.jpg"
           alt="Woman under tree illustration"
           fill
           className="object-contain object-bottom"
