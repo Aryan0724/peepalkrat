@@ -1,18 +1,15 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { ArrowRight, Sparkles, Compass } from "lucide-react";
+import { ArrowRight, Sparkles, Plane, Heart, ShieldCheck } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { HeroSection } from "@/components/home/hero-section";
+import { GlobalDiasporaGlobe } from "@/components/home/global-diaspora-globe";
 import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
-import { HaryanaFreedomSection } from "@/components/home/haryana-freedom-section";
-import { MewatImpactPulse } from "@/components/home/mewat-impact-pulse";
-import { ImpactManifesto } from "@/components/home/impact-manifesto";
-import { MewatVoicesSection } from "@/components/home/mewat-voices-section";
-import { SwadeshiEmailDispatch } from "@/components/home/swadeshi-email-dispatch";
+import { AnimatedImpactJourney } from "@/components/home/animated-impact-journey";
 import { MakerSpotlight } from "@/components/home/maker-spotlight";
-import { CulturalShowcase } from "@/components/home/cultural-showcase";
 import { CustomerStories } from "@/components/home/customer-stories";
+import { SwadeshiEmailDispatch } from "@/components/home/swadeshi-email-dispatch";
 import { ProductCard } from "@/components/shop/product-card";
 import { Button } from "@/components/ui/button";
 
@@ -57,7 +54,6 @@ export default async function HomePage() {
     featuredProducts = prods;
     collections = cols;
     makers = maks;
-    // Fallback to all categories if none featured
     if (!cats || cats.length === 0) {
       categories = await prisma.category.findMany({ take: 10 });
     } else {
@@ -74,43 +70,37 @@ export default async function HomePage() {
   }
 
   return (
-    <div className="w-full">
-      {/* 1. Cinematic Editorial Hero */}
+    <div className="w-full bg-[#FAF6EE]">
+      {/* 1. Hero: Animated Cartoon Women Empowerment & NRI Global Delivery */}
       <HeroSection data={contentBlocks["home_hero"]} />
 
-      {/* 2. Imperial Swadeshi Craft Medallion Carousel (Fixed Tailwind sizing & gold borders) */}
+      {/* 2. Interactive "Mewat to the Globe" Diaspora Transit Globe */}
+      <GlobalDiasporaGlobe />
+
+      {/* 3. Pinklay-Style Circular Category Discovery (Ornaments, Buntings, Weaves) */}
       <CircularCategoryStrip
         categories={categories}
         subtitle="हस्तकला एवं स्वदेशी शिल्प • Handcrafted in Haryana"
         title="Explore by Guild Discipline"
       />
 
-      {/* 2b. The 1857 Swadeshi Continuum: Historic Rebellion to Women's Economic Sovereignty */}
-      <HaryanaFreedomSection />
-
-      {/* 3. Live Mewat Women Financial Autonomy Pulse & Impact Counter */}
-      <MewatImpactPulse />
-
-      {/* 4. Philosophy & Agency Over Charity Manifesto */}
-      <ImpactManifesto data={contentBlocks["home_manifesto"]} />
-
-      {/* 3. Featured Curated Collections */}
-      <section className="py-24 bg-[#FAF8F5] border-b border-stone-200">
+      {/* 4. Curated Heirloom Collections for Diaspora Living */}
+      <section className="py-20 bg-[#FAF6EE] border-b border-[#EAE0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-2">
-                Curated Series
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#881C10] font-cinzel font-semibold block mb-1">
+                Heirloom Series
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
-                Heirloom Collections
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0B132B] font-normal">
+                Curated Collections for Global Homes
               </h2>
             </div>
             <Link
               href="/shop"
-              className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-charcoal hover:text-terracotta-700 font-semibold group"
+              className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-[#0B132B] hover:text-[#881C10] font-cinzel font-semibold group"
             >
-              <span>Explore All Collections</span>
+              <span>Explore All Curations</span>
               <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </div>
@@ -120,7 +110,7 @@ export default async function HomePage() {
               <Link
                 key={col.id}
                 href={`/collections/${col.slug}`}
-                className="group relative block aspect-[3/4] overflow-hidden rounded-sm bg-stone-100 shadow-sm hover:shadow-editorial transition-all duration-300"
+                className="group relative block aspect-[3/4] overflow-hidden rounded-xs bg-stone-100 shadow-sm hover:shadow-xl transition-all duration-300 border border-[#EAE0CE] hover:border-[#C8A253]"
               >
                 {col.image && (
                   <Image
@@ -131,20 +121,20 @@ export default async function HomePage() {
                     className="object-cover transition-transform duration-700 group-hover:scale-105"
                   />
                 )}
-                <div className="absolute inset-0 bg-gradient-to-t from-charcoal/85 via-charcoal/30 to-transparent transition-opacity duration-300 group-hover:from-charcoal/90" />
-                <div className="absolute bottom-6 inset-x-6 text-white space-y-1.5">
-                  <span className="text-[10px] uppercase tracking-widest text-terracotta-200 font-semibold">
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0B132B]/90 via-[#0B132B]/40 to-transparent transition-opacity duration-300" />
+                <div className="absolute bottom-5 inset-x-5 text-white space-y-1">
+                  <span className="text-[9px] uppercase tracking-widest text-[#DFBD69] font-cinzel font-semibold">
                     Series
                   </span>
-                  <h3 className="font-serif text-xl font-medium leading-snug group-hover:text-terracotta-200 transition-colors">
+                  <h3 className="font-serif text-lg font-medium leading-snug group-hover:text-[#DFBD69] transition-colors">
                     {col.name}
                   </h3>
                   <p className="text-xs text-stone-300 line-clamp-2 leading-relaxed font-light">
                     {col.description}
                   </p>
-                  <span className="inline-flex items-center text-[11px] uppercase tracking-wider text-white font-semibold pt-2">
+                  <span className="inline-flex items-center text-[10px] uppercase font-cinzel tracking-wider text-[#DFBD69] font-semibold pt-1">
                     <span>View Pieces</span>
-                    <ArrowRight className="w-3.5 h-3.5 ml-1.5 group-hover:translate-x-1 transition-transform" />
+                    <ArrowRight className="w-3 h-3 ml-1 group-hover:translate-x-1 transition-transform" />
                   </span>
                 </div>
               </Link>
@@ -153,21 +143,21 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 4. Best Sellers & Signature Works */}
-      <section className="py-24 bg-white border-b border-stone-200">
+      {/* 5. Best Sellers & Signature Works (Direct Overseas Shopping) */}
+      <section className="py-20 bg-white border-b border-[#EAE0CE]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row md:items-end justify-between mb-14">
+          <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-2">
-                Honored Craft
+              <span className="text-[11px] uppercase tracking-[0.25em] text-[#881C10] font-cinzel font-semibold block mb-1">
+                Diaspora Favorites
               </span>
-              <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal">
+              <h2 className="font-serif text-3xl sm:text-4xl text-[#0B132B] font-normal">
                 Signature Works of Haryana
               </h2>
             </div>
             <Link
               href="/shop"
-              className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-charcoal hover:text-terracotta-700 font-semibold group"
+              className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-[#0B132B] hover:text-[#881C10] font-cinzel font-semibold group"
             >
               <span>View Full Catalog ({featuredProducts.length}+ pieces)</span>
               <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -182,83 +172,38 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 5. Meet the Makers Spotlight */}
+      {/* 6. Animated Illustrated 3-Step Impact Journey (Loom -> Bank Account -> Global Home) */}
+      <AnimatedImpactJourney />
+
+      {/* 7. Meet the Makers Spotlight */}
       <MakerSpotlight makers={makers} />
 
-      {/* 5b. Voices of Mewat - Oral Testimonies & Feminist Empowerment */}
-      <MewatVoicesSection />
-
-      {/* 6. Living Craft Geography of Haryana */}
-      <CulturalShowcase />
-
-      {/* 7. Craft Category Visual Index */}
-      <section className="py-20 bg-sandstone/30 border-b border-stone-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-12">
-            <span className="text-xs uppercase tracking-[0.25em] text-terracotta-700 font-semibold block mb-2">
-              Discipline By Discipline
-            </span>
-            <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
-              Explore by Craft Specialty
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4">
-            {categories.map((cat) => (
-              <Link
-                key={cat.id}
-                href={`/categories/${cat.slug}`}
-                className="group p-4 bg-white border border-stone-200 rounded-sm text-center hover:border-terracotta-600 transition-all duration-300 hover:shadow-card flex flex-col items-center"
-              >
-                <div className="relative w-16 h-16 rounded-full overflow-hidden mb-3 bg-stone-100 border border-stone-200">
-                  {cat.image ? (
-                    <Image
-                      src={cat.image}
-                      alt={cat.name}
-                      fill
-                      className="object-cover group-hover:scale-110 transition-transform duration-300"
-                    />
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center text-stone-400">
-                      <Sparkles className="w-5 h-5" />
-                    </div>
-                  )}
-                </div>
-                <h3 className="font-medium text-xs text-charcoal group-hover:text-terracotta-700 transition-colors line-clamp-2">
-                  {cat.name}
-                </h3>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* 7b. The Royal Postal Dispatch & Swadeshi Gazette (Artistic Email Representation) */}
-      <SwadeshiEmailDispatch />
-
-      {/* 8. Patron Testimonials & Reviews */}
+      {/* 8. Worldwide Customer Stories & Diaspora Unboxing Reviews */}
       <CustomerStories />
 
-      {/* 9. Editorial Call to Action */}
-      <section className="py-20 bg-[#FAF8F5] relative text-center">
-        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <span className="text-xs uppercase tracking-[0.28em] text-terracotta-700 font-semibold block mb-3">
-            Participate in Opportunity
+      {/* 9. The Royal Postal Dispatch & Swadeshi Gazette (Email Representation) */}
+      <SwadeshiEmailDispatch />
+
+      {/* 10. Minimalist Editorial Call to Action */}
+      <section className="py-16 bg-[#0B132B] text-white relative text-center border-b border-[#C8A253]/30">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-4">
+          <span className="text-[10px] uppercase tracking-[0.25em] text-[#DFBD69] font-cinzel font-semibold block">
+            Direct Social Commerce
           </span>
-          <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-light leading-tight mb-6">
-            “When you bring an object into your home, let it carry a genuine human story.”
+          <h2 className="font-serif text-3xl sm:text-4xl text-white font-light leading-snug">
+            “Bring authentic Indian heritage into your home while funding a woman's financial independence.”
           </h2>
-          <p className="text-sm text-stone-600 max-w-xl mx-auto mb-8 leading-relaxed">
-            All PeepalKrat items are packed in 100% biodegradable corrugated cardboard and recycled cotton pouches, accompanied by an artisan certificate with the maker’s name and village.
+          <p className="text-xs sm:text-sm text-stone-300 max-w-xl mx-auto leading-relaxed font-light">
+            All overseas orders ship plastic-free via DHL Express with verified artisan certificates and zero import customs hassle.
           </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+          <div className="pt-2 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link href="/shop">
-              <Button size="lg" variant="editorial" className="px-8 h-12">
+              <Button size="lg" className="px-8 h-12 bg-[#DFBD69] text-[#0B132B] hover:bg-[#F7E7B4] font-cinzel font-bold text-xs uppercase tracking-wider">
                 Discover All Products
               </Button>
             </Link>
             <Link href="/our-story">
-              <Button size="lg" variant="outline" className="px-8 h-12">
+              <Button size="lg" variant="outline" className="px-8 h-12 border-[#C8A253]/50 text-[#FAF6EE] hover:bg-white/10 font-cinzel text-xs uppercase tracking-wider">
                 Read Our Story
               </Button>
             </Link>

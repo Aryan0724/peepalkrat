@@ -15,7 +15,7 @@ interface CurrencyContextType {
 const CurrencyContext = createContext<CurrencyContextType | undefined>(undefined);
 
 export function CurrencyProvider({ children }: { children: React.ReactNode }) {
-  const [currency, setCurrencyState] = useState<CurrencyCode>("INR");
+  const [currency, setCurrencyState] = useState<CurrencyCode>("USD");
 
   useEffect(() => {
     const saved = localStorage.getItem("peepalkrat_currency") as CurrencyCode;
@@ -31,7 +31,7 @@ export function CurrencyProvider({ children }: { children: React.ReactNode }) {
     }
   };
 
-  const currencyConfig = CURRENCIES[currency] || CURRENCIES.INR;
+  const currencyConfig = CURRENCIES[currency] || CURRENCIES.USD;
 
   const format = (amountInINR: number) => formatPrice(amountInINR, currency);
   const convert = (amountInINR: number) => convertFromINR(amountInINR, currency);

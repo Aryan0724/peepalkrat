@@ -59,7 +59,7 @@ export function Header({ announcement }: { announcement?: any }) {
           </span>
         </div>
         <div className="mx-auto md:mx-0 text-center text-stone-300 text-[10px] tracking-widest uppercase">
-          {announcement?.title || "Complimentary pan-India shipping above ₹1,999 • 100% Swadeshi Living Wage"}
+          {announcement?.title || "Express Worldwide Delivery (3–5 Days) to US, UK, Canada, UAE & 45+ Countries • 100% Direct Maker Living Wage"}
         </div>
         <div className="hidden md:flex items-center space-x-4 text-[10px] uppercase font-cinzel">
           <Link href="/community" className="text-[#DFBD69] hover:text-white transition-colors font-semibold">
@@ -186,20 +186,30 @@ export function Header({ announcement }: { announcement?: any }) {
                   <div className="px-3 py-1 text-[10px] uppercase tracking-wider text-stone-400 font-semibold border-b border-stone-100">
                     Select Currency
                   </div>
-                  {(["INR", "USD", "EUR", "GBP"] as CurrencyCode[]).map((c) => (
+                  {(["USD", "GBP", "EUR", "CAD", "AUD", "INR"] as CurrencyCode[]).map((c) => (
                     <button
                       key={c}
                       onClick={() => {
                         setCurrency(c);
                         setCurrencyDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-sandstone/60 transition-colors ${
-                        currency === c ? "text-terracotta-700 font-semibold bg-sandstone/30" : "text-charcoal"
+                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-[#FAF6EE] transition-colors ${
+                        currency === c ? "text-[#881C10] font-semibold bg-[#FAF6EE]" : "text-charcoal"
                       }`}
                     >
-                      <span>{c}</span>
-                      <span className="text-stone-500">
-                        {c === "INR" ? "₹ (India)" : c === "USD" ? "$ (USD)" : c === "EUR" ? "€ (Euro)" : "£ (GBP)"}
+                      <span className="font-cinzel">{c}</span>
+                      <span className="text-stone-500 text-[11px]">
+                        {c === "USD"
+                          ? "$ (United States)"
+                          : c === "GBP"
+                          ? "£ (United Kingdom)"
+                          : c === "EUR"
+                          ? "€ (Europe)"
+                          : c === "CAD"
+                          ? "CA$ (Canada)"
+                          : c === "AUD"
+                          ? "AU$ (Australia)"
+                          : "₹ (India)"}
                       </span>
                     </button>
                   ))}

@@ -1,4 +1,4 @@
-export type CurrencyCode = "INR" | "USD" | "EUR" | "GBP";
+export type CurrencyCode = "USD" | "GBP" | "EUR" | "CAD" | "AUD" | "INR";
 
 export interface CurrencyConfig {
   code: CurrencyCode;
