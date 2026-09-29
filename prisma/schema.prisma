@@ -322,3 +322,8 @@ model ProductRecommendation {
   @@unique([productId, recommendedProductId])
 }
 
+model Subscriber {
+  id        String   @id @default(uuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
+}

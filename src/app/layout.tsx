@@ -5,6 +5,7 @@ import { CartProvider } from "@/lib/cart-context";
 import { Header } from "@/components/layout/header";
 import { Footer } from "@/components/layout/footer";
 import { CartDrawer } from "@/components/cart/cart-drawer";
+import { WhatsAppWidget } from "@/components/layout/whatsapp-widget";
 
 import { prisma } from "@/lib/db";
 
@@ -62,6 +63,7 @@ export default async function RootLayout({
             <CartDrawer />
             <main className="flex-1">{children}</main>
             <Footer aboutBlock={footerBlock} />
+            <WhatsAppWidget />
           </CartProvider>
         </CurrencyProvider>
       </body>

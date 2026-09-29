@@ -19,8 +19,8 @@ const ARTISAN_SPOTLIGHT = [
     name: "Master Tailoring Team",
     village: "Model Town, Ambala City",
     craft: "Garment Construction",
-    incomeBefore: "₹1,200",
-    incomeAfter: "₹8,500",
+    incomeBefore: "â‚¹1,200",
+    incomeAfter: "â‚¹8,500",
     years: "Working together as an empowered collective",
     image: "/peepalkraft/workshop/workshop-full-1.jpg",
   },
@@ -28,8 +28,8 @@ const ARTISAN_SPOTLIGHT = [
     name: "Diksha & Team",
     village: "Kanshi Nagar, Ambala City",
     craft: "Hand Embroidery & Finishing",
-    incomeBefore: "₹800",
-    incomeAfter: "₹7,200",
+    incomeBefore: "â‚¹800",
+    incomeAfter: "â‚¹7,200",
     years: "Crafting beautiful accessories & garments",
     image: "/peepalkraft/workshop/artisan-portrait-1.jpg",
   },
@@ -37,20 +37,20 @@ const ARTISAN_SPOTLIGHT = [
     name: "Artisan Collective",
     village: "Ambala City, Haryana",
     craft: "Fabric Cutting & Styling",
-    incomeBefore: "₹950",
-    incomeAfter: "₹9,000",
-    years: "Direct living wages — 100% financial independence",
+    incomeBefore: "â‚¹950",
+    incomeAfter: "â‚¹9,000",
+    years: "Direct living wages â€” 100% financial independence",
     image: "/peepalkraft/workshop/artisan-yellow-saree.jpg",
   },
 ];
 
 const TRUST_TICKER = [
   "Women Earning Living Wages in Ambala City",
-  "Express Worldwide Delivery · 48+ Countries",
+  "Express Worldwide Delivery Â· 48+ Countries",
   "Revenue Goes Directly to Artisans",
-  "Zero Middlemen · Direct Craft-to-Home",
-  "DHL Express 3–5 Days · Customs Pre-Cleared",
-  "100% Handmade · Haryana, India",
+  "Zero Middlemen Â· Direct Craft-to-Home",
+  "DHL Express 3â€“5 Days Â· Customs Pre-Cleared",
+  "100% Handmade Â· Haryana, India",
 ];
 
 export function HeroSection({ data }: HeroSectionProps) {
@@ -69,14 +69,25 @@ export function HeroSection({ data }: HeroSectionProps) {
 
   const artisan = ARTISAN_SPOTLIGHT[activeArtisan];
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email.trim()) setSubscribed(true);
+    if (email.trim()) {
+      try {
+        await fetch("/api/subscribe", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ email: email.trim() })
+        });
+        setSubscribed(true);
+      } catch (err) {
+        console.error(err);
+      }
+    }
   };
 
   return (
     <>
-      {/* ── Announcement ticker ── */}
+      {/* â”€â”€ Announcement ticker â”€â”€ */}
       <div className="bg-[#1A1A1A] text-white overflow-hidden">
         <div className="ticker-track py-2.5">
           {[...TRUST_TICKER, ...TRUST_TICKER].map((item, i) => (
@@ -88,11 +99,11 @@ export function HeroSection({ data }: HeroSectionProps) {
         </div>
       </div>
 
-      {/* ── Main Hero ── */}
+      {/* â”€â”€ Main Hero â”€â”€ */}
       <section className="w-full" style={{ background: "#FFFCF8" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
 
-          {/* ════ LEFT: Content ════ */}
+          {/* â•â•â•â• LEFT: Content â•â•â•â• */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20 order-1">
 
             {/* Craft origin tag with handwritten accent */}
@@ -110,7 +121,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             {/* Primary headline with Dual Language */}
             <div className="mb-6 relative">
               <div className="font-display text-xl text-[#E87722]/60 mb-2 tracking-wide">
-                महिला सशक्तिकरण • हरियाणा
+                à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¤¶à¤•à¥à¤¤à¤¿à¤•à¤°à¤£ â€¢ à¤¹à¤°à¤¿à¤¯à¤¾à¤£à¤¾
               </div>
               <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A]">
                 {data?.title || (
@@ -130,10 +141,10 @@ export function HeroSection({ data }: HeroSectionProps) {
 
             <p className="text-[#555] text-base sm:text-lg font-light leading-relaxed max-w-lg mb-10">
               {data?.subtitle ||
-                "Authentic handcraft from women artisans in Ambala City, Haryana. Every purchase delivers a living wage directly — no middlemen, no charity."}
+                "Authentic handcraft from women artisans in Ambala City, Haryana. Every purchase delivers a living wage directly â€” no middlemen, no charity."}
             </p>
 
-            {/* Impact numbers — clean row */}
+            {/* Impact numbers â€” clean row */}
             <div className="flex flex-wrap gap-x-10 gap-y-5 mb-10 pb-10 border-b border-black/10">
               {[
                 { n: "100%", l: "Handmade" },
@@ -163,7 +174,7 @@ export function HeroSection({ data }: HeroSectionProps) {
               </Link>
             </div>
 
-            {/* Email signup — credibility */}
+            {/* Email signup â€” credibility */}
             <div className="border-t border-black/8 pt-8">
               <div className="flex items-baseline gap-3 mb-3">
                 <p className="text-[13px] font-semibold text-[#1A1A1A] tracking-wide">
@@ -179,7 +190,7 @@ export function HeroSection({ data }: HeroSectionProps) {
               {subscribed ? (
                 <div className="flex items-center gap-2 text-[13px] text-emerald-700 font-medium">
                   <CheckCircle2 className="w-4 h-4" />
-                  You're in — first dispatch arrives this week.
+                  You're in â€” first dispatch arrives this week.
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex max-w-sm">
@@ -202,12 +213,12 @@ export function HeroSection({ data }: HeroSectionProps) {
                 </form>
               )}
               <p className="text-[11px] text-[#aaa] mt-2">
-                ✉ peepalkraft@gmail.com
+                âœ‰ peepalkraft@gmail.com
               </p>
             </div>
           </div>
 
-          {/* ════ RIGHT: Artisan Spotlight Panel (Image Dominant) ════ */}
+          {/* â•â•â•â• RIGHT: Artisan Spotlight Panel (Image Dominant) â•â•â•â• */}
           <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 order-2 bg-[#1A1A1A]">
             
             {/* Spinning Block-Print Seal of Authenticity */}
@@ -216,7 +227,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                 <path id="curve" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
                 <text className="font-sans text-[11.5px] uppercase tracking-[0.2em] fill-[#E87722] font-semibold">
                   <textPath href="#curve" startOffset="0%">
-                    • 100% ARTISAN MADE • ZERO MIDDLEMEN
+                    â€¢ 100% ARTISAN MADE â€¢ ZERO MIDDLEMEN
                   </textPath>
                 </text>
               </svg>
@@ -272,7 +283,7 @@ export function HeroSection({ data }: HeroSectionProps) {
 
                 {/* Income transformation */}
                 <div className="bg-white/10 backdrop-blur-md border border-white/20 p-5 w-full max-w-sm">
-                  <div className="section-label mb-3 !text-white/70">Monthly Income · Before → Now</div>
+                  <div className="section-label mb-3 !text-white/70">Monthly Income Â· Before â†’ Now</div>
                   <div className="flex items-end gap-4">
                     <span className="font-display text-xl text-white/50 line-through">{artisan.incomeBefore}</span>
                     <TrendingUp className="w-5 h-5 text-[#E87722] mb-1 flex-shrink-0" />

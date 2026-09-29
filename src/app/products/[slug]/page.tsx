@@ -108,8 +108,31 @@ export default async function ProductPage({ params }: ProductPageProps) {
 
   const displayRelatedProducts = [...curatedProducts, ...fallbackRelated].slice(0, 4);
 
+  const jsonLd = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: product.name,
+    image: product.images[0]?.url,
+    description: product.description,
+    sku: product.sku,
+    offers: {
+      "@type": "Offer",
+      price: product.price,
+      priceCurrency: product.currency,
+      availability: product.inventory > 0 ? "https://schema.org/InStock" : "https://schema.org/OutOfStock",
+    },
+    brand: {
+      "@type": "Brand",
+      name: "PeepalKraft"
+    }
+  };
+
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Breadcrumb Navigation */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-5 border-b border-stone-200/70 text-xs text-stone-500">
         <nav className="flex items-center space-x-2">

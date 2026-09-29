@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -34,6 +34,7 @@ export function AdminNav() {
     { href: "/admin/categories", label: "Categories", icon: FolderTree },
     { href: "/admin/collections", label: "Collections", icon: Layers },
     { href: "/admin/customers", label: "Customers", icon: Users },
+    { href: "/admin/subscribers", label: "Subscribers", icon: Users },
     { href: "/admin/coupons", label: "Coupons", icon: Tag },
     { href: "/admin/content", label: "Pages & Content CMS", icon: FileText },
     { href: "/admin/settings", label: "Store Settings", icon: Settings },
