@@ -1,20 +1,20 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Scale, HeartHandshake, ShieldCheck, ChevronDown, ChevronUp, MapPin, Sparkles } from "lucide-react";
 import { useCurrency } from "@/lib/currency-context";
 
-interface MewatWageLedgerProps {
+interface AmbalaWageLedgerProps {
   priceInr: number;
   originVillage?: string | null;
   makerName?: string | null;
 }
 
-export function MewatWageLedger({
+export function AmbalaWageLedger({
   priceInr,
-  originVillage = "Mewat, Haryana",
-  makerName = "Mewat Women's Artisan Guild",
-}: MewatWageLedgerProps) {
+  originVillage = "Ambala, Haryana",
+  makerName = "Ambala Women's Artisan Guild",
+}: AmbalaWageLedgerProps) {
   const [isOpen, setIsOpen] = useState(false);
   const { format } = useCurrency();
 
@@ -36,7 +36,7 @@ export function MewatWageLedger({
           <div>
             <div className="flex items-center space-x-1.5">
               <span className="text-xs font-semibold text-charcoal tracking-wide">
-                The Mewat Living Wage Ledger
+                The Ambala Living Wage Ledger
               </span>
               <span className="text-[9px] bg-emerald-100 text-emerald-800 font-bold px-1.5 py-0.2 rounded-full uppercase tracking-wider">
                 72% Maker Share
