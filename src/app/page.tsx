@@ -6,7 +6,7 @@ import { prisma } from "@/lib/db";
 import { HeroSection } from "@/components/home/hero-section";
 import { GlobalDiasporaGlobe } from "@/components/home/global-diaspora-globe";
 import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
-import { AnimatedImpactJourney } from "@/components/home/animated-impact-journey";
+import { ImpactManifesto } from "@/components/home/impact-manifesto";
 import { MakerSpotlight } from "@/components/home/maker-spotlight";
 import { CustomerStories } from "@/components/home/customer-stories";
 import { SwadeshiEmailDispatch } from "@/components/home/swadeshi-email-dispatch";
@@ -172,8 +172,8 @@ export default async function HomePage() {
         </div>
       </section>
 
-      {/* 6. Animated Illustrated 3-Step Impact Journey (Loom -> Bank Account -> Global Home) */}
-      <AnimatedImpactJourney />
+      {/* 6. Impact Manifesto: Real Data & Artisan Voices */}
+      <ImpactManifesto />
 
       {/* 7. Meet the Makers Spotlight */}
       <MakerSpotlight makers={makers} />
