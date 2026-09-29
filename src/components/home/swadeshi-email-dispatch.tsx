@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from "react";
-import { Mail, CheckCircle2, ShieldCheck, Sparkles, Send, Stamp } from "lucide-react";
+import Image from "next/image";
+import { Mail, CheckCircle2, Send } from "lucide-react";
 
 export function SwadeshiEmailDispatch() {
   const [email, setEmail] = useState("");
@@ -15,60 +16,47 @@ export function SwadeshiEmailDispatch() {
   };
 
   return (
-    <section className="py-20 bg-[#FAF6EE] relative overflow-hidden border-b border-[#EAE0CE]">
-      {/* Background jaali pattern */}
-      <div className="absolute inset-0 pattern-jaali opacity-30 pointer-events-none" />
+    <section className="relative w-full border-b border-black/10 overflow-hidden bg-[#F5F0E8]">
+      
+      {/* Hand-drawn village landscape banner */}
+      <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px]">
+        <Image
+          src="/peepalkraft/illustrations/village-landscape.png"
+          alt="Indian Village Scene Illustration"
+          fill
+          className="object-cover md:object-contain object-bottom opacity-90"
+          sizes="100vw"
+        />
+        {/* Soft fade at the top to blend with any text if needed */}
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#F5F0E8] to-transparent" />
+      </div>
 
-      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Archival Envelope Container */}
-        <div className="postal-dispatch-envelope p-8 sm:p-12 rounded-xs border-2 border-[#C8A253]/50 shadow-2xl relative bg-[#FAF6EE]">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-20 md:-mt-32 pb-20">
+        <div className="bg-[#FFFCF8] p-8 sm:p-12 rounded-sm border-stitch shadow-2xl relative">
           
-          {/* Top Postmark and Cancellation Stamp */}
-          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-[#EAE0CE]">
-            <div className="flex items-center space-x-3">
-              {/* Circular Postal Postmark */}
-              <div className="w-16 h-16 rounded-full border-2 border-dashed border-[#881C10] flex flex-col items-center justify-center p-1 text-center rotate-[-6deg] bg-white/60">
-                <span className="text-[7px] uppercase font-cinzel font-bold text-[#881C10]">MEWAT POSTAL</span>
-                <span className="text-[9px] font-serif font-bold text-[#0B132B]">1857-2026</span>
-                <span className="text-[6px] uppercase tracking-tighter text-stone-500">DISPATCH SEC.</span>
-              </div>
-
-              <div>
-                <span className="text-[10px] uppercase tracking-[0.25em] text-[#881C10] font-cinzel font-bold block">
-                  Quarterly Swadeshi Gazette
-                </span>
-                <h3 className="font-serif text-xl sm:text-2xl text-[#0B132B] font-medium">
-                  The Royal Postal Dispatch
-                </h3>
-              </div>
+          <div className="flex flex-col items-center text-center space-y-4">
+            <div className="font-handwritten text-3xl text-[#E87722] transform -rotate-3">
+              Join the PeepalKraft Parivar
             </div>
-
-            {/* Archival Classification Badge */}
-            <div className="px-3 py-1 bg-[#0B132B] text-[#DFBD69] text-[9px] font-cinzel uppercase tracking-[0.18em] rounded-xs border border-[#C8A253]/40">
-              Registered Courier • No Algorithmic Noise
-            </div>
-          </div>
-
-          {/* Letter Body Content */}
-          <div className="py-6 space-y-4 text-left">
-            <p className="font-cormorant text-base sm:text-lg text-stone-700 leading-relaxed italic">
-              “To those who honor the hands that weave: Subscribe to receive our quarterly letterpress gazette. We document oral histories of the 1857 Mewat peasant revolt, profiles of women who run the pit-looms of Haryana, and private invitations to limited artisan batch drops.”
+            
+            <h3 className="font-display text-2xl sm:text-3xl text-[#1A1A1A] max-w-xl">
+              Get hand-drawn tales of craft, exclusive artisan drops, and village stories.
+            </h3>
+            
+            <p className="font-sans text-sm text-[#555] max-w-lg mb-6">
+              Subscribe to our monthly gazette. No spam, just pure authentic Indian heritage and stories directly from the hands of the women in Ambala City.
             </p>
 
             {isSubmitted ? (
-              <div className="p-6 bg-emerald-50/80 border border-emerald-300 rounded-xs flex items-start space-x-3 text-emerald-900 animate-fade-in">
-                <CheckCircle2 className="w-5 h-5 text-emerald-700 shrink-0 mt-0.5" />
-                <div>
-                  <h4 className="font-serif font-semibold text-sm">
-                    Wax Seal Affixed • Dispatch Registered
-                  </h4>
-                  <p className="text-xs text-emerald-800/90 mt-1 leading-relaxed">
-                    Thank you. Your address ({email}) has been enrolled in the Mewat Artisan Ledger. Your inaugural issue of The Swadeshi Gazette will arrive in your inbox.
-                  </p>
+              <div className="p-4 bg-[#E87722]/10 border border-stitch rounded-sm flex items-center space-x-3 text-[#1A1A1A] animate-fade-in w-full max-w-md">
+                <CheckCircle2 className="w-5 h-5 text-[#E87722]" />
+                <div className="text-left">
+                  <h4 className="font-sans font-medium text-sm">Welcome to the family!</h4>
+                  <p className="text-xs text-[#555] mt-0.5">Your first letter arrives soon.</p>
                 </div>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="pt-2">
+              <form onSubmit={handleSubmit} className="w-full max-w-md pt-2">
                 <div className="flex flex-col sm:flex-row gap-3">
                   <div className="relative flex-1">
                     <input
@@ -76,17 +64,17 @@ export function SwadeshiEmailDispatch() {
                       required
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
-                      placeholder="Enter your email to receive the Gazette..."
-                      className="w-full px-4 py-3.5 bg-white/90 border-b-2 border-[#C8A253] text-stone-900 text-sm focus:outline-none focus:bg-white placeholder:text-stone-400 font-serif tracking-wide shadow-inner"
+                      placeholder="Enter your email..."
+                      className="w-full px-4 py-3 bg-white border border-[#E87722]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#E87722] font-sans transition-colors rounded-sm"
                     />
-                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#C8A253]" />
+                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#E87722]/50" />
                   </div>
 
                   <button
                     type="submit"
-                    className="wax-seal-btn px-8 py-3.5 font-cinzel font-semibold text-xs uppercase tracking-[0.18em] flex items-center justify-center space-x-2 shrink-0 rounded-xs"
+                    className="btn-saffron px-6 py-3 font-sans font-medium text-sm flex items-center justify-center space-x-2 shrink-0 rounded-sm"
                   >
-                    <span>Affix Seal & Dispatch</span>
+                    <span>Subscribe</span>
                     <Send className="w-3.5 h-3.5 ml-1" />
                   </button>
                 </div>
@@ -94,16 +82,6 @@ export function SwadeshiEmailDispatch() {
             )}
           </div>
 
-          {/* Postal Guarantees Footer */}
-          <div className="pt-4 border-t border-[#EAE0CE] flex flex-wrap items-center justify-between text-[11px] text-stone-500 gap-3">
-            <span className="flex items-center space-x-1.5">
-              <ShieldCheck className="w-3.5 h-3.5 text-[#881C10]" />
-              <span>Zero promotional spam • Unsubscribe anytime with 1-click</span>
-            </span>
-            <span className="font-serif italic text-stone-400">
-              Printed on virtual unbleached Khadi • Curated in Panipat & Nuh
-            </span>
-          </div>
         </div>
       </div>
     </section>

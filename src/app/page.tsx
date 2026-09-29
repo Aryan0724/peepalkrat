@@ -8,16 +8,25 @@ import { OurWorkshopSection } from "@/components/home/our-workshop";
 import { CircularCategoryStrip } from "@/components/home/circular-category-strip";
 import { ImpactManifesto } from "@/components/home/impact-manifesto";
 import { ProductCard } from "@/components/shop/product-card";
+import { MakerSpotlight } from "@/components/home/maker-spotlight";
+import { CustomerStories } from "@/components/home/customer-stories";
+import { SwadeshiEmailDispatch } from "@/components/home/swadeshi-email-dispatch";
 
 // Enable dynamic revalidation
 export const revalidate = 60;
 
 export default async function HomePage() {
   let contentBlocks: Record<string, any> = {};
+  let makers: any[] = [];
 
   try {
     const blocks = await prisma.contentBlock.findMany({
       where: { page: "home", isActive: true },
+    });
+
+    makers = await prisma.maker.findMany({
+      where: { isFeatured: true },
+      take: 4,
     });
 
     if (blocks) {
@@ -151,7 +160,16 @@ export default async function HomePage() {
       {/* 5. Impact Manifesto: Real Data & Artisan Voices */}
       <ImpactManifesto />
 
-      {/* 6. Minimalist Editorial Call to Action */}
+      {/* 6. Meet the Makers Spotlight */}
+      <MakerSpotlight makers={makers} />
+
+      {/* 7. Worldwide Customer Stories */}
+      <CustomerStories />
+
+      {/* 8. Newsletter Dispatch */}
+      <SwadeshiEmailDispatch />
+
+      {/* 9. Minimalist Editorial Call to Action */}
       <section className="py-20 bg-[#1A1A1A] text-white relative text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15]">
