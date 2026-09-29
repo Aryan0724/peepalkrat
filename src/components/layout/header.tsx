@@ -96,7 +96,7 @@ export function Header({ announcement }: { announcement?: any }) {
                 PeepalKrat
               </span>
               <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium -mt-0.5">
-                Mewat · Haryana
+                Ambala City · Haryana
               </span>
             </Link>
           </div>

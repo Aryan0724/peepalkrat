@@ -11,15 +11,15 @@ const stats = [
     label: "Average Monthly Income",
     sublabel: "Before → After joining PeepalKrat",
     note: "8× income growth in 18 months",
-    color: "#DFBD69",
+    color: "#E87722",
   },
   {
     before: "0",
     after: "142+",
     label: "Women With Sole Bank Signing Authority",
     sublabel: "Own account. Own passbook. Their earnings.",
-    note: "Villages of Nuh, Punhana, Taoru & Ferozpur Jhirka",
-    color: "#FAF6EE",
+    note: "Neighborhoods of Ambala City, Haryana",
+    color: "#FFFCF8",
   },
   {
     before: "₹0",
@@ -27,44 +27,32 @@ const stats = [
     label: "Direct Wages Disbursed",
     sublabel: "Paid weekly. Zero middlemen. Zero deductions.",
     note: "Since inception — growing every month",
-    color: "#DFBD69",
+    color: "#E87722",
   },
 ];
 
 const testimonials = [
   {
-    name: "Sameena Begum",
-    village: "Nuh, Mewat",
-    craft: "Pit-Loom Weaver",
+    name: "Diksha & Team",
+    village: "Kanshi Nagar, Ambala City",
+    craft: "Hand Embroidery & Finishing",
     quote:
-      "Pehle ghar mein kaam tha, paisa nahi tha. Ab main apni beti ki fees khud bharta hoon.",
+      "Pehle ghar mein kaam tha, paisa nahi tha. Ab main apni craft se sidha kamati hoon.",
     translation:
-      "Before, there was work at home but no income. Now I pay my daughter's school fees myself.",
-    incomeBefore: "₹700 / month",
+      "Before, there was work at home but no income. Now I earn directly from my craft.",
+    incomeBefore: "₹800 / month",
     incomeAfter: "₹7,200 / month",
     yearsActive: "3 years",
   },
   {
-    name: "Reshma Devi",
-    village: "Punhana, Mewat",
-    craft: "Moonj Grass Artisan",
+    name: "Artisan Collective",
+    village: "Model Town, Ambala City",
+    craft: "Master Tailoring",
     quote:
-      "Mere paas apna account hai. Apni kamai hai. Ab main apne pati par nirbhar nahi hoon.",
+      "Mere paas apna account hai. Apni kamai hai. Ab main bank khud jaati hoon.",
     translation:
-      "I have my own account. My own earnings. I am no longer dependent on my husband.",
-    incomeBefore: "₹900 / month",
-    incomeAfter: "₹5,800 / month",
-    yearsActive: "2 years",
-  },
-  {
-    name: "Fatima Khatoon",
-    village: "Ferozpur Jhirka, Mewat",
-    craft: "Phulkari Embroiderer",
-    quote:
-      "Jab videsh se order aata hai, mujhe lagta hai ki meri kala duniya bhar mein pahunch rahi hai.",
-    translation:
-      "When an order comes from abroad, I feel my craft is reaching the whole world.",
-    incomeBefore: "₹1,100 / month",
+      "I have my own account. My own earnings. Now I go to the bank myself.",
+    incomeBefore: "₹1,200 / month",
     incomeAfter: "₹8,500 / month",
     yearsActive: "4 years",
   },
@@ -133,7 +121,7 @@ export function ImpactManifesto() {
   const t = testimonials[activeTestimonial];
 
   return (
-    <section className="bg-[#0B132B] text-[#FAF6EE] relative overflow-hidden border-b border-[#C8A253]/20">
+    <section className="bg-[#1A1A1A] text-[#FFFCF8] relative overflow-hidden border-b border-black/10">
       {/* Subtle grain texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -144,41 +132,38 @@ export function ImpactManifesto() {
       />
 
       {/* Top accent line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#C8A253]/60 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E87722]/60 to-transparent" />
 
-      {/* ─── SECTION 1: Mewat Location & Mission Context ─── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16">
+      {/* ─── SECTION 1: Ambala City Location & Mission Context ─── */}
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Context */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2 text-[#DFBD69]">
+            <div className="flex items-center space-x-2 text-[#E87722]">
               <MapPin className="w-4 h-4" />
-              <span className="text-[11px] font-cinzel font-semibold uppercase tracking-[0.25em]">
-                Mewat District, Haryana, India
+              <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em]">
+                Ambala City, Haryana, India
               </span>
             </div>
-            <h2 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.08] text-white">
-              One of India's most{" "}
-              <em className="font-cormorant italic not-italic text-[#DFBD69]">
-                underserved
+            <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.08] text-white">
+              One of Haryana's most{" "}
+              <em className="italic text-[#E87722]">
+                historic
               </em>{" "}
               districts. Now, one of its most{" "}
-              <em className="font-cormorant italic text-[#DFBD69]">
+              <em className="italic text-[#E87722]">
                 determined.
               </em>
             </h2>
-            <p className="text-stone-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#C8A253]/50 pl-5">
-              Mewat — renamed Nuh district in 2016 — has historically ranked
-              last or near-last in Haryana on female literacy, workforce
-              participation, and income. PeepalKrat is a direct intervention:
-              placing craft earnings, bank accounts, and market access directly
-              in the hands of women who were previously invisible to the formal
-              economy.
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#E87722]/50 pl-5">
+              PeepalKrat is a direct intervention: placing craft earnings, bank 
+              accounts, and market access directly in the hands of women 
+              artisans in Ambala City who were previously invisible to the formal economy.
             </p>
             <div className="pt-2">
               <Link
                 href="/impact"
-                className="inline-flex items-center text-xs uppercase tracking-[0.2em] font-cinzel font-semibold text-[#DFBD69] hover:text-white transition-colors group"
+                className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#E87722] hover:text-white transition-colors group"
               >
                 <span>Read the Full Impact Report</span>
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -190,33 +175,33 @@ export function ImpactManifesto() {
           <div className="relative">
             <div
               key={activeTestimonial}
-              className="bg-[#132247]/80 border border-[#C8A253]/30 p-8 space-y-6"
+              className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 space-y-6"
               style={{ animation: "fadeSlideIn 0.5s ease-out" }}
             >
               {/* Income transformation */}
-              <div className="flex items-center space-x-6 pb-6 border-b border-[#C8A253]/20">
+              <div className="flex items-center space-x-6 pb-6 border-b border-white/10">
                 <div className="text-center">
-                  <div className="text-xl font-serif text-stone-500 line-through">
+                  <div className="text-xl font-display text-gray-400 line-through">
                     {t.incomeBefore}
                   </div>
-                  <div className="text-[10px] text-stone-500 uppercase tracking-wider mt-1">
+                  <div className="text-[10px] font-sans text-gray-400 uppercase tracking-wider mt-1">
                     Before
                   </div>
                 </div>
-                <TrendingUp className="w-8 h-8 text-[#DFBD69] flex-shrink-0" />
+                <TrendingUp className="w-8 h-8 text-[#E87722] flex-shrink-0" />
                 <div className="text-center">
-                  <div className="text-3xl font-serif font-medium text-[#DFBD69]">
+                  <div className="text-3xl font-display font-medium text-[#E87722]">
                     {t.incomeAfter}
                   </div>
-                  <div className="text-[10px] text-[#DFBD69] uppercase tracking-wider mt-1 font-cinzel">
+                  <div className="text-[10px] text-[#E87722] uppercase tracking-wider mt-1 font-sans">
                     Today
                   </div>
                 </div>
                 <div className="text-right ml-auto">
-                  <div className="text-[10px] text-stone-400 uppercase tracking-wider">
+                  <div className="text-[10px] text-gray-400 uppercase tracking-wider font-sans">
                     Active for
                   </div>
-                  <div className="text-sm font-serif text-white">
+                  <div className="text-sm font-display text-white">
                     {t.yearsActive}
                   </div>
                 </div>
@@ -224,10 +209,10 @@ export function ImpactManifesto() {
 
               {/* Quote in Hindi + English */}
               <blockquote className="space-y-3">
-                <p className="font-cormorant italic text-xl sm:text-2xl text-white/90 leading-relaxed">
+                <p className="font-display italic text-2xl text-white/90 leading-relaxed">
                   "{t.quote}"
                 </p>
-                <p className="text-stone-400 text-xs sm:text-sm italic leading-relaxed font-light">
+                <p className="text-gray-400 text-sm italic leading-relaxed font-light">
                   "{t.translation}"
                 </p>
               </blockquote>
@@ -235,10 +220,10 @@ export function ImpactManifesto() {
               {/* Attribution */}
               <div className="flex items-center justify-between pt-2">
                 <div>
-                  <div className="font-cinzel font-semibold text-sm text-white">
+                  <div className="font-sans font-medium text-sm text-white">
                     {t.name}
                   </div>
-                  <div className="text-[11px] text-stone-400 mt-0.5">
+                  <div className="text-[11px] text-gray-400 mt-0.5 font-sans">
                     {t.craft} · {t.village}
                   </div>
                 </div>
@@ -249,127 +234,53 @@ export function ImpactManifesto() {
                       onClick={() => setActiveTestimonial(i)}
                       className={`w-6 h-0.5 transition-all duration-300 ${
                         i === activeTestimonial
-                          ? "bg-[#DFBD69]"
+                          ? "bg-[#E87722]"
                           : "bg-white/20 hover:bg-white/40"
                       }`}
+                      aria-label={`View testimonial ${i + 1}`}
                     />
                   ))}
                 </div>
               </div>
             </div>
-
-            {/* Decorative corner */}
-            <div className="absolute -bottom-2 -right-2 w-12 h-12 border-r-2 border-b-2 border-[#C8A253]/40" />
-            <div className="absolute -top-2 -left-2 w-12 h-12 border-l-2 border-t-2 border-[#C8A253]/40" />
           </div>
         </div>
       </div>
 
-      {/* Divider */}
-      <div className="h-px max-w-7xl mx-auto bg-gradient-to-r from-transparent via-[#C8A253]/25 to-transparent" />
-
-      {/* ─── SECTION 2: Raw Data Manifesto ─── */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="mb-12 max-w-xl">
-          <span className="text-[11px] font-cinzel font-semibold uppercase tracking-[0.25em] text-[#C8A253] block mb-3">
-            The Numbers That Matter
-          </span>
-          <h3 className="font-serif text-3xl sm:text-4xl text-white font-light leading-tight">
-            This is not charity. This is commerce with a conscience.
-          </h3>
-        </div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-0 border border-[#C8A253]/20">
-          {stats.map((stat, i) => (
-            <div
-              key={i}
-              className={`p-10 space-y-4 ${
-                i < stats.length - 1
-                  ? "border-b md:border-b-0 md:border-r border-[#C8A253]/20"
-                  : ""
-              }`}
-            >
-              {/* Before / After */}
-              <div className="flex items-baseline space-x-3">
-                <span className="font-serif text-lg text-stone-600 line-through">
-                  {stat.before}
-                </span>
-                <span className="text-stone-500 text-sm">→</span>
-                <span
-                  className="font-serif text-4xl sm:text-5xl font-light"
-                  style={{ color: stat.color }}
-                >
-                  {stat.after}
-                </span>
-              </div>
-
-              <div className="space-y-1">
-                <h4 className="font-cinzel text-xs font-bold uppercase tracking-[0.2em] text-white">
+      {/* ─── SECTION 2: The Hard Numbers Grid ─── */}
+      <div className="border-t border-white/10 bg-black/20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
+            {stats.map((stat, idx) => (
+              <div key={idx} className="relative group">
+                <div className="mb-2">
+                  <span className="text-[10px] text-gray-400 uppercase tracking-wider font-sans block mb-1">
+                    {stat.sublabel}
+                  </span>
+                  <div
+                    className="font-display text-4xl sm:text-5xl tracking-tight transition-transform duration-500 group-hover:scale-105 origin-left"
+                    style={{ color: stat.color }}
+                  >
+                    {stat.after === "142+" ? (
+                      <CountUp target={142} suffix="+" />
+                    ) : stat.after === "₹6,400" ? (
+                      <CountUp target={6400} prefix="₹" />
+                    ) : (
+                      stat.after
+                    )}
+                  </div>
+                </div>
+                <h3 className="text-sm font-sans font-medium text-white mb-2 uppercase tracking-wide">
                   {stat.label}
-                </h4>
-                <p className="text-stone-400 text-xs font-light">
-                  {stat.sublabel}
-                </p>
-              </div>
-
-              <div className="pt-2 border-t border-[#C8A253]/15">
-                <p className="text-[10px] font-cinzel uppercase tracking-widest text-[#DFBD69]">
+                </h3>
+                <p className="text-xs text-gray-400 font-light border-l border-white/10 pl-3">
                   {stat.note}
                 </p>
               </div>
-            </div>
-          ))}
-        </div>
-
-        {/* Live tracker row */}
-        <div className="mt-8 grid grid-cols-2 sm:grid-cols-4 gap-6 bg-[#132247]/40 border border-[#C8A253]/20 px-8 py-6">
-          <div>
-            <div className="font-serif text-3xl text-[#DFBD69] font-light">
-              <CountUp target={142} suffix="+" />
-            </div>
-            <div className="text-[10px] font-cinzel uppercase tracking-widest text-stone-400 mt-1">
-              Women Artisans
-            </div>
-          </div>
-          <div>
-            <div className="font-serif text-3xl text-white font-light">
-              <CountUp target={12} />
-            </div>
-            <div className="text-[10px] font-cinzel uppercase tracking-widest text-stone-400 mt-1">
-              Villages Reached
-            </div>
-          </div>
-          <div>
-            <div className="font-serif text-3xl text-[#DFBD69] font-light">
-              <CountUp target={48} suffix="+" />
-            </div>
-            <div className="text-[10px] font-cinzel uppercase tracking-widest text-stone-400 mt-1">
-              Countries Delivered
-            </div>
-          </div>
-          <div>
-            <div className="font-serif text-3xl text-white font-light">
-              <CountUp target={72} suffix="%" />
-            </div>
-            <div className="text-[10px] font-cinzel uppercase tracking-widest text-stone-400 mt-1">
-              Revenue to Artisan
-            </div>
+            ))}
           </div>
         </div>
       </div>
-
-      <style jsx>{`
-        @keyframes fadeSlideIn {
-          from {
-            opacity: 0;
-            transform: translateY(8px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-      `}</style>
     </section>
   );
 }

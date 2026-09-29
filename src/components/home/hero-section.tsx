@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
-import { ArrowRight, Mail, CheckCircle2, TrendingUp } from "lucide-react";
+import Image from "next/image";
+import { ArrowRight, Mail, CheckCircle2, TrendingUp, MapPin } from "lucide-react";
 
 interface HeroSectionProps {
   data?: {
@@ -15,38 +16,38 @@ interface HeroSectionProps {
 
 const ARTISAN_SPOTLIGHT = [
   {
-    name: "Sameena Begum",
-    village: "Nuh, Mewat",
-    craft: "Pit-Loom Weaver",
-    incomeBefore: "₹700",
-    incomeAfter: "₹7,200",
-    years: "3 years with PeepalKrat",
-    initials: "SB",
-  },
-  {
-    name: "Reshma Devi",
-    village: "Punhana, Mewat",
-    craft: "Moonj Grass Artisan",
-    incomeBefore: "₹900",
-    incomeAfter: "₹5,800",
-    years: "2 years with PeepalKrat",
-    initials: "RD",
-  },
-  {
-    name: "Fatima Khatoon",
-    village: "Ferozpur Jhirka",
-    craft: "Phulkari Embroiderer",
-    incomeBefore: "₹1,100",
+    name: "Master Tailoring Team",
+    village: "Model Town, Ambala City",
+    craft: "Garment Construction",
+    incomeBefore: "₹1,200",
     incomeAfter: "₹8,500",
-    years: "4 years with PeepalKrat",
-    initials: "FK",
+    years: "Working together as an empowered collective",
+    image: "/peepalkraft/workshop/workshop-full-1.jpg",
+  },
+  {
+    name: "Diksha & Team",
+    village: "Kanshi Nagar, Ambala City",
+    craft: "Hand Embroidery & Finishing",
+    incomeBefore: "₹800",
+    incomeAfter: "₹7,200",
+    years: "Crafting beautiful accessories & garments",
+    image: "/peepalkraft/workshop/artisan-portrait-1.jpg",
+  },
+  {
+    name: "Artisan Collective",
+    village: "Ambala City, Haryana",
+    craft: "Fabric Cutting & Styling",
+    incomeBefore: "₹950",
+    incomeAfter: "₹9,000",
+    years: "Direct living wages — 100% financial independence",
+    image: "/peepalkraft/workshop/artisan-yellow-saree.jpg",
   },
 ];
 
 const TRUST_TICKER = [
-  "142+ Women Earning Living Wages in Mewat",
+  "Women Earning Living Wages in Ambala City",
   "Express Worldwide Delivery · 48+ Countries",
-  "72% Revenue Goes Directly to Artisans",
+  "Revenue Goes Directly to Artisans",
   "Zero Middlemen · Direct Craft-to-Home",
   "DHL Express 3–5 Days · Customs Pre-Cleared",
   "100% Handmade · Haryana, India",
@@ -97,7 +98,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             {/* Craft origin tag */}
             <div className="mb-6">
               <span className="section-label">
-                Handcrafted in Mewat, Haryana · Est. 2021
+                Handcrafted in Ambala City, Haryana
               </span>
             </div>
 
@@ -113,14 +114,14 @@ export function HeroSection({ data }: HeroSectionProps) {
 
             <p className="text-[#555] text-base sm:text-lg font-light leading-relaxed max-w-lg mb-10">
               {data?.subtitle ||
-                "Authentic handcraft from 142+ women artisans across 12 villages of Mewat. Every purchase delivers a living wage directly — no middlemen, no charity."}
+                "Authentic handcraft from women artisans in Ambala City, Haryana. Every purchase delivers a living wage directly — no middlemen, no charity."}
             </p>
 
             {/* Impact numbers — clean row */}
             <div className="flex flex-wrap gap-x-10 gap-y-5 mb-10 pb-10 border-b border-black/10">
               {[
-                { n: "142+", l: "Women Earning" },
-                { n: "₹2.1 Cr", l: "Wages Paid" },
+                { n: "100%", l: "Handmade" },
+                { n: "Zero", l: "Middlemen" },
                 { n: "48+", l: "Countries" },
                 { n: "72%", l: "To Artisan" },
               ].map((s) => (
@@ -185,82 +186,72 @@ export function HeroSection({ data }: HeroSectionProps) {
                 </form>
               )}
               <p className="text-[11px] text-[#aaa] mt-2">
-                ✉ hello@peepalkrat.com &nbsp;·&nbsp; orders@peepalkrat.com
+                ✉ peepalkraft@gmail.com
               </p>
             </div>
           </div>
 
-          {/* ════ RIGHT: Artisan Spotlight Panel ════ */}
-          <div
-            className="relative overflow-hidden min-h-[55vh] lg:min-h-0 order-1 lg:order-2"
-            style={{ background: "#F0E9DE" }}
-          >
-            {/* Large craft-pattern SVG watermark */}
-            <svg
-              className="absolute inset-0 w-full h-full opacity-[0.06] pointer-events-none"
-              viewBox="0 0 400 400"
-              preserveAspectRatio="xMidYMid slice"
-            >
-              <defs>
-                <pattern id="paisley" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
-                  <path
-                    d="M40 10 C55 10 70 25 70 40 C70 55 55 70 40 70 C25 70 10 55 10 40 C10 25 25 10 40 10Z M40 20 C50 20 60 30 60 40 C60 50 50 60 40 60 C30 60 20 50 20 40 C20 30 30 20 40 20Z"
-                    fill="none"
-                    stroke="#1A1A1A"
-                    strokeWidth="0.8"
-                  />
-                  <circle cx="40" cy="40" r="4" fill="#1A1A1A" opacity="0.5" />
-                </pattern>
-              </defs>
-              <rect width="400" height="400" fill="url(#paisley)" />
-            </svg>
+          {/* ════ RIGHT: Artisan Spotlight Panel (Image Dominant) ════ */}
+          <div className="relative overflow-hidden min-h-[60vh] lg:min-h-0 order-1 lg:order-2 bg-[#1A1A1A]">
+            {/* Background Image transitioning */}
+            {ARTISAN_SPOTLIGHT.map((item, i) => (
+              <div
+                key={i}
+                className={`absolute inset-0 transition-opacity duration-1000 ${
+                  i === activeArtisan ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <Image
+                  src={item.image}
+                  alt={item.name}
+                  fill
+                  className="object-cover opacity-60"
+                  priority={i === 0}
+                />
+                {/* Gradient overlay to make text readable */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent" />
+              </div>
+            ))}
 
             {/* Artisan card content */}
             <div
-              className="relative z-10 flex flex-col h-full p-8 sm:p-12"
+              className="relative z-10 flex flex-col h-full p-8 sm:p-12 justify-end"
               key={tick}
               style={{ animation: "fadeUp 0.6s cubic-bezier(0.22,1,0.36,1) both" }}
             >
               {/* Header */}
-              <div className="mb-auto">
-                <span className="section-label mb-8 block">
-                  Women Behind Your Purchase
+              <div className="mb-4">
+                <span className="section-label mb-4 block text-white/80">
+                  Real Artisans. Real Impact.
                 </span>
 
-                {/* Monogram */}
-                <div
-                  className="w-14 h-14 rounded-full flex items-center justify-center mb-6"
-                  style={{ background: "#1A1A1A" }}
-                >
-                  <span className="font-display text-lg text-white">{artisan.initials}</span>
+                {/* Identity */}
+                <div className="space-y-2 mb-8">
+                  <div className="font-display text-4xl text-white">{artisan.name}</div>
+                  <div className="flex items-center text-[13px] text-white/80">
+                    <MapPin className="w-3.5 h-3.5 mr-1" /> {artisan.village}
+                  </div>
+                  <div className="text-[13px] text-[#E87722] font-medium tracking-wide uppercase mt-1">
+                    {artisan.craft}
+                  </div>
                 </div>
 
                 {/* Income transformation */}
-                <div className="mb-8">
-                  <div className="section-label mb-3">Monthly Income · Before → Now</div>
+                <div className="bg-white/10 backdrop-blur-md border border-white/20 p-5 w-full max-w-sm">
+                  <div className="section-label mb-3 !text-white/70">Monthly Income · Before → Now</div>
                   <div className="flex items-end gap-4">
-                    <span className="font-display text-xl text-[#999] line-through">{artisan.incomeBefore}</span>
+                    <span className="font-display text-xl text-white/50 line-through">{artisan.incomeBefore}</span>
                     <TrendingUp className="w-5 h-5 text-[#E87722] mb-1 flex-shrink-0" />
-                    <span className="font-display text-5xl text-[#1A1A1A]">{artisan.incomeAfter}</span>
+                    <span className="font-display text-4xl text-white">{artisan.incomeAfter}</span>
                   </div>
-                  <div className="text-[11px] text-[#888] mt-2 font-medium tracking-widest uppercase">
-                    / month today
-                  </div>
-                </div>
-
-                {/* Identity */}
-                <div className="border-t border-black/10 pt-6 space-y-2">
-                  <div className="font-semibold text-[#1A1A1A] text-base">{artisan.name}</div>
-                  <div className="text-[13px] text-[#666]">{artisan.craft}</div>
-                  <div className="text-[13px] text-[#888]">{artisan.village}</div>
-                  <div className="text-[12px] text-[#888] font-light border-l-2 border-[#E87722] pl-3 mt-4">
-                    {artisan.years} — sole signing authority on her bank account
+                  <div className="text-[11px] text-white/70 mt-3 font-medium tracking-widest uppercase border-l-2 border-[#E87722] pl-3">
+                    {artisan.years}
                   </div>
                 </div>
               </div>
 
               {/* Progress indicators */}
-              <div className="flex items-center gap-2 mt-8">
+              <div className="flex items-center gap-2 mt-4">
                 {ARTISAN_SPOTLIGHT.map((_, i) => (
                   <button
                     key={i}
@@ -268,14 +259,11 @@ export function HeroSection({ data }: HeroSectionProps) {
                     className="h-[2px] transition-all duration-500 cursor-pointer"
                     style={{
                       width: i === activeArtisan ? 32 : 12,
-                      background: i === activeArtisan ? "#1A1A1A" : "rgba(26,26,26,0.2)",
+                      background: i === activeArtisan ? "#FFFFFF" : "rgba(255,255,255,0.3)",
                     }}
                     aria-label={ARTISAN_SPOTLIGHT[i].name}
                   />
                 ))}
-                <span className="text-[10px] text-[#999] ml-2 tracking-widest uppercase font-medium">
-                  {activeArtisan + 1} / {ARTISAN_SPOTLIGHT.length}
-                </span>
               </div>
             </div>
           </div>
