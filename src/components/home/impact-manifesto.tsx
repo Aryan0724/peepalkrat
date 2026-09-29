@@ -9,7 +9,7 @@ const stats = [
     before: "₹800",
     after: "₹6,400",
     label: "Average Monthly Income",
-    sublabel: "Before → After joining PeepalKrat",
+    sublabel: "Before → After joining PeepalKraft",
     note: "8× income growth in 18 months",
     color: "#E87722",
   },
@@ -156,7 +156,7 @@ export function ImpactManifesto() {
               </em>
             </h2>
             <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#E87722]/50 pl-5">
-              PeepalKrat is a direct intervention: placing craft earnings, bank 
+              PeepalKraft is a direct intervention: placing craft earnings, bank 
               accounts, and market access directly in the hands of women 
               artisans in Ambala City who were previously invisible to the formal economy.
             </p>

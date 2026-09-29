@@ -78,7 +78,7 @@ export function Footer({
           {/* Col 1 & 2: Brand & Royal Postal Dispatch (The Way Email is Represented) */}
           <div className="lg:col-span-2 space-y-4">
             <span className="font-serif text-2xl font-semibold tracking-wider text-white">
-              PEEPALKRAT
+              PeepalKraft
             </span>
             <p className="text-[10px] tracking-[0.28em] uppercase text-[#DFBD69] font-cinzel font-bold -mt-2">
               Mewat & Haryana • Swadeshi Freedom Guild
@@ -216,7 +216,7 @@ export function Footer({
               </li>
               <li>
                 <span className="text-stone-300">Patron Care:</span>
-                <p className="text-[11px] text-stone-400 mt-0.5">hello@peepalkrat.com</p>
+                <p className="text-[11px] text-stone-400 mt-0.5">hello@PeepalKraft.com</p>
               </li>
               <li className="pt-1">
                 <span className="text-[#DFBD69] text-[11px]">Direct Bank Transfers Every Friday to Women Artisans</span>
@@ -228,7 +228,7 @@ export function Footer({
         {/* Bottom Bar: Copyright & Currencies */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-stone-500 space-y-4 md:space-y-0">
           <div>
-            © {new Date().getFullYear()} PeepalKrat Enterprise. 1857 Rebellion Lineage to 2026 Women's Sovereignty. Registered in Haryana, India.
+            © {new Date().getFullYear()} PeepalKraft Enterprise. 1857 Rebellion Lineage to 2026 Women's Sovereignty. Registered in Haryana, India.
           </div>
 
           <div className="flex items-center space-x-6">

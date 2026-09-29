@@ -9,11 +9,11 @@ import { CartDrawer } from "@/components/cart/cart-drawer";
 import { prisma } from "@/lib/db";
 
 export const metadata: Metadata = {
-  title: "PEEPALKRAT | Haryana Heritage Crafts & Women Artisan Commerce",
+  title: "PeepalKraft | Haryana Heritage Crafts & Women Artisan Commerce",
   description:
     "For the People. By the People. Discover premium handloom weaves, heirloom Phulkari textiles, wild Moonj grasscraft, and terracotta pottery crafted with dignity by women artisans across Haryana, India.",
   keywords: [
-    "PeepalKrat",
+    "PeepalKraft",
     "Haryana craft",
     "Panipat handloom",
     "Phulkari embroidery",
@@ -24,10 +24,10 @@ export const metadata: Metadata = {
     "Ethical luxury",
   ],
   openGraph: {
-    title: "PEEPALKRAT | Haryana Heritage Crafts & Women Artisan Commerce",
+    title: "PeepalKraft | Haryana Heritage Crafts & Women Artisan Commerce",
     description: "Every purchase carries a story. Direct artisan commerce from Haryana.",
-    url: "https://peepalkrat.com",
-    siteName: "PeepalKrat",
+    url: "https://PeepalKraft.com",
+    siteName: "PeepalKraft",
     type: "website",
   },
 };
