@@ -107,21 +107,26 @@ export function HeroSection({ data }: HeroSectionProps) {
               </div>
             </div>
 
-            {/* Primary headline */}
-            <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A] mb-6 relative">
-              {data?.title || (
-                <>
-                  Where every stitch funds a<br />
-                  <span className="relative inline-block">
-                    <span className="italic text-[#E87722] relative z-10">woman's independence.</span>
-                    {/* Hand-drawn underline SVG */}
-                    <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#F5C89A] z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
-                      <path d="M0,5 Q50,10 100,2" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
-                    </svg>
-                  </span>
-                </>
-              )}
-            </h1>
+            {/* Primary headline with Dual Language */}
+            <div className="mb-6 relative">
+              <div className="font-display text-xl text-[#E87722]/60 mb-2 tracking-wide">
+                महिला सशक्तिकरण • हरियाणा
+              </div>
+              <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A]">
+                {data?.title || (
+                  <>
+                    Where every stitch funds a<br />
+                    <span className="relative inline-block">
+                      <span className="italic text-[#E87722] relative z-10">woman's independence.</span>
+                      {/* Hand-drawn underline SVG */}
+                      <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#F5C89A] z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                        <path d="M0,5 Q50,10 100,2" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
+                      </svg>
+                    </span>
+                  </>
+                )}
+              </h1>
+            </div>
 
             <p className="text-[#555] text-base sm:text-lg font-light leading-relaxed max-w-lg mb-10">
               {data?.subtitle ||
@@ -204,6 +209,24 @@ export function HeroSection({ data }: HeroSectionProps) {
 
           {/* ════ RIGHT: Artisan Spotlight Panel (Image Dominant) ════ */}
           <div className="relative overflow-hidden min-h-[60vh] lg:min-h-0 order-1 lg:order-2 bg-[#1A1A1A]">
+            
+            {/* Spinning Block-Print Seal of Authenticity */}
+            <div className="absolute top-10 right-10 z-20 w-28 h-28 pointer-events-none select-none opacity-90 hidden sm:block">
+              <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow">
+                <path id="curve" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
+                <text className="font-sans text-[11.5px] uppercase tracking-[0.2em] fill-[#E87722] font-semibold">
+                  <textPath href="#curve" startOffset="0%">
+                    • 100% ARTISAN MADE • ZERO MIDDLEMEN
+                  </textPath>
+                </text>
+              </svg>
+              {/* Inner leaf icon */}
+              <div className="absolute inset-0 flex items-center justify-center">
+                <svg className="w-6 h-6 text-[#E87722]" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
+                </svg>
+              </div>
+            </div>
             {/* Background Image transitioning */}
             {ARTISAN_SPOTLIGHT.map((item, i) => (
               <div

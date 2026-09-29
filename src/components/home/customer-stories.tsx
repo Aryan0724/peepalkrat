@@ -41,6 +41,7 @@ export function CustomerStories() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center space-x-2 text-[12px] uppercase tracking-widest text-[#E87722] font-sans font-medium">
+            <span className="font-display text-[#E87722]/60 text-base lowercase mr-1 tracking-normal">दुनिया भर में</span>
             <span>Global Diaspora Feedback</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl text-[#1A1A1A] font-normal relative inline-block">

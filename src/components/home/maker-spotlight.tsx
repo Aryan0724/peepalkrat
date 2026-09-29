@@ -63,6 +63,7 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div className="relative">
             <span className="text-[12px] uppercase tracking-widest text-[#E87722] font-sans font-medium block mb-2">
+              <span className="font-display text-[#E87722]/60 text-base lowercase mr-2 tracking-normal">हमारी कारीगर</span>
               The Hands Behind the Craft
             </span>
             <h2 className="font-display text-3xl sm:text-4xl text-[#1A1A1A] font-normal">
