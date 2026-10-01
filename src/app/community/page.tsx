@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -21,7 +21,7 @@ const INITIAL_NOTES: CommunityNote[] = [
     senderName: "Ananya Roy",
     location: "London, UK",
     recipientArtisan: "Asmeena Begum (Nuh)",
-    message: "Dearest Asmeena ji, the Moonj grass basket arrived in London yesterday. It occupies pride of place in our home. To know that your daughterâ€™s college tuition is paid from your own hands makes it priceless. More power to you and your sisters.",
+    message: "Dearest Asmeena ji, the Moonj grass basket arrived in London yesterday. It occupies pride of place in our home. To know that your daughter’s college tuition is paid from your own hands makes it priceless. More power to you and your sisters.",
     date: "2 days ago",
   },
   {
@@ -29,7 +29,7 @@ const INITIAL_NOTES: CommunityNote[] = [
     senderName: "Siddharth & Meera Mehra",
     location: "New Delhi, India",
     recipientArtisan: "Parveena Khan (Taoru)",
-    message: "Parveena ji, the geometric Phulkari silk stole was a gift for my motherâ€™s 60th birthday. She was moved to tears by the signed artisan card. Thank you for preserving Haryanaâ€™s soul with so much dignity.",
+    message: "Parveena ji, the geometric Phulkari silk stole was a gift for my mother’s 60th birthday. She was moved to tears by the signed artisan card. Thank you for preserving Haryana’s soul with so much dignity.",
     date: "4 days ago",
   },
   {
@@ -54,7 +54,7 @@ export default function CommunityPage() {
   const [notes, setNotes] = useState<CommunityNote[]>(INITIAL_NOTES);
   const [senderName, setSenderName] = useState("");
   const [location, setLocation] = useState("");
-  const [recipientArtisan, setRecipientArtisan] = useState("All Ambala Women Makers");
+  const [recipientArtisan, setRecipientArtisan] = useState("All Mewat Women Makers");
   const [message, setMessage] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
@@ -80,27 +80,27 @@ export default function CommunityPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#E8D1A7] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Editorial Hero */}
       <div className="relative bg-[#1C1917] text-white py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-15">
           <Image
             src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=2000&q=80"
-            alt="Ambala women artisan collective"
+            alt="Mewat women artisan collective"
             fill
             className="object-cover"
           />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 text-[#84592B] text-xs uppercase tracking-[0.28em] font-semibold">
+          <div className="inline-flex items-center space-x-2 text-[#D4A338] text-xs uppercase tracking-[0.28em] font-semibold">
             <Sparkles className="w-4 h-4" />
-            <span>The Sisterhood of Ambala â€¢ à¤†à¤µà¤¾à¤œà¤¼-à¤-à¤®à¥‡à¤µà¤¾à¤¤</span>
+            <span>The Sisterhood of Mewat • आवाज़-ए-मेवात</span>
           </div>
           <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light leading-tight">
             Financial Freedom from the Soil of Haryana
           </h1>
           <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
-            In Ambala, a woman holding a bank passbook is not just a commercial event. It is a social revolution. Explore the real journeys of our artisan leaders and leave a personal message of gratitude.
+            In Mewat, a woman holding a bank passbook is not just a commercial event. It is a social revolution. Explore the real journeys of our artisan leaders and leave a personal message of gratitude.
           </p>
         </div>
       </div>
@@ -116,15 +116,15 @@ export default function CommunityPage() {
                 fill
                 className="object-cover"
               />
-              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#84592B] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
+              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#D4A338] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
                 Nuh Cluster
               </span>
             </div>
             <h3 className="font-serif text-xl font-medium text-charcoal">The Moonj Reed Revolution</h3>
             <p className="text-xs text-stone-600 leading-relaxed font-light">
-              Wild canal reeds (Moonj) that were previously burned or ignored are now transformed into museum-grade storage baskets by Asmeena Begumâ€™s 28-woman cooperative in Nuh.
+              Wild canal reeds (Moonj) that were previously burned or ignored are now transformed into museum-grade storage baskets by Asmeena Begum’s 28-woman cooperative in Nuh.
             </p>
-            <div className="pt-2 text-[11px] text-[#9D9167] font-semibold flex items-center space-x-1">
+            <div className="pt-2 text-[11px] text-[#4A6B52] font-semibold flex items-center space-x-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>100% of daughters enrolled in senior school</span>
             </div>
@@ -138,7 +138,7 @@ export default function CommunityPage() {
                 fill
                 className="object-cover"
               />
-              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#84592B] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
+              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#D4A338] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
                 Taoru Cluster
               </span>
             </div>
@@ -146,7 +146,7 @@ export default function CommunityPage() {
             <p className="text-xs text-stone-600 leading-relaxed font-light">
               In Taoru, Parveena Khan established an after-school Phulkari apprenticeship where adolescent girls earn direct stipends, giving them the agency to delay marriage until adulthood.
             </p>
-            <div className="pt-2 text-[11px] text-[#9D9167] font-semibold flex items-center space-x-1">
+            <div className="pt-2 text-[11px] text-[#4A6B52] font-semibold flex items-center space-x-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>35+ young women with personal savings</span>
             </div>
@@ -160,15 +160,15 @@ export default function CommunityPage() {
                 fill
                 className="object-cover"
               />
-              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#84592B] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
+              <span className="absolute bottom-2 left-2 bg-[#1C1917]/80 text-[#D4A338] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold">
                 Punhana Cluster
               </span>
             </div>
             <h3 className="font-serif text-xl font-medium text-charcoal">Solar Wheels & Clay Mastery</h3>
             <p className="text-xs text-stone-600 leading-relaxed font-light">
-              By replacing grueling manual foot-wheels with rooftop solar-powered potter wheels, Rukhsana Bano transformed Punhana into Haryanaâ€™s foremost female terracotta studio.
+              By replacing grueling manual foot-wheels with rooftop solar-powered potter wheels, Rukhsana Bano transformed Punhana into Haryana’s foremost female terracotta studio.
             </p>
-            <div className="pt-2 text-[11px] text-[#9D9167] font-semibold flex items-center space-x-1">
+            <div className="pt-2 text-[11px] text-[#4A6B52] font-semibold flex items-center space-x-1">
               <CheckCircle2 className="w-3.5 h-3.5" />
               <span>Zero-emission craft production</span>
             </div>
@@ -179,7 +179,7 @@ export default function CommunityPage() {
         <div className="bg-white rounded-sm border border-stone-200 p-8 sm:p-12 shadow-editorial space-y-10">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 border-b border-stone-200 pb-6">
             <div>
-              <span className="text-xs uppercase tracking-[0.25em] text-[#743014] font-semibold block mb-1">
+              <span className="text-xs uppercase tracking-[0.25em] text-[#B84824] font-semibold block mb-1">
                 Direct Patron Solidarity
               </span>
               <h2 className="font-serif text-2xl sm:text-3xl text-charcoal font-normal">
@@ -194,9 +194,9 @@ export default function CommunityPage() {
           {/* Form & Messages Grid */}
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-10">
             {/* Note Submission Form */}
-            <div className="bg-[#E8D1A7] p-6 rounded-sm border border-stone-200 space-y-4">
+            <div className="bg-[#FAF8F5] p-6 rounded-sm border border-stone-200 space-y-4">
               <div className="flex items-center space-x-2 text-xs font-semibold text-charcoal uppercase tracking-wider">
-                <Send className="w-4 h-4 text-[#743014]" />
+                <Send className="w-4 h-4 text-[#B84824]" />
                 <span>Write a Note to a Maker</span>
               </div>
 
@@ -216,7 +216,7 @@ export default function CommunityPage() {
                     value={senderName}
                     onChange={(e) => setSenderName(e.target.value)}
                     placeholder="e.g. Ananya Roy"
-                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#743014]"
+                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#B84824]"
                   />
                 </div>
 
@@ -227,7 +227,7 @@ export default function CommunityPage() {
                     value={location}
                     onChange={(e) => setLocation(e.target.value)}
                     placeholder="e.g. New Delhi or London"
-                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#743014]"
+                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#B84824]"
                   />
                 </div>
 
@@ -236,9 +236,9 @@ export default function CommunityPage() {
                   <select
                     value={recipientArtisan}
                     onChange={(e) => setRecipientArtisan(e.target.value)}
-                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#743014]"
+                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#B84824]"
                   >
-                    <option value="All Ambala Women Makers">All Ambala Women Makers</option>
+                    <option value="All Mewat Women Makers">All Mewat Women Makers</option>
                     <option value="Asmeena Begum (Nuh)">Asmeena Begum (Nuh)</option>
                     <option value="Parveena Khan (Taoru)">Parveena Khan (Taoru)</option>
                     <option value="Rukhsana Bano (Punhana)">Rukhsana Bano (Punhana)</option>
@@ -254,7 +254,7 @@ export default function CommunityPage() {
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     placeholder="Share how her piece brought warmth to your home and your appreciation for her craftsmanship..."
-                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#743014]"
+                    className="w-full p-2.5 bg-white border border-stone-300 rounded-sm focus:outline-none focus:border-[#B84824]"
                   />
                 </div>
 
@@ -270,17 +270,17 @@ export default function CommunityPage() {
                 {notes.map((note) => (
                   <div
                     key={note.id}
-                    className="bg-[#E8D1A7]/80 p-5 rounded-sm border border-stone-200/90 space-y-3 flex flex-col justify-between"
+                    className="bg-[#FAF8F5]/80 p-5 rounded-sm border border-stone-200/90 space-y-3 flex flex-col justify-between"
                   >
                     <div className="space-y-2">
                       <div className="flex items-center justify-between text-[10px] text-stone-400">
-                        <span className="font-semibold text-[#743014] bg-white px-2 py-0.5 rounded-full border border-stone-200">
+                        <span className="font-semibold text-[#B84824] bg-white px-2 py-0.5 rounded-full border border-stone-200">
                           To: {note.recipientArtisan}
                         </span>
                         <span>{note.date}</span>
                       </div>
                       <p className="text-xs text-charcoal/90 leading-relaxed font-light italic">
-                        â€œ{note.message}â€
+                        “{note.message}”
                       </p>
                     </div>
 
@@ -298,7 +298,7 @@ export default function CommunityPage() {
         {/* Call to Action */}
         <div className="text-center pt-6 space-y-4">
           <h3 className="font-serif text-2xl text-charcoal">
-            Participate in Ambala's Independence Movement
+            Participate in Mewat's Independence Movement
           </h3>
           <p className="text-xs text-stone-500 max-w-lg mx-auto">
             Every object in our collection carries living proof of rural women's dignity. Discover the catalog today.

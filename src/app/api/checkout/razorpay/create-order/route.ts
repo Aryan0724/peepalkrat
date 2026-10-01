@@ -1,4 +1,4 @@
-﻿import { NextRequest, NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { getRazorpayInstance } from "@/lib/payments/razorpay";
 
 export async function POST(req: NextRequest) {
@@ -15,7 +15,7 @@ export async function POST(req: NextRequest) {
     const keyId =
       process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ||
       process.env.RAZORPAY_KEY_ID ||
-      "rzp_test_PeepalKratAmbala";
+      "rzp_test_PeepalKratMewat";
 
     let razorpayOrderId = `order_${Date.now()}_${Math.random().toString(36).substring(7)}`;
 
@@ -27,7 +27,7 @@ export async function POST(req: NextRequest) {
           currency: currency.toUpperCase(),
           receipt: receipt || `rcpt_${Date.now()}`,
           notes: {
-            brand: "PeepalKrat Ambala",
+            brand: "PeepalKrat Mewat",
             initiative: "Haryana Women Artisans Financial Autonomy",
             ...(notes || {}),
           },

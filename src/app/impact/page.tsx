@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { Sparkles, ShieldCheck, Heart, Users, MapPin, Trees, Scale, ArrowRight } from "lucide-react";
@@ -41,7 +41,7 @@ export default async function ImpactPage() {
   const ecoPillar = contentBlocks["impact_eco_pillar"];
 
   return (
-    <div className="min-h-screen bg-[#E8D1A7] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Header */}
       <div className="bg-charcoal text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center">
         <div className="max-w-3xl mx-auto space-y-4">
@@ -171,7 +171,7 @@ export default async function ImpactPage() {
               </p>
             </div>
             <div className="bg-white p-6 border border-stone-200 rounded-sm space-y-2">
-              <h3 className="font-serif text-lg font-medium text-charcoal">Jhajjar & Ambala</h3>
+              <h3 className="font-serif text-lg font-medium text-charcoal">Jhajjar & Mewat</h3>
               <p className="text-xs text-stone-500">
                 16 grasscraft artisans harvesting wild canal Moonj and Sarkanda reeds. Zero-waste home storage, planters, and dining accessories.
               </p>

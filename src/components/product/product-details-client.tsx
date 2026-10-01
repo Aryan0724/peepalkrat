@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -155,7 +155,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
             >
               Crafted by {product.maker.name}
             </Link>
-            <span className="text-stone-300">â€¢</span>
+            <span className="text-stone-300">•</span>
             <span className="text-stone-500">{product.productionLocation || product.maker.villageDistrict}</span>
           </div>
         )}
@@ -166,7 +166,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
 
         <div className="flex items-center space-x-4 text-xs text-stone-500 pt-1">
           <span>SKU: {selectedVariant?.sku || product.sku}</span>
-          <span>â€¢</span>
+          <span>•</span>
           <span className="text-peepal-700 font-medium">100% Traceable Craft</span>
         </div>
       </div>
@@ -191,7 +191,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
       {/* Short Description */}
       {product.storySnippet && (
         <p className="text-sm text-stone-600 leading-relaxed italic border-l-2 border-terracotta-500 pl-4">
-          â€œ{product.storySnippet}â€
+          “{product.storySnippet}”
         </p>
       )}
 
@@ -339,7 +339,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
               href={`/makers/${product.maker.slug}`}
               className="text-terracotta-700 font-semibold hover:underline"
             >
-              View Maker Profile â†’
+              View Maker Profile →
             </Link>
           </div>
         </div>
@@ -398,7 +398,7 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
                 {r.title && <h4 className="font-semibold text-charcoal">{r.title}</h4>}
                 <p className="text-stone-600 leading-relaxed">{r.comment}</p>
                 <div className="text-[11px] text-stone-400 pt-1">
-                  â€” {r.customerName}
+                  — {r.customerName}
                 </div>
               </div>
             ))}
@@ -434,9 +434,9 @@ export function ProductDetailsClient({ product }: ProductDetailsClientProps) {
                   onChange={(e) => setReviewRating(Number(e.target.value))}
                   className="p-1.5 border border-stone-300 rounded-sm bg-white"
                 >
-                  <option value={5}>â­â­â­â­â­ (5/5)</option>
-                  <option value={4}>â­â­â­â­ (4/5)</option>
-                  <option value={3}>â­â­â­ (3/5)</option>
+                  <option value={5}>⭐⭐⭐⭐⭐ (5/5)</option>
+                  <option value={4}>⭐⭐⭐⭐ (4/5)</option>
+                  <option value={3}>⭐⭐⭐ (3/5)</option>
                 </select>
               </div>
               <div>

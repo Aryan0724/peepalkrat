@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -47,7 +47,7 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
   ];
 
   return (
-    <section className="py-24 bg-[#E8D1A7] relative overflow-hidden border-b border-black/8">
+    <section className="py-24 bg-[#FFFCF8] relative overflow-hidden border-b border-black/8">
       {/* Decorative illustration from iTokri uploaded by user */}
       <div className="absolute bottom-0 left-0 w-64 lg:w-96 aspect-square opacity-20 pointer-events-none hidden md:block">
         <Image
@@ -62,20 +62,20 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">
           <div className="relative">
-            <span className="text-[12px] uppercase tracking-widest text-[#743014] font-sans font-medium block mb-2">
-              <span className="font-display text-[#743014]/60 text-base lowercase mr-2 tracking-normal">à¤¹à¤®à¤¾à¤°à¥€ à¤•à¤¾à¤°à¥€à¤—à¤°</span>
+            <span className="text-[12px] uppercase tracking-widest text-[#E87722] font-sans font-medium block mb-2">
+              <span className="font-display text-[#E87722]/60 text-base lowercase mr-2 tracking-normal">हमारी कारीगर</span>
               The Hands Behind the Craft
             </span>
-            <h2 className="font-display text-3xl sm:text-4xl text-[#442D1C] font-normal">
+            <h2 className="font-display text-3xl sm:text-4xl text-[#1A1A1A] font-normal">
               Meet the Women of PeepalKraft
             </h2>
-            <div className="absolute -top-10 -right-24 transform rotate-[15deg] font-handwritten text-[#743014] text-2xl hidden md:block">
+            <div className="absolute -top-10 -right-24 transform rotate-[15deg] font-handwritten text-[#E87722] text-2xl hidden md:block">
               Our Heroes
             </div>
           </div>
           <Link
             href="/our-story"
-            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-[#442D1C] hover:text-[#743014] font-sans font-medium transition-colors group"
+            className="mt-4 md:mt-0 inline-flex items-center text-xs uppercase tracking-widest text-[#1A1A1A] hover:text-[#E87722] font-sans font-medium transition-colors group"
           >
             <span>View All Artisan Profiles</span>
             <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
@@ -87,10 +87,10 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
           {displayMakers.slice(0, 2).map((maker) => (
             <div
               key={maker.id}
-              className="bg-white p-4 rounded-sm shadow-sm border border-black/5 hover:border-[#743014]/30 transition-colors flex flex-col sm:flex-row gap-6 group"
+              className="bg-white p-4 rounded-sm shadow-sm border border-black/5 hover:border-[#E87722]/30 transition-colors flex flex-col sm:flex-row gap-6 group"
             >
               {/* Portrait */}
-              <div className="relative w-full sm:w-2/5 aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#9D9167] border-stitch">
+              <div className="relative w-full sm:w-2/5 aspect-[3/4] sm:aspect-auto overflow-hidden bg-[#F5F0E8] border-stitch">
                 <Image
                   src={maker.photo}
                   alt={maker.name}
@@ -102,14 +102,14 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
 
               {/* Info */}
               <div className="flex-1 flex flex-col justify-center py-2 sm:py-6 sm:pr-6">
-                <div className="font-sans text-[11px] text-[#743014] uppercase tracking-wider mb-2 font-medium">
+                <div className="font-sans text-[11px] text-[#E87722] uppercase tracking-wider mb-2 font-medium">
                   {maker.craftSkill}
                 </div>
-                <h3 className="font-display text-2xl text-[#442D1C] mb-2">
+                <h3 className="font-display text-2xl text-[#1A1A1A] mb-2">
                   {maker.name}
                 </h3>
                 <div className="flex items-center text-[12px] text-[#555] mb-4">
-                  <MapPin className="w-3.5 h-3.5 mr-1 text-[#743014]" />
+                  <MapPin className="w-3.5 h-3.5 mr-1 text-[#E87722]" />
                   {maker.villageDistrict}
                 </div>
                 <p className="text-sm text-[#555] font-light leading-relaxed mb-6">
@@ -117,7 +117,7 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
                 </p>
                 <Link
                   href={`/makers/${maker.slug}`}
-                  className="inline-flex items-center text-xs font-sans uppercase tracking-widest font-medium text-[#442D1C] hover:text-[#743014] transition-colors mt-auto"
+                  className="inline-flex items-center text-xs font-sans uppercase tracking-widest font-medium text-[#1A1A1A] hover:text-[#E87722] transition-colors mt-auto"
                 >
                   Read Story <ArrowRight className="w-3 h-3 ml-1" />
                 </Link>

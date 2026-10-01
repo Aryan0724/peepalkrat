@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin, Sparkles, Award } from "lucide-react";
@@ -46,7 +46,7 @@ export default async function MakersPage() {
   const heroBlock = contentBlocks["makers_hero"];
 
   return (
-    <div className="min-h-screen bg-[#E8D1A7] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Editorial Header */}
       <div className="bg-charcoal text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center">
         <div className="max-w-3xl mx-auto space-y-4">
@@ -120,7 +120,7 @@ export default async function MakersPage() {
 
                     {maker.quote && (
                       <blockquote className="mt-3 pl-3 border-l-2 border-terracotta-400 italic text-xs text-stone-500 line-clamp-2">
-                        â€œ{maker.quote}â€
+                        “{maker.quote}”
                       </blockquote>
                     )}
                   </div>

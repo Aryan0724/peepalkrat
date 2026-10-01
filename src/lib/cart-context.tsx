@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { createContext, useContext, useEffect, useState } from "react";
 import { CartItemModel, AppliedCoupon } from "@/types";
@@ -144,7 +144,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
       // Fallback local check for seeded coupons if offline
       if (cleanCode === "WELCOME10") {
         if (subtotal < 1500) {
-          return { success: false, message: "WELCOME10 requires a minimum order of â‚¹1,500." };
+          return { success: false, message: "WELCOME10 requires a minimum order of ₹1,500." };
         }
         setAppliedCoupon({
           code: "WELCOME10",
@@ -155,7 +155,7 @@ export function CartProvider({ children }: { children: React.ReactNode }) {
         return { success: true, message: "Coupon WELCOME10 applied! 10% off" };
       } else if (cleanCode === "HARYANAHERITAGE") {
         if (subtotal < 3500) {
-          return { success: false, message: "HARYANAHERITAGE requires minimum order of â‚¹3,500." };
+          return { success: false, message: "HARYANAHERITAGE requires minimum order of ₹3,500." };
         }
         setAppliedCoupon({
           code: "HARYANAHERITAGE",

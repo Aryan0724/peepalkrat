@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -56,7 +56,7 @@ export default function CartPage() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-[70vh] bg-[#E8D1A7] flex items-center justify-center py-20 px-4">
+      <div className="min-h-[70vh] bg-[#FAF8F5] flex items-center justify-center py-20 px-4">
         <div className="max-w-md w-full text-center space-y-4 bg-white p-10 rounded-sm border border-stone-200 shadow-card">
           <div className="w-16 h-16 rounded-full bg-sandstone flex items-center justify-center mx-auto text-stone-400">
             <ShoppingBag className="w-8 h-8 stroke-1" />
@@ -80,7 +80,7 @@ export default function CartPage() {
   }
 
   return (
-    <div className="min-h-screen bg-[#E8D1A7] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-10">
         <div className="flex items-center justify-between pb-6 mb-8 border-b border-stone-200">
           <div>

@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { Users, Mail, Phone, ShoppingBag } from "lucide-react";
 import { prisma } from "@/lib/db";
 import { formatPrice } from "@/lib/currency";
@@ -61,7 +61,7 @@ export default async function AdminCustomersPage() {
                     )}
                   </td>
                   <td className="py-3.5 px-4 text-stone-600">
-                    {address ? `${address.city}, ${address.state}` : "â€”"}
+                    {address ? `${address.city}, ${address.state}` : "—"}
                   </td>
                   <td className="py-3.5 px-4 font-semibold text-charcoal">
                     {c.ordersCount || c._count.orders} orders

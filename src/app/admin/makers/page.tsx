@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 import { Plus, MapPin, ExternalLink, Users } from "lucide-react";
@@ -93,7 +93,7 @@ export default async function AdminMakersPage() {
                         href={`/admin/makers/${m.id}`}
                         className="text-terracotta-700 hover:text-terracotta-900 font-semibold"
                       >
-                        Edit Profile â†’
+                        Edit Profile →
                       </Link>
                     </div>
                   </td>

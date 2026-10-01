@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import Link from "next/link";
 import {
   DollarSign,
@@ -174,7 +174,7 @@ export default async function AdminDashboardPage() {
             Order Fulfillment Pipeline Status
           </span>
           <Link href="/admin/orders" className="text-xs font-semibold text-terracotta-700 hover:text-terracotta-900">
-            Manage All Orders â†’
+            Manage All Orders →
           </Link>
         </div>
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 pt-1">
@@ -277,7 +277,7 @@ export default async function AdminDashboardPage() {
                         href={`/admin/orders/${order.id}`}
                         className="text-xs text-terracotta-700 hover:text-terracotta-900 font-semibold"
                       >
-                        Manage â†’
+                        Manage →
                       </Link>
                     </td>
                   </tr>
@@ -326,7 +326,7 @@ export default async function AdminDashboardPage() {
                 href="/admin/inventory"
                 className="text-xs text-terracotta-700 hover:text-terracotta-900 font-semibold block text-center"
               >
-                Go to Live Inventory Manager â†’
+                Go to Live Inventory Manager →
               </Link>
             </div>
           </div>

@@ -1,4 +1,4 @@
-﻿export interface PaymentIntentRequest {
+export interface PaymentIntentRequest {
   orderId: string;
   orderNumber: string;
   amount: number;

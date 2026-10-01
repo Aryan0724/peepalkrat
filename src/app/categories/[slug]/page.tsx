@@ -46,7 +46,7 @@ export default async function CategoryPage({ params }: CategoryPageProps) {
   if (!category) notFound();
 
   return (
-    <div className="min-h-screen bg-[#E8D1A7] pb-24">
+    <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Category Banner */}
       <div className="relative bg-charcoal text-white py-20 px-4 sm:px-6 lg:px-8 border-b border-stone-800">
         {category.image && (

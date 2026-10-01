@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { prisma } from "@/lib/db";
 import { ProductListClient } from "@/components/admin/product-list-client";
 

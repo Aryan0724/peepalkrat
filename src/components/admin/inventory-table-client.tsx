@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -76,8 +76,8 @@ export function InventoryTableClient({ initialProducts }: { initialProducts: Inv
                     </div>
                   </td>
                   <td className="py-3 px-4 font-mono text-[11px] text-stone-600">{p.sku}</td>
-                  <td className="py-3 px-4 text-stone-600">{p.category?.name || "â€”"}</td>
-                  <td className="py-3 px-4 text-terracotta-700">{p.maker?.name || "â€”"}</td>
+                  <td className="py-3 px-4 text-stone-600">{p.category?.name || "—"}</td>
+                  <td className="py-3 px-4 text-terracotta-700">{p.maker?.name || "—"}</td>
                   <td className="py-3 px-4 font-serif font-medium text-charcoal">{formatPrice(p.price, "INR")}</td>
                   <td className="py-3 px-4">
                     {p.inventory === 0 ? (

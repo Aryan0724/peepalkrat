@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -287,7 +287,7 @@ export function CartDrawer() {
               </div>
 
               <p className="text-[10px] text-center text-stone-400">
-                100% Secure Checkout â€¢ Plastic-Free Packaging â€¢ Direct Artisan Benefit
+                100% Secure Checkout • Plastic-Free Packaging • Direct Artisan Benefit
               </p>
             </div>
           )}

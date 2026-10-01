@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -76,7 +76,7 @@ export function OrderDetailClient({ order }: OrderDetailProps) {
               Order {order.orderNumber}
             </h1>
             <p className="text-xs text-stone-500">
-              Placed on {formatDate(order.createdAt)} â€¢ Via {order.paymentMethod}
+              Placed on {formatDate(order.createdAt)} • Via {order.paymentMethod}
             </p>
           </div>
         </div>

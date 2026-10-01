@@ -1,4 +1,4 @@
-﻿import React from "react";
+import React from "react";
 import { prisma } from "@/lib/db";
 import { CouponManagerClient } from "@/components/admin/coupon-manager-client";
 

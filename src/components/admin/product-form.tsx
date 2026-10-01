@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -345,7 +345,7 @@ export function ProductForm({
               onClick={() => setStatusMessage(null)}
               className="text-stone-400 hover:text-stone-600 font-bold"
             >
-              âœ•
+              ✕
             </button>
           </div>
         )}
@@ -460,7 +460,7 @@ export function ProductForm({
                       <option value="">-- Choose from Catalog ({availableForRec.length} available) --</option>
                       {availableForRec.map((p) => (
                         <option key={p.id} value={p.id}>
-                          {p.name} ({p.sku}) â€” {formatPrice(p.price, "INR")}
+                          {p.name} ({p.sku}) — {formatPrice(p.price, "INR")}
                         </option>
                       ))}
                     </select>
@@ -542,9 +542,9 @@ export function ProductForm({
                               </span>
                               <div className="flex items-center space-x-2 text-[10px] text-stone-500">
                                 <span className="font-serif font-medium text-terracotta-700">
-                                  {companion ? formatPrice(companion.price, "INR") : "â€”"}
+                                  {companion ? formatPrice(companion.price, "INR") : "—"}
                                 </span>
-                                <span>â€¢</span>
+                                <span>•</span>
                                 <span className="bg-mustard-50 text-mustard-900 border border-mustard-200 px-1.5 py-0.2 rounded-xs">
                                   {rec.note}
                                 </span>
@@ -730,7 +730,7 @@ export function ProductForm({
 
               <div className="space-y-3 text-xs">
                 <div>
-                  <label className="block text-stone-700 font-semibold mb-1">Selling Price (â‚¹) *</label>
+                  <label className="block text-stone-700 font-semibold mb-1">Selling Price (₹) *</label>
                   <input
                     type="number"
                     name="price"
@@ -745,7 +745,7 @@ export function ProductForm({
                 </div>
 
                 <div>
-                  <label className="block text-stone-700 font-semibold mb-1">Compare-at Price / MRP (â‚¹)</label>
+                  <label className="block text-stone-700 font-semibold mb-1">Compare-at Price / MRP (₹)</label>
                   <input
                     type="number"
                     name="compareAtPrice"
@@ -758,7 +758,7 @@ export function ProductForm({
                 </div>
 
                 <div>
-                  <label className="block text-stone-700 font-semibold mb-1">Artisan Cost Price (â‚¹)</label>
+                  <label className="block text-stone-700 font-semibold mb-1">Artisan Cost Price (₹)</label>
                   <input
                     type="number"
                     name="costPrice"

@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React from "react";
 import { Sparkles, Heart } from "lucide-react";
@@ -29,7 +29,7 @@ export function CartoonWomanAtLoom({ className = "w-64 h-64" }: { className?: st
             y1={64}
             x2={55 + i * 8}
             y2={215}
-            stroke="#84592B"
+            stroke="#DFBD69"
             strokeWidth="1.2"
             strokeOpacity="0.65"
           />
@@ -38,28 +38,28 @@ export function CartoonWomanAtLoom({ className = "w-64 h-64" }: { className?: st
         {/* Woven Fabric Section (Vibrant Terracotta, Pink & Saffron) */}
         <path
           d="M 50 140 Q 140 135 230 140 L 230 215 L 50 215 Z"
-          fill="#743014"
+          fill="#B84824"
         />
         <path
           d="M 50 165 Q 140 160 230 165 L 230 195 L 50 195 Z"
-          fill="#84592B"
+          fill="#DFBD69"
         />
         <path
           d="M 50 180 Q 140 178 230 180 L 230 190 L 50 190 Z"
-          fill="#442D1C"
+          fill="#0B132B"
         />
 
         {/* Traditional Geometric Phulkari diamond on fabric */}
-        <polygon points="140,150 152,165 140,180 128,165" fill="#E8D1A7" />
-        <polygon points="95,150 105,165 95,180 85,165" fill="#E8D1A7" />
-        <polygon points="185,150 195,165 185,180 175,165" fill="#E8D1A7" />
+        <polygon points="140,150 152,165 140,180 128,165" fill="#FAF6EE" />
+        <polygon points="95,150 105,165 95,180 85,165" fill="#FAF6EE" />
+        <polygon points="185,150 195,165 185,180 175,165" fill="#FAF6EE" />
 
         {/* Animated Moving Shuttle (Left to Right) */}
         <g className="animate-shuttle">
           <rect x="120" y="132" width="40" height="10" rx="5" fill="#D4AF37" stroke="#68140B" strokeWidth="1.5" />
-          <circle cx="140" cy="137" r="2.5" fill="#743014" />
+          <circle cx="140" cy="137" r="2.5" fill="#881C10" />
           {/* Thread trailing from shuttle */}
-          <path d="M 120 137 Q 100 135 80 138" stroke="#84592B" strokeWidth="1.5" strokeDasharray="2 2" fill="none" />
+          <path d="M 120 137 Q 100 135 80 138" stroke="#DFBD69" strokeWidth="1.5" strokeDasharray="2 2" fill="none" />
         </g>
 
         {/* Woman Artisan Character (Smiling, Colorful, Stylized Cartoon) */}
@@ -68,7 +68,7 @@ export function CartoonWomanAtLoom({ className = "w-64 h-64" }: { className?: st
           <path
             d="M 15 35 C 0 85, -15 150, -10 180 C 15 185, 85 185, 110 180 C 115 150, 100 85, 85 35 Z"
             fill="#E05638"
-            stroke="#84592B"
+            stroke="#DFBD69"
             strokeWidth="2"
           />
 
@@ -87,7 +87,7 @@ export function CartoonWomanAtLoom({ className = "w-64 h-64" }: { className?: st
           <path d="M 54 49 Q 58 53 62 49" stroke="#1C1917" strokeWidth="2" strokeLinecap="round" fill="none" />
 
           {/* Red Bindi & Nath (Nose Ring) */}
-          <circle cx="50" cy="44" r="2" fill="#743014" />
+          <circle cx="50" cy="44" r="2" fill="#881C10" />
           <circle cx="43" cy="54" r="2" fill="#D4AF37" stroke="#1C1917" strokeWidth="0.5" />
 
           {/* Rosy Cheeks */}
@@ -95,14 +95,14 @@ export function CartoonWomanAtLoom({ className = "w-64 h-64" }: { className?: st
           <circle cx="63" cy="56" r="3.5" fill="#FF8A80" opacity="0.6" />
 
           {/* Sweet Smile */}
-          <path d="M 44 58 Q 50 65 56 58" stroke="#743014" strokeWidth="2.2" strokeLinecap="round" fill="none" />
+          <path d="M 44 58 Q 50 65 56 58" stroke="#881C10" strokeWidth="2.2" strokeLinecap="round" fill="none" />
 
           {/* Kurti / Dress */}
-          <path d="M 28 75 C 35 68, 65 68, 72 75 L 85 140 L 15 140 Z" fill="#442D1C" />
+          <path d="M 28 75 C 35 68, 65 68, 72 75 L 85 140 L 15 140 Z" fill="#0B132B" />
 
           {/* Gold Necklace */}
-          <path d="M 38 74 Q 50 83 62 74" stroke="#84592B" strokeWidth="2.5" fill="none" />
-          <circle cx="50" cy="83" r="2" fill="#743014" />
+          <path d="M 38 74 Q 50 83 62 74" stroke="#DFBD69" strokeWidth="2.5" fill="none" />
+          <circle cx="50" cy="83" r="2" fill="#881C10" />
 
           {/* Arms reaching to Loom with colorful glass bangles */}
           {/* Left arm */}
@@ -135,7 +135,7 @@ export function CartoonWomanSpinningCharkha({ className = "w-64 h-64" }: { class
         className="w-full h-full drop-shadow-md"
       >
         {/* Ground Base / Mat */}
-        <ellipse cx="140" cy="225" rx="120" ry="16" fill="#F4ECE0" stroke="#84592B" strokeWidth="1" strokeDasharray="3 3" />
+        <ellipse cx="140" cy="225" rx="120" ry="16" fill="#F4ECE0" stroke="#DFBD69" strokeWidth="1" strokeDasharray="3 3" />
 
         {/* Charkha Wooden Stand */}
         <rect x="150" y="210" width="100" height="12" rx="3" fill="#8B4513" />
@@ -167,13 +167,13 @@ export function CartoonWomanSpinningCharkha({ className = "w-64 h-64" }: { class
 
             {/* Center Axle */}
             <circle cx="0" cy="0" r="8" fill="#D4AF37" stroke="#68140B" strokeWidth="1.5" />
-            <circle cx="0" cy="0" r="3" fill="#743014" />
+            <circle cx="0" cy="0" r="3" fill="#881C10" />
           </g>
         </g>
 
         {/* Spindle on left with Cotton Thread */}
         <rect x="156" y="152" width="16" height="8" rx="2" fill="#D4AF37" />
-        <line x1="164" y1="156" x2="225" y2="130" stroke="#E8D1A7" strokeWidth="2" strokeDasharray="3 2" />
+        <line x1="164" y1="156" x2="225" y2="130" stroke="#FAF6EE" strokeWidth="2" strokeDasharray="3 2" />
 
         {/* Woman Artisan Character Sitting Elegantly */}
         <g transform="translate(45, 50)">
@@ -181,7 +181,7 @@ export function CartoonWomanSpinningCharkha({ className = "w-64 h-64" }: { class
           <path
             d="M 25 35 C 0 80, -10 140, -5 170 C 15 175, 75 175, 95 170 C 105 140, 95 80, 75 35 Z"
             fill="#D4AF37"
-            stroke="#743014"
+            stroke="#B84824"
             strokeWidth="2"
           />
 
@@ -201,12 +201,12 @@ export function CartoonWomanSpinningCharkha({ className = "w-64 h-64" }: { class
           <circle cx="59" cy="49" r="0.8" fill="#FFFFFF" />
 
           {/* Bindi & Smile */}
-          <circle cx="52" cy="43" r="2" fill="#743014" />
-          <path d="M 46 59 Q 52 65 58 59" stroke="#743014" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <circle cx="52" cy="43" r="2" fill="#881C10" />
+          <path d="M 46 59 Q 52 65 58 59" stroke="#881C10" strokeWidth="2" strokeLinecap="round" fill="none" />
 
           {/* Teal & Gold Kurti */}
           <path d="M 32 74 C 40 68, 64 68, 72 74 L 85 145 L 20 145 Z" fill="#2E7D32" />
-          <path d="M 42 74 Q 52 82 62 74" stroke="#84592B" strokeWidth="2.5" fill="none" />
+          <path d="M 42 74 Q 52 82 62 74" stroke="#DFBD69" strokeWidth="2.5" fill="none" />
 
           {/* Hand turning Charkha Handle */}
           <path d="M 70 85 Q 105 100, 125 110" stroke="#F8CBA6" strokeWidth="7" strokeLinecap="round" fill="none" />
@@ -214,7 +214,7 @@ export function CartoonWomanSpinningCharkha({ className = "w-64 h-64" }: { class
 
           {/* Hand holding Raw Cotton Fluff */}
           <path d="M 35 90 Q 55 110, 75 115" stroke="#F8CBA6" strokeWidth="7" strokeLinecap="round" fill="none" />
-          <ellipse cx="75" cy="115" rx="7" ry="5" fill="#E8D1A7" />
+          <ellipse cx="75" cy="115" rx="7" ry="5" fill="#FAF6EE" />
         </g>
       </svg>
     </div>
@@ -235,50 +235,50 @@ export function CartoonWomanWithPassbook({ className = "w-64 h-64" }: { classNam
       >
         {/* Floating Celebratory Gold Coins */}
         <g className="animate-coin-rise" style={{ animationDelay: "0s" }}>
-          <circle cx="195" cy="50" r="10" fill="#84592B" stroke="#A67C2E" strokeWidth="1.5" />
-          <text x="195" y="54" fontSize="9" fontWeight="bold" textAnchor="middle" fill="#501007">â‚¹</text>
+          <circle cx="195" cy="50" r="10" fill="#DFBD69" stroke="#A67C2E" strokeWidth="1.5" />
+          <text x="195" y="54" fontSize="9" fontWeight="bold" textAnchor="middle" fill="#501007">₹</text>
         </g>
         <g className="animate-coin-rise" style={{ animationDelay: "0.8s" }}>
-          <circle cx="75" cy="40" r="8" fill="#84592B" stroke="#A67C2E" strokeWidth="1.5" />
+          <circle cx="75" cy="40" r="8" fill="#DFBD69" stroke="#A67C2E" strokeWidth="1.5" />
           <text x="75" y="43" fontSize="8" fontWeight="bold" textAnchor="middle" fill="#501007">$</text>
         </g>
         <g className="animate-coin-rise" style={{ animationDelay: "1.4s" }}>
-          <circle cx="215" cy="90" r="7" fill="#84592B" stroke="#A67C2E" strokeWidth="1" />
-          <text x="215" y="93" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#501007">Â£</text>
+          <circle cx="215" cy="90" r="7" fill="#DFBD69" stroke="#A67C2E" strokeWidth="1" />
+          <text x="215" y="93" fontSize="7" fontWeight="bold" textAnchor="middle" fill="#501007">£</text>
         </g>
 
         {/* Floating Stars */}
-        <path d="M 80 80 L 82 85 L 87 86 L 83 89 L 84 94 L 80 91 L 76 94 L 77 89 L 73 86 L 78 85 Z" fill="#84592B" className="animate-pulse" />
-        <path d="M 205 130 L 207 134 L 211 135 L 208 138 L 209 142 L 205 140 L 201 142 L 202 138 L 199 135 L 203 134 Z" fill="#84592B" className="animate-pulse" />
+        <path d="M 80 80 L 82 85 L 87 86 L 83 89 L 84 94 L 80 91 L 76 94 L 77 89 L 73 86 L 78 85 Z" fill="#DFBD69" className="animate-pulse" />
+        <path d="M 205 130 L 207 134 L 211 135 L 208 138 L 209 142 L 205 140 L 201 142 L 202 138 L 199 135 L 203 134 Z" fill="#DFBD69" className="animate-pulse" />
 
         {/* Empowered Woman Figure Standing Proudly */}
         <g transform="translate(90, 50)">
           {/* Royal Indigo Dupatta with Gold Polka Dots */}
           <path
             d="M 15 35 C -5 85, -15 155, -10 185 C 15 190, 85 190, 110 185 C 115 155, 105 85, 85 35 Z"
-            fill="#442D1C"
-            stroke="#84592B"
+            fill="#0B132B"
+            stroke="#DFBD69"
             strokeWidth="2"
           />
 
           {/* Dots on Dupatta */}
-          <circle cx="20" cy="90" r="2" fill="#84592B" />
-          <circle cx="35" cy="115" r="2" fill="#84592B" />
-          <circle cx="75" cy="100" r="2" fill="#84592B" />
-          <circle cx="85" cy="130" r="2" fill="#84592B" />
+          <circle cx="20" cy="90" r="2" fill="#DFBD69" />
+          <circle cx="35" cy="115" r="2" fill="#DFBD69" />
+          <circle cx="75" cy="100" r="2" fill="#DFBD69" />
+          <circle cx="85" cy="130" r="2" fill="#DFBD69" />
 
           {/* Hair & Top Bun */}
           <circle cx="50" cy="50" r="28" fill="#1C1917" />
           <circle cx="50" cy="22" r="12" fill="#1C1917" />
           {/* Hair Pin */}
-          <line x1="38" y1="20" x2="62" y2="24" stroke="#84592B" strokeWidth="2.5" strokeLinecap="round" />
+          <line x1="38" y1="20" x2="62" y2="24" stroke="#DFBD69" strokeWidth="2.5" strokeLinecap="round" />
 
           {/* Confident, Radiant Face */}
           <circle cx="50" cy="52" r="24" fill="#F8CBA6" />
 
           {/* Big Happy Smile showing confidence */}
-          <path d="M 42 58 Q 50 68 58 58 Z" fill="#FFFFFF" stroke="#743014" strokeWidth="1.5" />
-          <path d="M 42 58 Q 50 68 58 58" stroke="#743014" strokeWidth="2" strokeLinecap="round" fill="none" />
+          <path d="M 42 58 Q 50 68 58 58 Z" fill="#FFFFFF" stroke="#881C10" strokeWidth="1.5" />
+          <path d="M 42 58 Q 50 68 58 58" stroke="#881C10" strokeWidth="2" strokeLinecap="round" fill="none" />
 
           {/* Sparkling Joyful Eyes */}
           <ellipse cx="42" cy="48" rx="3" ry="3.5" fill="#1C1917" />
@@ -287,11 +287,11 @@ export function CartoonWomanWithPassbook({ className = "w-64 h-64" }: { classNam
           <circle cx="57" cy="47" r="1.2" fill="#FFFFFF" />
 
           {/* Vermilion Bindi */}
-          <circle cx="50" cy="41" r="2.5" fill="#743014" />
+          <circle cx="50" cy="41" r="2.5" fill="#881C10" />
 
           {/* Red & Gold Kurti */}
-          <path d="M 28 75 C 35 68, 65 68, 72 75 L 85 155 L 15 155 Z" fill="#743014" />
-          <path d="M 38 75 Q 50 84 62 75" stroke="#84592B" strokeWidth="2.5" fill="none" />
+          <path d="M 28 75 C 35 68, 65 68, 72 75 L 85 155 L 15 155 Z" fill="#881C10" />
+          <path d="M 38 75 Q 50 84 62 75" stroke="#DFBD69" strokeWidth="2.5" fill="none" />
 
           {/* Right Arm Raised Holding the Bank Passbook */}
           <path d="M 70 80 Q 95 60, 100 25" stroke="#F8CBA6" strokeWidth="8" strokeLinecap="round" fill="none" />
@@ -299,20 +299,20 @@ export function CartoonWomanWithPassbook({ className = "w-64 h-64" }: { classNam
           {/* Hand holding Passbook */}
           <circle cx="100" cy="24" r="5" fill="#F8CBA6" />
 
-          {/* The Bank Passbook ("Ambala WOMEN SHG â€¢ SBI / INDEPENDENCE") */}
+          {/* The Bank Passbook ("MEWAT WOMEN SHG • SBI / INDEPENDENCE") */}
           <g transform="translate(85, -5) rotate(12)">
-            <rect x="0" y="0" width="34" height="24" rx="3" fill="#1E88E5" stroke="#84592B" strokeWidth="1.5" />
+            <rect x="0" y="0" width="34" height="24" rx="3" fill="#1E88E5" stroke="#DFBD69" strokeWidth="1.5" />
             <rect x="3" y="3" width="28" height="6" fill="#0D47A1" />
-            <line x1="5" y1="13" x2="29" y2="13" stroke="#E8D1A7" strokeWidth="1.5" />
-            <line x1="5" y1="17" x2="23" y2="17" stroke="#84592B" strokeWidth="1.2" />
+            <line x1="5" y1="13" x2="29" y2="13" stroke="#FAF6EE" strokeWidth="1.5" />
+            <line x1="5" y1="17" x2="23" y2="17" stroke="#DFBD69" strokeWidth="1.2" />
             <text x="17" y="7.5" fontSize="4" fontWeight="bold" textAnchor="middle" fill="#FFFFFF">PASSBOOK</text>
           </g>
 
           {/* Left Hand on Hip (Posture of Strength) */}
           <path d="M 30 80 Q 5 95, 18 115" stroke="#F8CBA6" strokeWidth="8" strokeLinecap="round" fill="none" />
           {/* Colorful Bangles on wrists */}
-          <circle cx="16" cy="110" r="4" stroke="#84592B" strokeWidth="2" fill="none" />
-          <circle cx="98" cy="35" r="4" stroke="#84592B" strokeWidth="2" fill="none" />
+          <circle cx="16" cy="110" r="4" stroke="#DFBD69" strokeWidth="2" fill="none" />
+          <circle cx="98" cy="35" r="4" stroke="#DFBD69" strokeWidth="2" fill="none" />
         </g>
       </svg>
     </div>
@@ -326,15 +326,15 @@ export function AnimatedCartoonEmpowermentBackground() {
   return (
     <div className="absolute inset-0 pointer-events-none overflow-hidden opacity-40 select-none">
       {/* Soft animated gradient orbs */}
-      <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-[#84592B]/10 blur-3xl" />
-      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[#743014]/10 blur-3xl" />
+      <div className="absolute top-10 left-10 w-72 h-72 rounded-full bg-[#DFBD69]/10 blur-3xl" />
+      <div className="absolute bottom-10 right-10 w-96 h-96 rounded-full bg-[#881C10]/10 blur-3xl" />
 
       {/* Floating illustrated cartoon elements */}
       {/* Floating Cotton Bobbin Left */}
       <div className="absolute top-24 left-[4%] animate-float-slow hidden lg:block">
         <svg width="48" height="48" viewBox="0 0 60 60" fill="none">
-          <ellipse cx="30" cy="30" rx="18" ry="12" fill="#E8D1A7" stroke="#84592B" strokeWidth="2" />
-          <line x1="12" y1="30" x2="48" y2="30" stroke="#743014" strokeWidth="1.5" strokeDasharray="3 2" />
+          <ellipse cx="30" cy="30" rx="18" ry="12" fill="#FAF6EE" stroke="#DFBD69" strokeWidth="2" />
+          <line x1="12" y1="30" x2="48" y2="30" stroke="#881C10" strokeWidth="1.5" strokeDasharray="3 2" />
           <circle cx="30" cy="30" r="4" fill="#D4AF37" />
         </svg>
       </div>
@@ -346,7 +346,7 @@ export function AnimatedCartoonEmpowermentBackground() {
           <path d="M 35 25 C 38 18, 48 18, 50 25 C 52 35, 42 45, 35 52 Z" fill="#00838F" />
           {/* Animated Feather Eye */}
           <circle cx="43" cy="22" r="3" fill="#D4AF37" />
-          <circle cx="43" cy="22" r="1.5" fill="#442D1C" />
+          <circle cx="43" cy="22" r="1.5" fill="#0B132B" />
           {/* Feathers Fan */}
           <path d="M 25 45 C 10 35, 15 20, 28 28 Z" fill="#00ACC1" opacity="0.8" />
           <path d="M 20 50 C 5 45, 10 30, 24 38 Z" fill="#2E7D32" opacity="0.7" />

@@ -88,11 +88,11 @@ export function HeroSection({ data }: HeroSectionProps) {
   return (
     <>
       {/* â”€â”€ Announcement ticker â”€â”€ */}
-      <div className="bg-[#442D1C] text-white overflow-hidden">
+      <div className="bg-[#1A1A1A] text-white overflow-hidden">
         <div className="ticker-track py-2.5">
           {[...TRUST_TICKER, ...TRUST_TICKER].map((item, i) => (
             <span key={i} className="inline-flex items-center px-8 text-[11px] font-medium tracking-widest uppercase">
-              <span className="w-1 h-1 rounded-full bg-[#743014] mr-8 flex-shrink-0" />
+              <span className="w-1 h-1 rounded-full bg-[#E87722] mr-8 flex-shrink-0" />
               {item}
             </span>
           ))}
@@ -100,7 +100,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       </div>
 
       {/* â”€â”€ Main Hero â”€â”€ */}
-      <section className="w-full" style={{ background: "#E8D1A7" }}>
+      <section className="w-full" style={{ background: "#FFFCF8" }}>
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
 
           {/* â•â•â•â• LEFT: Content â•â•â•â• */}
@@ -108,29 +108,29 @@ export function HeroSection({ data }: HeroSectionProps) {
 
             {/* Craft origin tag with handwritten accent */}
             <div className="mb-6 relative inline-block">
-              <span className="section-label bg-[#743014]/10 text-[#743014] px-3 py-1 rounded-sm border border-[#743014]/20">
+              <span className="section-label bg-[#E87722]/10 text-[#E87722] px-3 py-1 rounded-sm border border-[#E87722]/20">
                 Handcrafted in Ambala City, Haryana
               </span>
-              <div className="absolute -top-5 -right-16 transform rotate-[15deg] font-handwritten text-2xl text-[#442D1C]">
+              <div className="absolute -top-5 -right-16 transform rotate-[15deg] font-handwritten text-2xl text-[#1A1A1A]">
                 100% Genuine
                 {/* Hand-drawn squiggly arrow */}
-                <svg className="w-8 h-8 absolute -bottom-4 -left-6 transform -rotate-45 text-[#442D1C]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
+                <svg className="w-8 h-8 absolute -bottom-4 -left-6 transform -rotate-45 text-[#1A1A1A]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 15l-2 5L9 9l11 4-5 2zm0 0l5 5M7.188 2.239l.777 2.897M5.136 7.965l-2.898-.777M13.95 4.05l-2.122 2.122m-5.657 5.656l-2.12 2.122"></path></svg>
               </div>
             </div>
 
             {/* Primary headline with Dual Language */}
             <div className="mb-6 relative">
-              <div className="font-display text-xl text-[#743014]/60 mb-2 tracking-wide">
+              <div className="font-display text-xl text-[#E87722]/60 mb-2 tracking-wide">
                 à¤®à¤¹à¤¿à¤²à¤¾ à¤¸à¤¶à¤•à¥à¤¤à¤¿à¤•à¤°à¤£ â€¢ à¤¹à¤°à¤¿à¤¯à¤¾à¤£à¤¾
               </div>
-              <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#442D1C]">
+              <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.8rem] leading-[1.06] text-[#1A1A1A]">
                 {data?.title || (
                   <>
                     Where every stitch funds a<br />
                     <span className="relative inline-block">
-                      <span className="italic text-[#743014] relative z-10">woman's independence.</span>
+                      <span className="italic text-[#E87722] relative z-10">woman's independence.</span>
                       {/* Hand-drawn underline SVG */}
-                      <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#E8D1A7] z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
+                      <svg className="absolute w-full h-3 -bottom-1 left-0 text-[#F5C89A] z-0" viewBox="0 0 100 10" preserveAspectRatio="none">
                         <path d="M0,5 Q50,10 100,2" stroke="currentColor" strokeWidth="3" fill="none" strokeLinecap="round" />
                       </svg>
                     </span>
@@ -153,7 +153,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                 { n: "72%", l: "To Artisan" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="font-display text-2xl sm:text-3xl text-[#442D1C]">{s.n}</div>
+                  <div className="font-display text-2xl sm:text-3xl text-[#1A1A1A]">{s.n}</div>
                   <div className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#888] mt-1">{s.l}</div>
                 </div>
               ))}
@@ -177,7 +177,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             {/* Email signup â€” credibility */}
             <div className="border-t border-black/8 pt-8">
               <div className="flex items-baseline gap-3 mb-3">
-                <p className="text-[13px] font-semibold text-[#442D1C] tracking-wide">
+                <p className="text-[13px] font-semibold text-[#1A1A1A] tracking-wide">
                   The Artisan Dispatch
                 </p>
                 <span className="text-[11px] text-[#888]">
@@ -219,13 +219,13 @@ export function HeroSection({ data }: HeroSectionProps) {
           </div>
 
           {/* â•â•â•â• RIGHT: Artisan Spotlight Panel (Image Dominant) â•â•â•â• */}
-          <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 order-2 bg-[#442D1C]">
+          <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 order-2 bg-[#1A1A1A]">
             
             {/* Spinning Block-Print Seal of Authenticity */}
             <div className="absolute top-10 right-10 z-20 w-28 h-28 pointer-events-none select-none opacity-90 hidden sm:block">
               <svg viewBox="0 0 100 100" className="w-full h-full animate-spin-slow">
                 <path id="curve" d="M 50,50 m -35,0 a 35,35 0 1,1 70,0 a 35,35 0 1,1 -70,0" fill="transparent" />
-                <text className="font-sans text-[11.5px] uppercase tracking-[0.2em] fill-[#743014] font-semibold">
+                <text className="font-sans text-[11.5px] uppercase tracking-[0.2em] fill-[#E87722] font-semibold">
                   <textPath href="#curve" startOffset="0%">
                     â€¢ 100% ARTISAN MADE â€¢ ZERO MIDDLEMEN
                   </textPath>
@@ -233,7 +233,7 @@ export function HeroSection({ data }: HeroSectionProps) {
               </svg>
               {/* Inner leaf icon */}
               <div className="absolute inset-0 flex items-center justify-center">
-                <svg className="w-6 h-6 text-[#743014]" fill="currentColor" viewBox="0 0 24 24">
+                <svg className="w-6 h-6 text-[#E87722]" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z" />
                 </svg>
               </div>
@@ -254,7 +254,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                   priority={i === 0}
                 />
                 {/* Gradient overlay to make text readable */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#442D1C] via-[#442D1C]/80 to-transparent" />
+                <div className="absolute inset-0 bg-gradient-to-t from-[#1A1A1A] via-[#1A1A1A]/80 to-transparent" />
               </div>
             ))}
 
@@ -276,7 +276,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                   <div className="flex items-center text-[13px] text-white/80">
                     <MapPin className="w-3.5 h-3.5 mr-1" /> {artisan.village}
                   </div>
-                  <div className="text-[13px] text-[#743014] font-medium tracking-wide uppercase mt-1">
+                  <div className="text-[13px] text-[#E87722] font-medium tracking-wide uppercase mt-1">
                     {artisan.craft}
                   </div>
                 </div>
@@ -286,10 +286,10 @@ export function HeroSection({ data }: HeroSectionProps) {
                   <div className="section-label mb-3 !text-white/70">Monthly Income Â· Before â†’ Now</div>
                   <div className="flex items-end gap-4">
                     <span className="font-display text-xl text-white/50 line-through">{artisan.incomeBefore}</span>
-                    <TrendingUp className="w-5 h-5 text-[#743014] mb-1 flex-shrink-0" />
+                    <TrendingUp className="w-5 h-5 text-[#E87722] mb-1 flex-shrink-0" />
                     <span className="font-display text-4xl text-white">{artisan.incomeAfter}</span>
                   </div>
-                  <div className="text-[11px] text-white/70 mt-3 font-medium tracking-widest uppercase border-l-2 border-[#743014] pl-3">
+                  <div className="text-[11px] text-white/70 mt-3 font-medium tracking-widest uppercase border-l-2 border-[#E87722] pl-3">
                     {artisan.years}
                   </div>
                 </div>

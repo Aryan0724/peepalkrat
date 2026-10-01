@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import React, { useState } from "react";
 import { Save, Check, Globe, Truck, Building2, CreditCard } from "lucide-react";
@@ -143,7 +143,7 @@ export function SettingsEditorClient({ initialSettings }: { initialSettings: Set
 
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           <div>
-            <label className="block text-stone-600 font-semibold mb-1">Free Shipping Minimum (â‚¹)</label>
+            <label className="block text-stone-600 font-semibold mb-1">Free Shipping Minimum (₹)</label>
             <input
               type="number"
               value={settings.free_shipping_threshold_inr || "2000"}
@@ -153,7 +153,7 @@ export function SettingsEditorClient({ initialSettings }: { initialSettings: Set
           </div>
 
           <div>
-            <label className="block text-stone-600 font-semibold mb-1">Standard Domestic Courier Fee (â‚¹)</label>
+            <label className="block text-stone-600 font-semibold mb-1">Standard Domestic Courier Fee (₹)</label>
             <input
               type="number"
               value={settings.standard_shipping_fee_inr || "150"}
@@ -163,7 +163,7 @@ export function SettingsEditorClient({ initialSettings }: { initialSettings: Set
           </div>
 
           <div>
-            <label className="block text-stone-600 font-semibold mb-1">Express Air Courier Fee (â‚¹)</label>
+            <label className="block text-stone-600 font-semibold mb-1">Express Air Courier Fee (₹)</label>
             <input
               type="number"
               value={settings.express_shipping_fee_inr || "250"}
@@ -196,7 +196,7 @@ export function SettingsEditorClient({ initialSettings }: { initialSettings: Set
           </div>
 
           <div>
-            <label className="block text-stone-600 font-semibold mb-1">EUR Rate (â‚¬)</label>
+            <label className="block text-stone-600 font-semibold mb-1">EUR Rate (€)</label>
             <input
               type="number"
               step="0.0001"
@@ -207,7 +207,7 @@ export function SettingsEditorClient({ initialSettings }: { initialSettings: Set
           </div>
 
           <div>
-            <label className="block text-stone-600 font-semibold mb-1">GBP Rate (Â£)</label>
+            <label className="block text-stone-600 font-semibold mb-1">GBP Rate (£)</label>
             <input
               type="number"
               step="0.0001"
