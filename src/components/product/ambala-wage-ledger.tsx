@@ -24,13 +24,13 @@ export function AmbalaWageLedger({
   const cooperativeReinvestment = Math.round(priceInr * 0.12);
 
   return (
-    <div className="bg-[#FAF8F5] border border-stone-200 rounded-sm overflow-hidden p-4 my-6 shadow-xs">
+    <div className="bg-[#E8D1A7] border border-stone-200 rounded-sm overflow-hidden p-4 my-6 shadow-xs">
       <button
         onClick={() => setIsOpen(!isOpen)}
         className="w-full flex items-center justify-between text-left focus:outline-none"
       >
         <div className="flex items-center space-x-2.5">
-          <div className="w-7 h-7 rounded-full bg-[#B84824]/10 text-[#B84824] flex items-center justify-center shrink-0">
+          <div className="w-7 h-7 rounded-full bg-[#743014]/10 text-[#743014] flex items-center justify-center shrink-0">
             <Scale className="w-3.5 h-3.5" />
           </div>
           <div>
@@ -60,14 +60,14 @@ export function AmbalaWageLedger({
           <div className="w-full h-4 rounded-xs overflow-hidden flex shadow-inner">
             <div
               style={{ width: "52%" }}
-              className="bg-[#B84824] flex items-center justify-center text-[9px] font-bold text-white tracking-wider"
+              className="bg-[#743014] flex items-center justify-center text-[9px] font-bold text-white tracking-wider"
               title="52% Direct Artisan Compensation"
             >
               52%
             </div>
             <div
               style={{ width: "20%" }}
-              className="bg-[#D4A338] flex items-center justify-center text-[9px] font-bold text-white tracking-wider"
+              className="bg-[#84592B] flex items-center justify-center text-[9px] font-bold text-white tracking-wider"
               title="20% Natural Raw Materials"
             >
               20%
@@ -92,7 +92,7 @@ export function AmbalaWageLedger({
           <div className="space-y-2 text-[11px]">
             <div className="flex items-center justify-between pb-1.5 border-b border-stone-200/60">
               <div className="flex items-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#B84824]" />
+                <span className="w-2 h-2 rounded-full bg-[#743014]" />
                 <span className="text-stone-700 font-medium">Direct Maker Wages (Personal Bank Passbook)</span>
               </div>
               <span className="font-semibold text-charcoal">{format(artisanWage)} (52%)</span>
@@ -100,7 +100,7 @@ export function AmbalaWageLedger({
 
             <div className="flex items-center justify-between pb-1.5 border-b border-stone-200/60">
               <div className="flex items-center space-x-1.5">
-                <span className="w-2 h-2 rounded-full bg-[#D4A338]" />
+                <span className="w-2 h-2 rounded-full bg-[#84592B]" />
                 <span className="text-stone-700 font-medium">Indigenous Haryana Raw Materials</span>
               </div>
               <span className="font-semibold text-charcoal">{format(rawMaterials)} (20%)</span>
@@ -126,10 +126,10 @@ export function AmbalaWageLedger({
           {/* Geographic Seal */}
           <div className="bg-white p-3 rounded-xs border border-stone-200 flex items-center justify-between text-[10px] text-stone-500">
             <div className="flex items-center space-x-1.5">
-              <MapPin className="w-3.5 h-3.5 text-[#B84824]" />
+              <MapPin className="w-3.5 h-3.5 text-[#743014]" />
               <span>Crafted in {originVillage}</span>
             </div>
-            <span className="text-[#4A6B52] font-semibold flex items-center space-x-1">
+            <span className="text-[#9D9167] font-semibold flex items-center space-x-1">
               <ShieldCheck className="w-3.5 h-3.5" />
               <span>Verified No-Middleman Living Wage</span>
             </span>

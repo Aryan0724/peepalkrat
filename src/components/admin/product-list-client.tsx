@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useMemo } from "react";
 import Link from "next/link";
@@ -157,7 +157,7 @@ export function ProductListClient({ initialProducts, categories }: ProductListCl
             onClick={() => setNotification(null)}
             className="text-stone-400 hover:text-stone-600 text-xs font-bold"
           >
-            ✕
+            âœ•
           </button>
         </div>
       )}
@@ -180,7 +180,7 @@ export function ProductListClient({ initialProducts, categories }: ProductListCl
                 onClick={() => setSearchQuery("")}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-xs text-stone-400 hover:text-stone-600"
               >
-                ✕
+                âœ•
               </button>
             )}
           </div>
@@ -322,12 +322,12 @@ export function ProductListClient({ initialProducts, categories }: ProductListCl
                         </div>
                       </td>
                       <td className="py-3 px-4 font-mono text-[11px] text-stone-600">{p.sku}</td>
-                      <td className="py-3 px-4 text-stone-600">{p.category?.name || "—"}</td>
+                      <td className="py-3 px-4 text-stone-600">{p.category?.name || "â€”"}</td>
                       <td className="py-3 px-4">
                         {p.maker ? (
                           <span className="text-terracotta-700 font-medium">{p.maker.name}</span>
                         ) : (
-                          <span className="text-stone-400">—</span>
+                          <span className="text-stone-400">â€”</span>
                         )}
                       </td>
                       <td className="py-3 px-4">

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { prisma } from "@/lib/db";
 import { SettingsEditorClient } from "@/components/admin/settings-editor-client";
 

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { prisma } from "@/lib/db";
 
 export async function GET(req: NextRequest) {
@@ -30,7 +30,7 @@ export async function GET(req: NextRequest) {
     return NextResponse.json(
       {
         success: false,
-        message: `This coupon requires a minimum order value of ₹${coupon.minOrderValue}.`,
+        message: `This coupon requires a minimum order value of â‚¹${coupon.minOrderValue}.`,
       },
       { status: 400 }
     );

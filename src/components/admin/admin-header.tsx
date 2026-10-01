@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -9,7 +9,7 @@ export function AdminHeader() {
     <header className="h-16 bg-white border-b border-stone-200 flex items-center justify-between px-8 shrink-0">
       <div className="flex items-center space-x-2 text-xs text-stone-500">
         <span className="w-2 h-2 rounded-full bg-emerald-500 inline-block" />
-        <span>Haryana Artisan Guild Network • All Systems Online</span>
+        <span>Haryana Artisan Guild Network â€¢ All Systems Online</span>
       </div>
 
       <div className="flex items-center space-x-6">

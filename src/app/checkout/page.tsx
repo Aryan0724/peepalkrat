@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { useRouter } from "next/navigation";
@@ -44,7 +44,7 @@ export default function CheckoutPage() {
 
   if (items.length === 0) {
     return (
-      <div className="min-h-[70vh] bg-[#FAF8F5] flex items-center justify-center p-4">
+      <div className="min-h-[70vh] bg-[#E8D1A7] flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white p-8 rounded-sm border border-stone-200 text-center space-y-4 shadow-card">
           <h2 className="font-serif text-2xl text-charcoal">No Items in Checkout</h2>
           <p className="text-xs text-stone-500">Your shopping bag is currently empty.</p>
@@ -140,11 +140,11 @@ export default function CheckoutPage() {
           const rzpData = await rzpOrderRes.json();
 
           const options = {
-            key: rzpData.keyId || "rzp_test_PeepalKratMewat",
+            key: rzpData.keyId || "rzp_test_PeepalKratAmbala",
             amount: rzpData.amount || Math.round(total * 100),
             currency: rzpData.currency || "INR",
-            name: "PeepalKrat Mewat",
-            description: `Order #${orderNumber} • Mewat Women Artisan Living Wage`,
+            name: "PeepalKrat Ambala",
+            description: `Order #${orderNumber} â€¢ Ambala Women Artisan Living Wage`,
             order_id: rzpData.orderId,
             handler: async function (response: any) {
               try {
@@ -170,7 +170,7 @@ export default function CheckoutPage() {
               contact: formData.phone,
             },
             theme: {
-              color: "#B84824",
+              color: "#743014",
             },
             modal: {
               ondismiss: function () {
@@ -203,7 +203,7 @@ export default function CheckoutPage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#E8D1A7] pb-24">
       {/* Checkout Minimal Header */}
       <div className="bg-white border-b border-stone-200 py-4 px-4 sm:px-6 lg:px-8">
         <div className="max-w-7xl mx-auto flex items-center justify-between">
@@ -302,7 +302,7 @@ export default function CheckoutPage() {
                       onChange={handleInputChange}
                       className="w-full p-2.5 border border-stone-300 rounded-sm bg-white focus:outline-none focus:border-terracotta-500"
                     >
-                      <option value="India">India (Complimentary on orders &gt; ₹2000)</option>
+                      <option value="India">India (Complimentary on orders &gt; â‚¹2000)</option>
                       <option value="United States">United States (DHL Express International)</option>
                       <option value="United Kingdom">United Kingdom (DHL Express International)</option>
                       <option value="Germany">Germany / EU (DHL Express International)</option>
@@ -419,7 +419,7 @@ export default function CheckoutPage() {
                   <label
                     className={`flex items-start p-4 border rounded-sm cursor-pointer transition-all ${
                       paymentMethod === "RAZORPAY"
-                        ? "border-[#B84824] bg-amber-50/40 ring-1 ring-[#B84824]"
+                        ? "border-[#743014] bg-amber-50/40 ring-1 ring-[#743014]"
                         : "border-stone-200 hover:border-stone-300"
                     }`}
                   >
@@ -434,14 +434,14 @@ export default function CheckoutPage() {
                     <div className="ml-3 flex-1">
                       <div className="flex items-center justify-between">
                         <span className="text-xs font-semibold text-charcoal">
-                          Razorpay • UPI (GPay, PhonePe, Paytm) / Cards / NetBanking
+                          Razorpay â€¢ UPI (GPay, PhonePe, Paytm) / Cards / NetBanking
                         </span>
                         <span className="text-[10px] bg-amber-100 text-amber-900 border border-amber-300 px-1.5 py-0.5 rounded font-semibold uppercase tracking-wider">
-                          Mewat Verified
+                          Ambala Verified
                         </span>
                       </div>
                       <p className="text-[11px] text-stone-600 mt-1">
-                        Zero convenience fee. Direct bank settlement honoring living wages for Mewat craftswomen.
+                        Zero convenience fee. Direct bank settlement honoring living wages for Ambala craftswomen.
                       </p>
                       <div className="flex flex-wrap items-center gap-1.5 mt-2 pt-2 border-t border-amber-200/50 text-[10px] text-stone-500">
                         <span className="font-semibold text-charcoal">Accepted:</span>
@@ -470,7 +470,7 @@ export default function CheckoutPage() {
                     />
                     <div className="ml-3">
                       <span className="text-xs font-semibold text-charcoal">
-                        Stripe Global • International Visa, MasterCard, Amex (USD / EUR / GBP)
+                        Stripe Global â€¢ International Visa, MasterCard, Amex (USD / EUR / GBP)
                       </span>
                       <p className="text-[11px] text-stone-500 mt-0.5">
                         Automatic currency conversion with 3D Secure fraud shielding.

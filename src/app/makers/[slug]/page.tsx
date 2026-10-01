@@ -48,7 +48,7 @@ export default async function MakerDetailPage({ params }: MakerDetailProps) {
   } catch {}
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#E8D1A7] pb-24">
       {/* Back Link */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8">
         <Link

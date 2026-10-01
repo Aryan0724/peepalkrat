@@ -1,4 +1,4 @@
-import { CurrencyCode, CurrencyConfig } from "@/types";
+﻿import { CurrencyCode, CurrencyConfig } from "@/types";
 
 export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   USD: {
@@ -9,13 +9,13 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   },
   GBP: {
     code: "GBP",
-    symbol: "£",
+    symbol: "Â£",
     name: "British Pound (United Kingdom)",
     rateAgainstINR: 0.0094,
   },
   EUR: {
     code: "EUR",
-    symbol: "€",
+    symbol: "â‚¬",
     name: "Euro (Europe)",
     rateAgainstINR: 0.011,
   },
@@ -33,7 +33,7 @@ export const CURRENCIES: Record<CurrencyCode, CurrencyConfig> = {
   },
   INR: {
     code: "INR",
-    symbol: "₹",
+    symbol: "â‚¹",
     name: "Indian Rupee (India)",
     rateAgainstINR: 1.0,
   },
@@ -51,13 +51,13 @@ export function formatPrice(amountInINR: number, targetCurrency: CurrencyCode = 
   const converted = convertFromINR(amountInINR, targetCurrency);
 
   if (targetCurrency === "INR") {
-    return `₹${Math.round(converted).toLocaleString("en-IN")}`;
+    return `â‚¹${Math.round(converted).toLocaleString("en-IN")}`;
   } else if (targetCurrency === "USD") {
     return `$${converted.toFixed(2)}`;
   } else if (targetCurrency === "GBP") {
-    return `£${converted.toFixed(2)}`;
+    return `Â£${converted.toFixed(2)}`;
   } else if (targetCurrency === "EUR") {
-    return `€${converted.toFixed(2)}`;
+    return `â‚¬${converted.toFixed(2)}`;
   } else if (targetCurrency === "CAD") {
     return `CA$${converted.toFixed(2)}`;
   } else if (targetCurrency === "AUD") {

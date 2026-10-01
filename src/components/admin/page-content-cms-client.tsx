@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Link from "next/link";
@@ -202,7 +202,7 @@ export function PageContentCmsClient({ initialBlocks }: { initialBlocks: Content
             onClick={() => setNotification(null)}
             className="text-stone-400 hover:text-stone-600 font-bold ml-4"
           >
-            ✕
+            âœ•
           </button>
         </div>
       )}
@@ -394,7 +394,7 @@ export function PageContentCmsClient({ initialBlocks }: { initialBlocks: Content
                     <span>Storefront Rendering</span>
                   </div>
 
-                  <div className="p-4 rounded-xs border border-stone-200 bg-[#FAF8F5] space-y-1.5">
+                  <div className="p-4 rounded-xs border border-stone-200 bg-[#E8D1A7] space-y-1.5">
                     {block.subtitle && (
                       <span className="text-[10px] uppercase tracking-[0.2em] font-semibold text-terracotta-700 block">
                         {block.subtitle}
@@ -412,7 +412,7 @@ export function PageContentCmsClient({ initialBlocks }: { initialBlocks: Content
                     )}
                     {block.linkUrl && (
                       <span className="text-[11px] font-semibold text-charcoal underline block pt-1">
-                        Link: {block.linkUrl} →
+                        Link: {block.linkUrl} â†’
                       </span>
                     )}
                   </div>

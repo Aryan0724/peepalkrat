@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Link from "next/link";
 import { ShoppingBag, Eye, Truck, CheckCircle2, Clock, XCircle } from "lucide-react";
 import { prisma } from "@/lib/db";
@@ -168,7 +168,7 @@ export default async function AdminOrdersPage({
                         href={`/admin/orders/${order.id}`}
                         className="text-xs text-terracotta-700 hover:text-terracotta-900 font-semibold"
                       >
-                        View & Fulfill →
+                        View & Fulfill â†’
                       </Link>
                     </td>
                   </tr>

@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, MapPin } from "lucide-react";
@@ -14,10 +14,10 @@ export function OurWorkshopSection() {
           
           {/* Left: Images */}
           <div className="relative">
-            <div className="absolute -top-6 -left-4 font-handwritten text-[#E87722] text-2xl transform -rotate-6 z-20 bg-white/80 px-2">
+            <div className="absolute -top-6 -left-4 font-handwritten text-[#743014] text-2xl transform -rotate-6 z-20 bg-white/80 px-2">
               Our Ambala City home
             </div>
-            <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] relative w-full lg:w-11/12 overflow-hidden bg-[#F5F0E8] border-stitch p-2">
+            <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] relative w-full lg:w-11/12 overflow-hidden bg-[#9D9167] border-stitch p-2">
               <div className="relative w-full h-full">
                 <Image 
                   src="/peepalkraft/store/storefront-1.jpg"
@@ -44,14 +44,14 @@ export function OurWorkshopSection() {
 
           {/* Right: Content */}
           <div className="flex flex-col justify-center">
-            <div className="flex items-center space-x-2 text-[#E87722] mb-6">
+            <div className="flex items-center space-x-2 text-[#743014] mb-6">
               <MapPin className="w-4 h-4" />
               <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em]">
                 Visit Our Physical Store
               </span>
             </div>
             
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] leading-[1.1] mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#442D1C] leading-[1.1] mb-6">
               From our Ambala City workshop to the world.
             </h2>
             

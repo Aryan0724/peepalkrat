@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, useMemo, useRef } from "react";
 import Image from "next/image";
@@ -265,7 +265,7 @@ export function ShopCatalogClient({
             <div
               className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
                 selectedCategory === "all"
-                  ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105"
+                  ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#E8D1A7] scale-105"
                   : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
               }`}
             >
@@ -316,7 +316,7 @@ export function ShopCatalogClient({
                   <div
                     className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
                       isSelected
-                        ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105 shadow-sm"
+                        ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#E8D1A7] scale-105 shadow-sm"
                         : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
                     }`}
                   >

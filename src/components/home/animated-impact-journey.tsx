@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -16,7 +16,7 @@ export function AnimatedImpactJourney() {
       title: "Hand-Crafted with Dignity",
       subtitle: "The Loom, Wheel & Charkha",
       description:
-        "In the villages of Nuh, Taoru & Panipat, 142+ women spin Desi cotton and plait wild Moonj grass. No automated mills—every thread carries human patience and ancestral Haryana skill.",
+        "In the villages of Nuh, Taoru & Panipat, 142+ women spin Desi cotton and plait wild Moonj grass. No automated millsâ€”every thread carries human patience and ancestral Haryana skill.",
       component: <CartoonWomanSpinningCharkha className="w-48 h-48 mx-auto" />,
       badge: "100% Hand-Crafted",
     },
@@ -34,14 +34,14 @@ export function AnimatedImpactJourney() {
       title: "Express to Your Overseas Home",
       subtitle: "Insured Pan-World Transit",
       description:
-        "Carefully wrapped in unbleached cotton pouches and biodegradable corrugated boxes. Flown via DHL Express to USA, UK, Canada & 45+ countries within 3–5 days with customs pre-cleared.",
+        "Carefully wrapped in unbleached cotton pouches and biodegradable corrugated boxes. Flown via DHL Express to USA, UK, Canada & 45+ countries within 3â€“5 days with customs pre-cleared.",
       component: <CartoonWomanAtLoom className="w-48 h-48 mx-auto" />,
-      badge: "DHL 3–5 Days Worldwide",
+      badge: "DHL 3â€“5 Days Worldwide",
     },
   ];
 
   return (
-    <section className="py-20 bg-[#FAF6EE] text-[#0B132B] relative overflow-hidden border-b border-[#EAE0CE]">
+    <section className="py-20 bg-[#E8D1A7] text-[#442D1C] relative overflow-hidden border-b border-[#EAE0CE]">
       {/* Background jaali pattern */}
       <div className="absolute inset-0 pattern-jaali opacity-25 pointer-events-none" />
 
@@ -49,17 +49,17 @@ export function AnimatedImpactJourney() {
         
         {/* Section Header */}
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-[#C8A253]/50 text-xs text-[#881C10] font-cinzel font-semibold uppercase tracking-[0.2em] shadow-xs">
+          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-[#C8A253]/50 text-xs text-[#743014] font-cinzel font-semibold uppercase tracking-[0.2em] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A253]" />
-            <span>The Empowerment Continuum • स्वावलंबन यात्रा</span>
+            <span>The Empowerment Continuum â€¢ à¤¸à¥à¤µà¤¾à¤µà¤²à¤‚à¤¬à¤¨ à¤¯à¤¾à¤¤à¥à¤°à¤¾</span>
           </div>
 
-          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#0B132B] leading-tight">
+          <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#442D1C] leading-tight">
             How Your Diaspora Purchase Creates Rural Independence
           </h2>
 
-          <p className="font-cormorant italic text-lg sm:text-xl text-[#881C10] font-light">
-            “From a quiet village courtyard in Mewat to your dining table abroad.”
+          <p className="font-cormorant italic text-lg sm:text-xl text-[#743014] font-light">
+            â€œFrom a quiet village courtyard in Ambala to your dining table abroad.â€
           </p>
 
           <p className="text-stone-600 text-xs sm:text-sm font-light leading-relaxed max-w-2xl mx-auto">
@@ -77,16 +77,16 @@ export function AnimatedImpactJourney() {
               <div>
                 {/* Step Header */}
                 <div className="flex items-center justify-between pb-3 border-b border-stone-100">
-                  <span className="font-cinzel text-xl font-bold text-[#DFBD69]">
+                  <span className="font-cinzel text-xl font-bold text-[#84592B]">
                     {s.step}
                   </span>
-                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-cinzel font-semibold bg-[#FAF6EE] text-[#881C10] border border-[#C8A253]/40 uppercase tracking-wider">
+                  <span className="px-2.5 py-0.5 rounded-full text-[10px] font-cinzel font-semibold bg-[#E8D1A7] text-[#743014] border border-[#C8A253]/40 uppercase tracking-wider">
                     {s.badge}
                   </span>
                 </div>
 
                 {/* Animated Cartoon Illustration */}
-                <div className="py-4 my-2 bg-[#FAF6EE]/50 rounded-xs flex items-center justify-center border border-[#EAE0CE]/60">
+                <div className="py-4 my-2 bg-[#E8D1A7]/50 rounded-xs flex items-center justify-center border border-[#EAE0CE]/60">
                   {s.component}
                 </div>
 
@@ -95,7 +95,7 @@ export function AnimatedImpactJourney() {
                   <span className="text-[10px] uppercase font-cinzel font-semibold tracking-wider text-[#C8A253] block">
                     {s.subtitle}
                   </span>
-                  <h3 className="font-serif text-xl font-medium text-[#0B132B] group-hover:text-[#881C10] transition-colors">
+                  <h3 className="font-serif text-xl font-medium text-[#442D1C] group-hover:text-[#743014] transition-colors">
                     {s.title}
                   </h3>
                   <p className="text-xs text-stone-600 font-light leading-relaxed pt-1">
@@ -117,9 +117,9 @@ export function AnimatedImpactJourney() {
         <div className="text-center pt-2">
           <Link
             href="/impact"
-            className="inline-flex items-center text-xs uppercase tracking-[0.2em] font-cinzel font-semibold text-[#881C10] hover:text-[#0B132B] transition-colors group"
+            className="inline-flex items-center text-xs uppercase tracking-[0.2em] font-cinzel font-semibold text-[#743014] hover:text-[#442D1C] transition-colors group"
           >
-            <span>View The Complete Mewat Living Wage Ledger</span>
+            <span>View The Complete Ambala Living Wage Ledger</span>
             <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
           </Link>
         </div>

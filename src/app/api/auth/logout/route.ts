@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import { getSessionCookieOptions } from "@/lib/auth";
 
 export async function POST(req: NextRequest) {

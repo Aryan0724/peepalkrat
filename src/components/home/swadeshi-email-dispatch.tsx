@@ -25,7 +25,7 @@ export function SwadeshiEmailDispatch() {
   };
 
   return (
-    <section className="relative w-full border-b border-black/10 overflow-hidden bg-[#F5F0E8]">
+    <section className="relative w-full border-b border-black/10 overflow-hidden bg-[#9D9167]">
       
       {/* Hand-drawn village landscape banner */}
       <div className="relative w-full h-[300px] md:h-[400px] lg:h-[450px]">
@@ -37,18 +37,18 @@ export function SwadeshiEmailDispatch() {
           sizes="100vw"
         />
         {/* Soft fade at the top to blend with any text if needed */}
-        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#F5F0E8] to-transparent" />
+        <div className="absolute inset-x-0 top-0 h-32 bg-gradient-to-b from-[#9D9167] to-transparent" />
       </div>
 
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 -mt-20 md:-mt-32 pb-20">
-        <div className="bg-[#FFFCF8] p-8 sm:p-12 rounded-sm border-stitch shadow-2xl relative">
+        <div className="bg-[#E8D1A7] p-8 sm:p-12 rounded-sm border-stitch shadow-2xl relative">
           
           <div className="flex flex-col items-center text-center space-y-4">
-            <div className="font-handwritten text-3xl text-[#E87722] transform -rotate-3">
+            <div className="font-handwritten text-3xl text-[#743014] transform -rotate-3">
               Join the PeepalKraft Parivar
             </div>
             
-            <h3 className="font-display text-2xl sm:text-3xl text-[#1A1A1A] max-w-xl">
+            <h3 className="font-display text-2xl sm:text-3xl text-[#442D1C] max-w-xl">
               Get hand-drawn tales of craft, exclusive artisan drops, and village stories.
             </h3>
             
@@ -57,8 +57,8 @@ export function SwadeshiEmailDispatch() {
             </p>
 
             {isSubmitted ? (
-              <div className="p-4 bg-[#E87722]/10 border border-stitch rounded-sm flex items-center space-x-3 text-[#1A1A1A] animate-fade-in w-full max-w-md">
-                <CheckCircle2 className="w-5 h-5 text-[#E87722]" />
+              <div className="p-4 bg-[#743014]/10 border border-stitch rounded-sm flex items-center space-x-3 text-[#442D1C] animate-fade-in w-full max-w-md">
+                <CheckCircle2 className="w-5 h-5 text-[#743014]" />
                 <div className="text-left">
                   <h4 className="font-sans font-medium text-sm">Welcome to the family!</h4>
                   <p className="text-xs text-[#555] mt-0.5">Your first letter arrives soon.</p>
@@ -74,9 +74,9 @@ export function SwadeshiEmailDispatch() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email..."
-                      className="w-full px-4 py-3 bg-white border border-[#E87722]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#E87722] font-sans transition-colors rounded-sm"
+                      className="w-full px-4 py-3 bg-white border border-[#743014]/30 text-[#442D1C] text-sm focus:outline-none focus:border-[#743014] font-sans transition-colors rounded-sm"
                     />
-                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#E87722]/50" />
+                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#743014]/50" />
                   </div>
 
                   <button

@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Image from "next/image";
@@ -17,11 +17,11 @@ interface ArtisanVoice {
   slug: string;
 }
 
-const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
+const Ambala_ARTISAN_VOICES: ArtisanVoice[] = [
   {
     name: "Asmeena Begum",
     role: "President, Nuh Women's Moonj Cooperative",
-    cluster: "Nuh, Mewat, Haryana",
+    cluster: "Nuh, Ambala, Haryana",
     photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
     quote: "Before the loom, my voice was confined to the four walls of the courtyard. Today, my elder daughter is pursuing her B.Ed in Gurugram, funded entirely from my own bank passbook.",
     impactStory: "Led 28 women in Nuh to harvest wild canal reeds and build an independent bank balance.",
@@ -32,7 +32,7 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
   {
     name: "Parveena Khan",
     role: "Master Needlework Artisan",
-    cluster: "Taoru, Mewat, Haryana",
+    cluster: "Taoru, Ambala, Haryana",
     photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
     quote: "Our Phulkari needles do not merely stitch flowers on unbleached silk. They stitch our autonomy. Every Rupee I earn stays in my control, deciding our home's nutrition and healthcare.",
     impactStory: "Trains teenage village girls in traditional counted-thread embroidery to prevent early forced marriages.",
@@ -43,7 +43,7 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
   {
     name: "Rukhsana Bano",
     role: "Studio Potter & Kiln Lead",
-    cluster: "Punhana, Mewat, Haryana",
+    cluster: "Punhana, Ambala, Haryana",
     photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
     quote: "For decades, men owned the clay carts while women prepared the silt in secret. Today, our earthenware carries my stamped seal. In Punhana, women are recognized as masters of commerce.",
     impactStory: "Installed solar-powered potter wheels in Punhana village, tripling daily income.",
@@ -54,7 +54,7 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
   {
     name: "Shakila Bibi",
     role: "Handloom Dhurrie Weaver",
-    cluster: "Ferozepur Jhirka, Mewat, Haryana",
+    cluster: "Ferozepur Jhirka, Ambala, Haryana",
     photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
     quote: "We formed our collective so no predatory middleman could take our margin. 72% of what a customer in Delhi or London pays arrives straight into our hands.",
     impactStory: "Coordinates 18 pit-looms weaving upcycled zero-waste cotton dhurries.",
@@ -64,27 +64,27 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
   },
 ];
 
-export function MewatVoicesSection() {
+export function AmbalaVoicesSection() {
   return (
-    <section className="py-24 bg-[#FAF8F5] relative overflow-hidden border-b border-stone-200">
+    <section className="py-24 bg-[#E8D1A7] relative overflow-hidden border-b border-stone-200">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
-          <div className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.28em] text-[#B84824] font-semibold">
+          <div className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.28em] text-[#743014] font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>The Sisterhood of Mewat • नारी शक्ति</span>
+            <span>The Sisterhood of Ambala â€¢ à¤¨à¤¾à¤°à¥€ à¤¶à¤•à¥à¤¤à¤¿</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal leading-tight">
             Voices of Financial Independence
           </h2>
           <p className="text-stone-600 text-xs sm:text-sm font-light leading-relaxed">
-            Behind every stitch, coil, and brass bell is an Indian woman who chose resilience over submission. Meet the artisans of Mewat transforming rural Haryana through dignified craft entrepreneurship.
+            Behind every stitch, coil, and brass bell is an Indian woman who chose resilience over submission. Meet the artisans of Ambala transforming rural Haryana through dignified craft entrepreneurship.
           </p>
         </div>
 
         {/* 4 Editorial Voice Cards */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {MEWAT_ARTISAN_VOICES.map((artisan, index) => (
+          {Ambala_ARTISAN_VOICES.map((artisan, index) => (
             <div
               key={index}
               className="bg-white border border-stone-200 rounded-sm overflow-hidden flex flex-col justify-between shadow-card hover:shadow-editorial hover:-translate-y-1 transition-all duration-300 group"
@@ -99,8 +99,8 @@ export function MewatVoicesSection() {
                   className="object-cover transition-transform duration-700 group-hover:scale-105"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-transparent" />
-                <div className="absolute top-3 left-3 bg-[#1C1917]/80 text-[#D4A338] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold backdrop-blur-xs flex items-center space-x-1">
-                  <MapPin className="w-3 h-3 text-[#D4A338]" />
+                <div className="absolute top-3 left-3 bg-[#1C1917]/80 text-[#84592B] text-[9px] uppercase tracking-wider px-2 py-0.5 rounded-xs font-semibold backdrop-blur-xs flex items-center space-x-1">
+                  <MapPin className="w-3 h-3 text-[#84592B]" />
                   <span>{artisan.cluster.split(",")[0]}</span>
                 </div>
                 <div className="absolute bottom-3 left-3 right-3 text-white">
@@ -112,9 +112,9 @@ export function MewatVoicesSection() {
               {/* Quote & Impact Body */}
               <div className="p-5 flex-1 flex flex-col justify-between space-y-4">
                 <div className="space-y-3">
-                  <div className="relative pl-3 border-l-2 border-[#B84824]">
+                  <div className="relative pl-3 border-l-2 border-[#743014]">
                     <p className="font-serif italic text-xs text-charcoal/90 leading-relaxed font-light">
-                      “{artisan.quote}”
+                      â€œ{artisan.quote}â€
                     </p>
                   </div>
 
@@ -130,14 +130,14 @@ export function MewatVoicesSection() {
 
                 {/* Footer Impact Badge & Link */}
                 <div className="pt-3 border-t border-stone-100 flex items-center justify-between">
-                  <span className="inline-flex items-center text-[10px] font-semibold text-[#4A6B52] bg-emerald-50 px-2 py-0.5 rounded-full">
+                  <span className="inline-flex items-center text-[10px] font-semibold text-[#9D9167] bg-emerald-50 px-2 py-0.5 rounded-full">
                     <CheckCircle2 className="w-3 h-3 mr-1" />
                     <span>{artisan.daughtersSupported}</span>
                   </span>
 
                   <Link
                     href={`/makers/${artisan.slug}`}
-                    className="text-xs font-semibold text-[#B84824] hover:text-[#9A381C] flex items-center group-hover:translate-x-0.5 transition-transform"
+                    className="text-xs font-semibold text-[#743014] hover:text-[#743014] flex items-center group-hover:translate-x-0.5 transition-transform"
                   >
                     <span>Pieces</span>
                     <ArrowRight className="w-3.5 h-3.5 ml-1" />
@@ -152,9 +152,9 @@ export function MewatVoicesSection() {
         <div className="mt-14 text-center">
           <Link
             href="/community"
-            className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-[#B84824] hover:text-[#9A381C] border-b-2 border-[#B84824] pb-1 hover:border-[#9A381C] transition-colors"
+            className="inline-flex items-center space-x-2 text-xs font-semibold uppercase tracking-widest text-[#743014] hover:text-[#743014] border-b-2 border-[#743014] pb-1 hover:border-[#743014] transition-colors"
           >
-            <span>Read Full Mewat Sisterhood Journal & Leave a Note of Gratitude</span>
+            <span>Read Full Ambala Sisterhood Journal & Leave a Note of Gratitude</span>
             <ArrowRight className="w-3.5 h-3.5 ml-1" />
           </Link>
         </div>

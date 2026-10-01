@@ -1,4 +1,4 @@
-import React, { Suspense } from "react";
+﻿import React, { Suspense } from "react";
 import { prisma } from "@/lib/db";
 import { ShopCatalogClient } from "@/components/shop/shop-catalog-client";
 
@@ -54,7 +54,7 @@ export default async function ShopPage({
   }
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5]">
+    <div className="min-h-screen bg-[#E8D1A7]">
       <Suspense fallback={<div className="py-20 text-center text-sm text-stone-500">Loading catalog...</div>}>
         <ShopCatalogClient
           products={products as any}

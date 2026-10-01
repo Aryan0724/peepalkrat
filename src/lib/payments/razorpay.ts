@@ -1,13 +1,13 @@
-import Razorpay from "razorpay";
+﻿import Razorpay from "razorpay";
 
 export const getRazorpayInstance = () => {
   const keyId =
     process.env.RAZORPAY_KEY_ID ||
     process.env.NEXT_PUBLIC_RAZORPAY_KEY_ID ||
-    "rzp_test_PeepalKratMewat";
+    "rzp_test_PeepalKratAmbala";
   const keySecret =
     process.env.RAZORPAY_KEY_SECRET ||
-    "rzp_test_PeepalKratMewatSecret2026";
+    "rzp_test_PeepalKratAmbalaSecret2026";
 
   if (!keyId || !keySecret) {
     return null;

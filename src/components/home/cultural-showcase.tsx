@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React from "react";
 import Link from "next/link";
@@ -22,7 +22,7 @@ export function CulturalShowcase() {
       link: "/collections/festive-phulkari",
     },
     {
-      region: "Jhajjar & Mewat",
+      region: "Jhajjar & Ambala",
       title: "Wild Moonj Grasscraft",
       description: "Sculptural, water-resilient home vessels hand-plaited from wild seasonal canal-bank reeds.",
       image: "https://images.unsplash.com/photo-1590736704728-f4730bb30770?auto=format&fit=crop&w=600&q=80",
@@ -38,21 +38,21 @@ export function CulturalShowcase() {
   ];
 
   return (
-    <section className="py-24 bg-[#0B132B] text-white relative overflow-hidden border-b border-[#C8A253]/30">
+    <section className="py-24 bg-[#442D1C] text-white relative overflow-hidden border-b border-[#C8A253]/30">
       {/* Subtle decorative weave pattern */}
       <div className="absolute inset-0 opacity-10 pointer-events-none pattern-weave" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="max-w-3xl mb-16">
-          <div className="inline-flex items-center space-x-2 text-[#DFBD69] text-[11px] uppercase tracking-[0.25em] font-cinzel font-semibold mb-3">
-            <Compass className="w-4 h-4 text-[#DFBD69]" />
-            <span>स्वाधीनता एवं शिल्प भूगोल • Cultural Provenance</span>
+          <div className="inline-flex items-center space-x-2 text-[#84592B] text-[11px] uppercase tracking-[0.25em] font-cinzel font-semibold mb-3">
+            <Compass className="w-4 h-4 text-[#84592B]" />
+            <span>à¤¸à¥à¤µà¤¾à¤§à¥€à¤¨à¤¤à¤¾ à¤à¤µà¤‚ à¤¶à¤¿à¤²à¥à¤ª à¤­à¥‚à¤—à¥‹à¤² â€¢ Cultural Provenance</span>
           </div>
-          <h2 className="font-serif text-3xl sm:text-5xl font-light leading-tight text-[#FAF6EE]">
+          <h2 className="font-serif text-3xl sm:text-5xl font-light leading-tight text-[#E8D1A7]">
             The Living Craft Geography of Haryana
           </h2>
           <p className="mt-4 text-stone-300 text-sm leading-relaxed font-light">
-            From the 1857 resistance strongholds of Rewari and Mewat to the ancient pit-looms of Panipat—each district represents a living lineage of Swadeshi craftsmanship.
+            From the 1857 resistance strongholds of Rewari and Ambala to the ancient pit-looms of Panipatâ€”each district represents a living lineage of Swadeshi craftsmanship.
           </p>
         </div>
 

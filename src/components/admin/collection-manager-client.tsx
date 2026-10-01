@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -150,7 +150,7 @@ export function CollectionManagerClient({
                   </div>
                 </td>
                 <td className="py-3.5 px-4 font-mono text-[11px] text-stone-500">/{col.slug}</td>
-                <td className="py-3.5 px-4 text-stone-600 max-w-sm truncate">{col.description || "—"}</td>
+                <td className="py-3.5 px-4 text-stone-600 max-w-sm truncate">{col.description || "â€”"}</td>
                 <td className="py-3.5 px-4 font-medium text-charcoal">{col._count.products} pcs</td>
                 <td className="py-3.5 px-4">
                   {col.isFeatured ? (

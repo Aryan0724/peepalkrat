@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import Image from "next/image";
@@ -76,7 +76,7 @@ export function ProductCard({ product }: ProductCardProps) {
       {/* Product Image Frame */}
       <Link
         href={`/products/${product.slug}`}
-        className="relative block aspect-[3/4] w-full overflow-hidden bg-[#F5F0E8] mb-4"
+        className="relative block aspect-[3/4] w-full overflow-hidden bg-[#9D9167] mb-4"
       >
         <Image
           src={primaryImage}
@@ -89,16 +89,16 @@ export function ProductCard({ product }: ProductCardProps) {
         {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {discountPercent && (
-            <Badge className="bg-[#E87722] hover:bg-[#E87722] text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5">
+            <Badge className="bg-[#743014] hover:bg-[#743014] text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5">
               -{discountPercent}%
             </Badge>
           )}
           {isOutOfStock ? (
-            <Badge className="bg-[#1A1A1A]/80 hover:bg-[#1A1A1A]/80 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
+            <Badge className="bg-[#442D1C]/80 hover:bg-[#442D1C]/80 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
               Sold Out
             </Badge>
           ) : isLowStock ? (
-            <Badge className="bg-[#E87722]/90 hover:bg-[#E87722]/90 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
+            <Badge className="bg-[#743014]/90 hover:bg-[#743014]/90 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
               Only {inventory} Left
             </Badge>
           ) : null}
@@ -114,7 +114,7 @@ export function ProductCard({ product }: ProductCardProps) {
         >
           <Heart
             className={`w-4 h-4 transition-colors ${
-              isWishlisted ? "fill-[#E87722] text-[#E87722]" : "text-[#1A1A1A]"
+              isWishlisted ? "fill-[#743014] text-[#743014]" : "text-[#442D1C]"
             }`}
           />
         </button>
@@ -127,8 +127,8 @@ export function ProductCard({ product }: ProductCardProps) {
               disabled={isAdded}
               className={`w-full py-2.5 px-4 text-xs font-sans font-medium uppercase tracking-wider transition-colors flex items-center justify-center ${
                 isAdded
-                  ? "bg-[#1A1A1A] text-white"
-                  : "bg-white/95 hover:bg-white text-[#1A1A1A] shadow-sm backdrop-blur-md"
+                  ? "bg-[#442D1C] text-white"
+                  : "bg-white/95 hover:bg-white text-[#442D1C] shadow-sm backdrop-blur-md"
               }`}
             >
               {isAdded ? (
@@ -154,15 +154,15 @@ export function ProductCard({ product }: ProductCardProps) {
                 {product.maker.name}
               </p>
             )}
-            <Link href={`/products/${product.slug}`} className="group-hover:text-[#E87722] transition-colors">
-              <h3 className="font-sans text-[13px] text-[#1A1A1A] leading-snug line-clamp-2">
+            <Link href={`/products/${product.slug}`} className="group-hover:text-[#743014] transition-colors">
+              <h3 className="font-sans text-[13px] text-[#442D1C] leading-snug line-clamp-2">
                 {product.name}
               </h3>
             </Link>
           </div>
           
           <div className="text-right flex-shrink-0">
-            <div className="font-display text-[15px] text-[#1A1A1A]">
+            <div className="font-display text-[15px] text-[#442D1C]">
               {format(product.price)}
             </div>
             {product.compareAtPrice && product.compareAtPrice > product.price && (

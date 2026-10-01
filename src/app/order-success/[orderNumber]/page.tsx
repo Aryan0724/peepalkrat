@@ -28,7 +28,7 @@ export default async function OrderSuccessPage({ params }: OrderSuccessProps) {
   if (!order) notFound();
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#E8D1A7] pb-24">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 pt-12">
         {/* Success Header Banner */}
         <div className="bg-white rounded-sm border border-stone-200 p-8 sm:p-12 text-center shadow-card space-y-4">

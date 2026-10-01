@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useRef } from "react";
 import Link from "next/link";
@@ -41,12 +41,12 @@ export function CircularCategoryStrip({
   if (!categories || categories.length === 0) return null;
 
   return (
-    <section className="relative w-full bg-[#FFFCF8] py-12 border-b border-black/8 overflow-hidden">
+    <section className="relative w-full bg-[#E8D1A7] py-12 border-b border-black/8 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-8">
           <div>
-            <h2 className="font-display text-2xl sm:text-3xl text-[#1A1A1A] tracking-tight">
+            <h2 className="font-display text-2xl sm:text-3xl text-[#442D1C] tracking-tight">
               {title}
             </h2>
             <div className="text-[12px] font-sans text-[#555] mt-1 tracking-wide uppercase">
@@ -59,14 +59,14 @@ export function CircularCategoryStrip({
             <button
               onClick={() => scroll("left")}
               aria-label="Scroll left"
-              className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#1A1A1A] hover:border-[#E87722] hover:text-[#E87722] transition-colors bg-white shadow-sm"
+              className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#442D1C] hover:border-[#743014] hover:text-[#743014] transition-colors bg-white shadow-sm"
             >
               <ChevronLeft className="w-4 h-4" />
             </button>
             <button
               onClick={() => scroll("right")}
               aria-label="Scroll right"
-              className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#1A1A1A] hover:border-[#E87722] hover:text-[#E87722] transition-colors bg-white shadow-sm"
+              className="w-8 h-8 rounded-full border border-black/10 flex items-center justify-center text-[#442D1C] hover:border-[#743014] hover:text-[#743014] transition-colors bg-white shadow-sm"
             >
               <ChevronRight className="w-4 h-4" />
             </button>
@@ -96,11 +96,11 @@ export function CircularCategoryStrip({
                     <div
                       className={`w-[90px] h-[90px] rounded-full p-[2px] transition-all duration-300 ${
                         isActive
-                          ? "bg-[#E87722]"
-                          : "bg-transparent group-hover:bg-[#E87722]/30"
+                          ? "bg-[#743014]"
+                          : "bg-transparent group-hover:bg-[#743014]/30"
                       }`}
                     >
-                      <div className="w-full h-full rounded-full overflow-hidden bg-[#F5F0E8] relative">
+                      <div className="w-full h-full rounded-full overflow-hidden bg-[#9D9167] relative">
                         {cat.image ? (
                           <Image
                             src={cat.image}
@@ -110,12 +110,12 @@ export function CircularCategoryStrip({
                             className="object-cover transition-transform duration-500 group-hover:scale-110"
                           />
                         ) : (
-                          <div className="w-full h-full flex items-center justify-center text-xl font-display text-[#1A1A1A]">
+                          <div className="w-full h-full flex items-center justify-center text-xl font-display text-[#442D1C]">
                             {cat.name.charAt(0)}
                           </div>
                         )}
                         {/* Soft overlay on hover */}
-                        <div className="absolute inset-0 bg-[#E87722]/0 group-hover:bg-[#E87722]/10 transition-colors duration-300" />
+                        <div className="absolute inset-0 bg-[#743014]/0 group-hover:bg-[#743014]/10 transition-colors duration-300" />
                       </div>
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export function CircularCategoryStrip({
                   <div className="mt-3 w-full">
                     <h3
                       className={`text-[12px] font-sans font-medium leading-tight transition-colors line-clamp-2 ${
-                        isActive ? "text-[#E87722]" : "text-[#1A1A1A] group-hover:text-[#E87722]"
+                        isActive ? "text-[#743014]" : "text-[#442D1C] group-hover:text-[#743014]"
                       }`}
                     >
                       {cat.name}

@@ -1,4 +1,4 @@
-import { NextRequest, NextResponse } from "next/server";
+﻿import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
 import { prisma } from "@/lib/db";
 
@@ -12,7 +12,7 @@ export async function POST(req: NextRequest) {
     } = await req.json();
 
     const secret =
-      process.env.RAZORPAY_KEY_SECRET || "rzp_test_PeepalKratMewatSecret2026";
+      process.env.RAZORPAY_KEY_SECRET || "rzp_test_PeepalKratAmbalaSecret2026";
 
     let isValid = false;
     if (razorpay_signature && secret && razorpay_order_id && razorpay_payment_id) {
@@ -44,7 +44,7 @@ export async function POST(req: NextRequest) {
       verified: isValid,
       paymentId: razorpay_payment_id,
       message: isValid
-        ? "Payment verified successfully. Wages allocated to Mewat women artisans."
+        ? "Payment verified successfully. Wages allocated to Ambala women artisans."
         : "Payment verification could not be validated.",
     });
   } catch (error: any) {

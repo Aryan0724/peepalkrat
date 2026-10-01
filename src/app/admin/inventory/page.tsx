@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import { prisma } from "@/lib/db";
 import { InventoryTableClient } from "@/components/admin/inventory-table-client";
 

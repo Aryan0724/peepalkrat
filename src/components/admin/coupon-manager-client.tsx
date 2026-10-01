@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState } from "react";
 import { Plus, Tag, Check, X } from "lucide-react";
@@ -114,7 +114,7 @@ export function CouponManagerClient({ initialCoupons }: { initialCoupons: Coupon
                 className="w-full p-2.5 border border-stone-300 rounded-sm bg-white"
               >
                 <option value="PERCENTAGE">Percentage (%)</option>
-                <option value="FIXED">Fixed Amount (₹)</option>
+                <option value="FIXED">Fixed Amount (â‚¹)</option>
               </select>
             </div>
             <div>
@@ -124,12 +124,12 @@ export function CouponManagerClient({ initialCoupons }: { initialCoupons: Coupon
                 required
                 value={discountValue}
                 onChange={(e) => setDiscountValue(e.target.value)}
-                placeholder={discountType === "PERCENTAGE" ? "e.g. 15 (for 15%)" : "e.g. 500 (for ₹500)"}
+                placeholder={discountType === "PERCENTAGE" ? "e.g. 15 (for 15%)" : "e.g. 500 (for â‚¹500)"}
                 className="w-full p-2.5 border border-stone-300 rounded-sm bg-white"
               />
             </div>
             <div>
-              <label className="block text-stone-600 mb-1 font-semibold">Minimum Order Value (₹)</label>
+              <label className="block text-stone-600 mb-1 font-semibold">Minimum Order Value (â‚¹)</label>
               <input
                 type="number"
                 value={minOrderValue}
@@ -144,7 +144,7 @@ export function CouponManagerClient({ initialCoupons }: { initialCoupons: Coupon
                 type="text"
                 value={description}
                 onChange={(e) => setDescription(e.target.value)}
-                placeholder="e.g. 15% off on all festive orders above ₹2,500"
+                placeholder="e.g. 15% off on all festive orders above â‚¹2,500"
                 className="w-full p-2.5 border border-stone-300 rounded-sm bg-white"
               />
             </div>
@@ -172,10 +172,10 @@ export function CouponManagerClient({ initialCoupons }: { initialCoupons: Coupon
               <tr key={c.id} className="hover:bg-sandstone/20 transition-colors">
                 <td className="py-3.5 px-4 font-mono font-bold text-charcoal">{c.code}</td>
                 <td className="py-3.5 px-4 font-semibold text-terracotta-700">
-                  {c.discountType === "PERCENTAGE" ? `${c.discountValue}%` : `₹${c.discountValue}`}
+                  {c.discountType === "PERCENTAGE" ? `${c.discountValue}%` : `â‚¹${c.discountValue}`}
                 </td>
                 <td className="py-3.5 px-4 text-stone-600">{formatPrice(c.minOrderValue, "INR")}</td>
-                <td className="py-3.5 px-4 text-stone-600">{c.description || "—"}</td>
+                <td className="py-3.5 px-4 text-stone-600">{c.description || "â€”"}</td>
                 <td className="py-3.5 px-4 font-medium text-charcoal">{c.usageCount} times</td>
                 <td className="py-3.5 px-4 text-right">
                   <button

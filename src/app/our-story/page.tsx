@@ -1,4 +1,4 @@
-import React from "react";
+﻿import React from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Sparkles, Compass, ShieldCheck, Heart } from "lucide-react";
@@ -9,7 +9,7 @@ import { prisma } from "@/lib/db";
 export const metadata = {
   title: "Our Story & Origins | PeepalKrat",
   description:
-    "The journey of PeepalKrat — rooted in the villages of Haryana, building a modern cultural commerce brand where women artisans are the foundation, not the marketing.",
+    "The journey of PeepalKrat â€” rooted in the villages of Haryana, building a modern cultural commerce brand where women artisans are the foundation, not the marketing.",
 };
 
 export const revalidate = 60;
@@ -33,7 +33,7 @@ export default async function OurStoryPage() {
   const heritageBlock = contentBlocks["story_heritage"];
 
   return (
-    <div className="min-h-screen bg-[#FAF8F5] pb-24">
+    <div className="min-h-screen bg-[#E8D1A7] pb-24">
       {/* Editorial Hero */}
       <div className="relative bg-charcoal text-white py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center overflow-hidden">
         <div className="absolute inset-0 opacity-20">
@@ -61,7 +61,7 @@ export default async function OurStoryPage() {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 space-y-16">
         <div className="space-y-6 text-stone-700 font-light leading-relaxed text-base sm:text-lg">
           <span className="text-xs uppercase tracking-widest text-terracotta-700 font-semibold block">
-            {wageBlock?.subtitle || "Chapter I — Beyond the Donation Basket"}
+            {wageBlock?.subtitle || "Chapter I â€” Beyond the Donation Basket"}
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal leading-snug">
             {wageBlock?.title || "Commerce with Dignity, Not Guilt-Driven Charity"}
@@ -77,26 +77,26 @@ export default async function OurStoryPage() {
         {/* Full Width Quote Frame */}
         <div className="bg-sandstone/60 p-8 sm:p-12 border-l-4 border-terracotta-600 rounded-r-sm space-y-3">
           <p className="font-serif italic text-xl sm:text-2xl text-charcoal leading-relaxed">
-            “When needle and loom meet patience, our autonomy awakens. We do not just build products; we weave our community’s resilience.”
+            â€œWhen needle and loom meet patience, our autonomy awakens. We do not just build products; we weave our communityâ€™s resilience.â€
           </p>
           <span className="block text-xs uppercase tracking-wider text-terracotta-700 font-semibold">
-            — Sunita Devi, Master Weaver & Co-operative Leader, Panipat
+            â€” Sunita Devi, Master Weaver & Co-operative Leader, Panipat
           </span>
         </div>
 
         {/* Narrative Section 2: Craft Disciplines */}
         <div className="space-y-6 text-stone-700 font-light leading-relaxed text-base sm:text-lg">
           <span className="text-xs uppercase tracking-widest text-terracotta-700 font-semibold block">
-            {heritageBlock?.subtitle || "Chapter II — The Living Geographies of Haryana"}
+            {heritageBlock?.subtitle || "Chapter II â€” The Living Geographies of Haryana"}
           </span>
           <h2 className="font-serif text-2xl sm:text-3xl font-normal text-charcoal leading-snug">
-            {heritageBlock?.title || "From the Pit-Looms of Panipat to Rewari’s Brass Foundries"}
+            {heritageBlock?.title || "From the Pit-Looms of Panipat to Rewariâ€™s Brass Foundries"}
           </h2>
           <p>
-            {heritageBlock?.content || "Haryana possesses one of the most vibrant yet under-celebrated material design cultures in Northern India. From Panipat’s heavyweight geometric flat-weaves (dhurries and kilims) to the delicate darning needle stitches of Rohtak’s Phulkari, the riverbed Moonj wild grass basketry of Jhajjar, and the cold-hammered bell-metal vessels of historic Rewari."}
+            {heritageBlock?.content || "Haryana possesses one of the most vibrant yet under-celebrated material design cultures in Northern India. From Panipatâ€™s heavyweight geometric flat-weaves (dhurries and kilims) to the delicate darning needle stitches of Rohtakâ€™s Phulkari, the riverbed Moonj wild grass basketry of Jhajjar, and the cold-hammered bell-metal vessels of historic Rewari."}
           </p>
           <p>
-            We work directly with women in six Haryana districts, setting up solar-lit weaving sheds, providing clean electric potter’s wheels, ensuring ergonomic pit-looms, and eliminating predatory middle-men.
+            We work directly with women in six Haryana districts, setting up solar-lit weaving sheds, providing clean electric potterâ€™s wheels, ensuring ergonomic pit-looms, and eliminating predatory middle-men.
           </p>
         </div>
 
@@ -105,7 +105,7 @@ export default async function OurStoryPage() {
           <div className="space-y-2">
             <h3 className="font-serif text-lg font-medium text-charcoal">100% Traceability</h3>
             <p className="text-xs text-stone-500 leading-relaxed">
-              Every parcel carries a signed artisan card with the maker’s photo, craft discipline, and Haryana village name.
+              Every parcel carries a signed artisan card with the makerâ€™s photo, craft discipline, and Haryana village name.
             </p>
           </div>
           <div className="space-y-2">

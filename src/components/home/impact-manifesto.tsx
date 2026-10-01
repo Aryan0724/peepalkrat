@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useEffect, useRef, useState } from "react";
 import Link from "next/link";
@@ -6,12 +6,12 @@ import { ArrowRight, MapPin, TrendingUp } from "lucide-react";
 
 const stats = [
   {
-    before: "₹800",
-    after: "₹6,400",
+    before: "â‚¹800",
+    after: "â‚¹6,400",
     label: "Average Monthly Income",
-    sublabel: "Before → After joining PeepalKraft",
-    note: "8× income growth in 18 months",
-    color: "#E87722",
+    sublabel: "Before â†’ After joining PeepalKraft",
+    note: "8Ã— income growth in 18 months",
+    color: "#743014",
   },
   {
     before: "0",
@@ -19,15 +19,15 @@ const stats = [
     label: "Women With Sole Bank Signing Authority",
     sublabel: "Own account. Own passbook. Their earnings.",
     note: "Neighborhoods of Ambala City, Haryana",
-    color: "#FFFCF8",
+    color: "#E8D1A7",
   },
   {
-    before: "₹0",
-    after: "₹2.1 Cr",
+    before: "â‚¹0",
+    after: "â‚¹2.1 Cr",
     label: "Direct Wages Disbursed",
     sublabel: "Paid weekly. Zero middlemen. Zero deductions.",
-    note: "Since inception — growing every month",
-    color: "#E87722",
+    note: "Since inception â€” growing every month",
+    color: "#743014",
   },
 ];
 
@@ -40,8 +40,8 @@ const testimonials = [
       "Pehle ghar mein kaam tha, paisa nahi tha. Ab main apni craft se sidha kamati hoon.",
     translation:
       "Before, there was work at home but no income. Now I earn directly from my craft.",
-    incomeBefore: "₹800 / month",
-    incomeAfter: "₹7,200 / month",
+    incomeBefore: "â‚¹800 / month",
+    incomeAfter: "â‚¹7,200 / month",
     yearsActive: "3 years",
   },
   {
@@ -52,8 +52,8 @@ const testimonials = [
       "Mere paas apna account hai. Apni kamai hai. Ab main bank khud jaati hoon.",
     translation:
       "I have my own account. My own earnings. Now I go to the bank myself.",
-    incomeBefore: "₹1,200 / month",
-    incomeAfter: "₹8,500 / month",
+    incomeBefore: "â‚¹1,200 / month",
+    incomeAfter: "â‚¹8,500 / month",
     yearsActive: "4 years",
   },
 ];
@@ -121,7 +121,7 @@ export function ImpactManifesto() {
   const t = testimonials[activeTestimonial];
 
   return (
-    <section className="bg-[#1A1A1A] text-[#FFFCF8] relative overflow-hidden border-b border-black/10">
+    <section className="bg-[#442D1C] text-[#E8D1A7] relative overflow-hidden border-b border-black/10">
       {/* Subtle grain texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -132,14 +132,14 @@ export function ImpactManifesto() {
       />
 
       {/* Top accent line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E87722]/60 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#743014]/60 to-transparent" />
 
-      {/* ─── SECTION 1: Ambala City Location & Mission Context ─── */}
+      {/* â”€â”€â”€ SECTION 1: Ambala City Location & Mission Context â”€â”€â”€ */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Context */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2 text-[#E87722]">
+            <div className="flex items-center space-x-2 text-[#743014]">
               <MapPin className="w-4 h-4" />
               <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em]">
                 Ambala City, Haryana, India
@@ -147,15 +147,15 @@ export function ImpactManifesto() {
             </div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.08] text-white">
               One of Haryana's most{" "}
-              <em className="italic text-[#E87722]">
+              <em className="italic text-[#743014]">
                 historic
               </em>{" "}
               districts. Now, one of its most{" "}
-              <em className="italic text-[#E87722]">
+              <em className="italic text-[#743014]">
                 determined.
               </em>
             </h2>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#E87722]/50 pl-5">
+            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#743014]/50 pl-5">
               PeepalKraft is a direct intervention: placing craft earnings, bank 
               accounts, and market access directly in the hands of women 
               artisans in Ambala City who were previously invisible to the formal economy.
@@ -163,7 +163,7 @@ export function ImpactManifesto() {
             <div className="pt-2">
               <Link
                 href="/impact"
-                className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#E87722] hover:text-white transition-colors group"
+                className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#743014] hover:text-white transition-colors group"
               >
                 <span>Read the Full Impact Report</span>
                 <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
@@ -188,12 +188,12 @@ export function ImpactManifesto() {
                     Before
                   </div>
                 </div>
-                <TrendingUp className="w-8 h-8 text-[#E87722] flex-shrink-0" />
+                <TrendingUp className="w-8 h-8 text-[#743014] flex-shrink-0" />
                 <div className="text-center">
-                  <div className="text-3xl font-display font-medium text-[#E87722]">
+                  <div className="text-3xl font-display font-medium text-[#743014]">
                     {t.incomeAfter}
                   </div>
-                  <div className="text-[10px] text-[#E87722] uppercase tracking-wider mt-1 font-sans">
+                  <div className="text-[10px] text-[#743014] uppercase tracking-wider mt-1 font-sans">
                     Today
                   </div>
                 </div>
@@ -224,7 +224,7 @@ export function ImpactManifesto() {
                     {t.name}
                   </div>
                   <div className="text-[11px] text-gray-400 mt-0.5 font-sans">
-                    {t.craft} · {t.village}
+                    {t.craft} Â· {t.village}
                   </div>
                 </div>
                 <div className="flex space-x-1.5">
@@ -234,7 +234,7 @@ export function ImpactManifesto() {
                       onClick={() => setActiveTestimonial(i)}
                       className={`w-6 h-0.5 transition-all duration-300 ${
                         i === activeTestimonial
-                          ? "bg-[#E87722]"
+                          ? "bg-[#743014]"
                           : "bg-white/20 hover:bg-white/40"
                       }`}
                       aria-label={`View testimonial ${i + 1}`}
@@ -247,7 +247,7 @@ export function ImpactManifesto() {
         </div>
       </div>
 
-      {/* ─── SECTION 2: The Hard Numbers Grid ─── */}
+      {/* â”€â”€â”€ SECTION 2: The Hard Numbers Grid â”€â”€â”€ */}
       <div className="border-t border-white/10 bg-black/20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12 lg:gap-8">
@@ -263,8 +263,8 @@ export function ImpactManifesto() {
                   >
                     {stat.after === "142+" ? (
                       <CountUp target={142} suffix="+" />
-                    ) : stat.after === "₹6,400" ? (
-                      <CountUp target={6400} prefix="₹" />
+                    ) : stat.after === "â‚¹6,400" ? (
+                      <CountUp target={6400} prefix="â‚¹" />
                     ) : (
                       stat.after
                     )}

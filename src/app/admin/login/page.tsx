@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 
 import React, { useState, Suspense } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
@@ -131,7 +131,7 @@ export default function AdminLoginPage() {
             href="/"
             className="text-xs text-stone-500 hover:text-charcoal underline"
           >
-            ← Return to Storefront
+            â† Return to Storefront
           </Link>
         </div>
       </div>
