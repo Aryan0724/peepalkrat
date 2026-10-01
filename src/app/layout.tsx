@@ -56,7 +56,7 @@ export default async function RootLayout({
 
   return (
     <html lang="en" className="scroll-smooth">
-      <body className="min-h-screen flex flex-col bg-[#FAF6EE] text-[#121216] selection:bg-[#DFBD69]/40 selection:text-[#0B132B]">
+      <body className="min-h-screen flex flex-col bg-[#FAF7F2] text-[#442D1C] selection:bg-[#E8D1A7]/60 selection:text-[#442D1C]">
         <CurrencyProvider>
           <CartProvider>
             <Header announcement={headerBlock} />

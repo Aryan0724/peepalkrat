@@ -87,18 +87,19 @@ export function ProductCard({ product }: ProductCardProps) {
         />
         
         {/* Badges */}
+        {/* Badges */}
         <div className="absolute top-2 left-2 flex flex-col gap-1 z-10">
           {discountPercent && (
-            <Badge className="bg-[#E87722] hover:bg-[#E87722] text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5">
+            <Badge className="bg-[#743014] hover:bg-[#743014] text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5">
               -{discountPercent}%
             </Badge>
           )}
           {isOutOfStock ? (
-            <Badge className="bg-[#1A1A1A]/80 hover:bg-[#1A1A1A]/80 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
+            <Badge className="bg-[#442D1C]/85 hover:bg-[#442D1C]/85 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
               Sold Out
             </Badge>
           ) : isLowStock ? (
-            <Badge className="bg-[#E87722]/90 hover:bg-[#E87722]/90 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
+            <Badge className="bg-[#743014]/90 hover:bg-[#743014]/90 text-white text-[10px] font-sans font-medium rounded-none border-none uppercase px-2 py-0.5 backdrop-blur-sm">
               Only {inventory} Left
             </Badge>
           ) : null}
@@ -110,11 +111,11 @@ export function ProductCard({ product }: ProductCardProps) {
             e.preventDefault();
             setIsWishlisted(!isWishlisted);
           }}
-          className="absolute top-2 right-2 p-2 rounded-full bg-white/60 hover:bg-white backdrop-blur-md transition-colors z-10"
+          className="absolute top-2 right-2 p-2 rounded-full bg-white/70 hover:bg-white backdrop-blur-md transition-colors z-10 shadow-xs"
         >
           <Heart
             className={`w-4 h-4 transition-colors ${
-              isWishlisted ? "fill-[#E87722] text-[#E87722]" : "text-[#1A1A1A]"
+              isWishlisted ? "fill-[#743014] text-[#743014]" : "text-[#442D1C]"
             }`}
           />
         </button>
@@ -125,10 +126,10 @@ export function ProductCard({ product }: ProductCardProps) {
             <button
               onClick={handleQuickAdd}
               disabled={isAdded}
-              className={`w-full py-2.5 px-4 text-xs font-sans font-medium uppercase tracking-wider transition-colors flex items-center justify-center ${
+              className={`w-full py-2.5 px-4 text-xs font-sans font-semibold uppercase tracking-wider transition-colors flex items-center justify-center ${
                 isAdded
-                  ? "bg-[#1A1A1A] text-white"
-                  : "bg-white/95 hover:bg-white text-[#1A1A1A] shadow-sm backdrop-blur-md"
+                  ? "bg-[#743014] text-white"
+                  : "bg-white/95 hover:bg-[#743014] hover:text-white text-[#442D1C] shadow-sm backdrop-blur-md"
               }`}
             >
               {isAdded ? (
@@ -150,23 +151,23 @@ export function ProductCard({ product }: ProductCardProps) {
         <div className="flex items-start justify-between gap-4">
           <div>
             {product.maker && (
-              <p className="text-[10px] text-[#888] font-sans uppercase tracking-widest mb-1">
+              <p className="text-[10px] text-[#9D9167] font-sans font-semibold uppercase tracking-widest mb-1">
                 {product.maker.name}
               </p>
             )}
-            <Link href={`/products/${product.slug}`} className="group-hover:text-[#E87722] transition-colors">
-              <h3 className="font-sans text-[13px] text-[#1A1A1A] leading-snug line-clamp-2">
+            <Link href={`/products/${product.slug}`} className="group-hover:text-[#743014] transition-colors">
+              <h3 className="font-serif text-[15px] text-[#442D1C] leading-snug line-clamp-2">
                 {product.name}
               </h3>
             </Link>
           </div>
           
           <div className="text-right flex-shrink-0">
-            <div className="font-display text-[15px] text-[#1A1A1A]">
+            <div className="font-display text-[16px] text-[#743014] font-medium">
               {format(product.price)}
             </div>
             {product.compareAtPrice && product.compareAtPrice > product.price && (
-              <div className="font-sans text-[11px] text-[#888] line-through">
+              <div className="font-sans text-[11px] text-[#9D9167] line-through">
                 {format(product.compareAtPrice)}
               </div>
             )}

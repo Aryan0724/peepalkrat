@@ -9,16 +9,43 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        background: "#E8D1A7",
+        ivory: "#FAF7F2",
+        golden: {
+          DEFAULT: "#E8D1A7",
+          light: "#F4E8D3",
+          dark: "#D6B885",
+        },
+        cocoa: {
+          DEFAULT: "#442D1C",
+          light: "#5A4231",
+          muted: "#7E6554",
+          dark: "#2E1C10",
+        },
+        "spiced-wine": {
+          DEFAULT: "#743014",
+          hover: "#5C240E",
+          light: "#8F3C1A",
+        },
+        olive: {
+          DEFAULT: "#9D9167",
+          light: "#B5A982",
+          dark: "#7B714E",
+        },
+        caramel: {
+          DEFAULT: "#84592B",
+          light: "#9E6D37",
+          dark: "#66431D",
+        },
+        background: "#FAF7F2",
         surface: "#FFFFFF",
-        sandstone: "#F4EFEA",
-        khadi: "#EBE5DC",
-        border: "#E7DFD5",
+        sandstone: "#F3EDE4",
+        khadi: "#EBE3D7",
+        border: "#E5DDD0",
         charcoal: {
-          DEFAULT: "#1C1917",
-          light: "#292524",
-          muted: "#57534E",
-          subtle: "#78716C",
+          DEFAULT: "#442D1C",
+          light: "#5A4231",
+          muted: "#7E6554",
+          subtle: "#9B8473",
         },
         terracotta: {
           50: "#FDF5F2",

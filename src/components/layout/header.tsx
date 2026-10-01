@@ -51,12 +51,11 @@ export function Header({ announcement }: { announcement?: any }) {
 
   return (
     <header className="sticky top-0 z-40 w-full">
-      {/* Main Header â€” iTokri style: warm cream, clean, minimal */}
+      {/* Main Header — Warm Ivory Canvas with Golden Batter Accent Border */}
       <div
         className={`w-full transition-all duration-300 border-b ${
-          isScrolled ? "py-3 shadow-sm border-black/10" : "py-4 border-black/8"
+          isScrolled ? "py-2.5 shadow-sm border-[#E8D1A7]/80 bg-[#FAF7F2]/95 backdrop-blur-sm" : "py-3.5 border-[#E8D1A7]/50 bg-[#FAF7F2]"
         }`}
-        style={{ background: "#E8D1A7" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Mobile Menu Trigger */}
@@ -69,41 +68,41 @@ export function Header({ announcement }: { announcement?: any }) {
           </button>
 
           {/* Desktop Navigation Links Left */}
-          <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555]">
+          <nav className="hidden lg:flex items-center space-x-8 text-[12.5px] font-medium tracking-[0.08em] uppercase text-[#442D1C]/80">
             <Link
               href="/shop"
-              className={`transition-colors hover:text-[#442D1C] ${pathname === "/shop" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#743014] ${pathname === "/shop" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""}`}
             >
               Shop
             </Link>
             <Link
               href="/collections/panipat-heritage-weaves"
-              className={`transition-colors hover:text-[#442D1C] ${pathname.startsWith("/collections") ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#743014] ${pathname.startsWith("/collections") ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""}`}
             >
               Collections
             </Link>
             <Link
               href="/makers"
-              className={`transition-colors hover:text-[#442D1C] ${pathname.startsWith("/makers") ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#743014] ${pathname.startsWith("/makers") ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""}`}
             >
               Artisans
             </Link>
           </nav>
 
           {/* Centered Brand Identity */}
-          <div className="text-center">
+          <div className="text-center py-1">
             <Link href="/" className="inline-flex flex-col items-center group">
-              <div className="flex items-center space-x-2">
+              <div className="flex items-center justify-center">
                 <Image
-                  src="/peepalkraft-logo.png"
+                  src="/peepalkraft-logo-dark.png"
                   alt="PeepalKraft Logo"
-                  width={200}
-                  height={50}
-                  className="h-10 w-auto sm:h-12 object-contain"
+                  width={220}
+                  height={54}
+                  className="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-[1.02]"
                   priority
                 />
               </div>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium mt-1">
+              <span className="block text-[10px] uppercase tracking-[0.28em] text-[#9D9167] font-semibold mt-1">
                 Ambala City · Haryana
               </span>
             </Link>
@@ -112,23 +111,23 @@ export function Header({ announcement }: { announcement?: any }) {
           {/* Right Navigation & Utility Actions */}
           <div className="flex items-center space-x-4 sm:space-x-5">
             {/* Desktop Navigation Links Right */}
-            <div className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555] mr-2">
+            <div className="hidden lg:flex items-center space-x-8 text-[12.5px] font-medium tracking-[0.08em] uppercase text-[#442D1C]/80 mr-2">
               <Link
                 href="/community"
-                className={`transition-colors hover:text-[#442D1C] ${pathname === "/community" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
+                className={`transition-colors hover:text-[#743014] ${pathname === "/community" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""}`}
               >
                 Community
               </Link>
               <Link
                 href="/our-story"
-                className={`transition-colors hover:text-[#442D1C] ${pathname === "/our-story" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
+                className={`transition-colors hover:text-[#743014] ${pathname === "/our-story" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""}`}
               >
                 Our Story
               </Link>
               <Link
                 href="/impact"
-                className={`transition-colors hover:text-[#442D1C] ${
-                  pathname === "/impact" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5" : "text-[#442D1C]"
+                className={`transition-colors hover:text-[#743014] ${
+                  pathname === "/impact" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5 font-semibold" : ""
                 }`}
               >
                 Impact

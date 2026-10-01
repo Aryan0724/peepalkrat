@@ -74,19 +74,19 @@ export function Footer({
         </div>
 
         {/* Main Footer Links & Postal Dispatch Envelope */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-14 border-b border-[#C8A253]/20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 py-14 border-b border-[#E8D1A7]/20">
           
-          {/* Col 1 & 2: Brand & Royal Postal Dispatch (The Way Email is Represented) */}
+          {/* Col 1 & 2: Brand & Royal Postal Dispatch */}
           <div className="lg:col-span-2 space-y-4">
             <Image
-              src="/peepalkraft-logo.png"
+              src="/peepalkraft-logo-light.png"
               alt="PeepalKraft Logo"
-              width={180}
-              height={45}
-              className="h-10 w-auto object-contain brightness-0 invert opacity-90"
+              width={200}
+              height={50}
+              className="h-11 w-auto object-contain"
             />
-            <p className="text-[10px] tracking-[0.28em] uppercase text-[#84592B] font-cinzel font-bold -mt-2">
-              Ambala & Haryana â€¢ Swadeshi Freedom Guild
+            <p className="text-[10px] tracking-[0.28em] uppercase text-[#E8D1A7] font-semibold mt-1">
+              Ambala & Haryana • Swadeshi Freedom Guild
             </p>
             <p className="text-xs text-stone-400 leading-relaxed max-w-sm pt-1">
               {aboutBlock?.content || "A social commerce guild rooted in the historic soil of Haryana, connecting patrons globally with the timeless mastery and feminist financial sovereignty of rural women makers."}

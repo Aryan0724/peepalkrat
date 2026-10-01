@@ -27,7 +27,7 @@ export function CustomerStories() {
   ];
 
   return (
-    <section className="py-20 bg-[#FFFCF8] relative overflow-hidden border-b border-black/8">
+    <section className="py-20 bg-[#FAF7F2] relative overflow-hidden border-b border-[#442D1C]/10">
       {/* Decorative illustration from iTokri uploaded by user */}
       <div className="absolute top-20 right-10 lg:right-32 w-64 h-64 opacity-20 lg:opacity-10 pointer-events-none hidden md:block">
         <Image
@@ -40,17 +40,17 @@ export function CustomerStories() {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
-          <div className="inline-flex items-center space-x-2 text-[12px] uppercase tracking-widest text-[#E87722] font-sans font-medium">
-            <span className="font-display text-[#E87722]/60 text-base lowercase mr-1 tracking-normal">दुनिया भर में</span>
+          <div className="inline-flex items-center space-x-2 text-[12px] uppercase tracking-widest text-[#743014] font-sans font-semibold">
+            <span className="font-display text-[#743014] text-base mr-1 tracking-normal font-medium">दुनिया भर में •</span>
             <span>Global Diaspora Feedback</span>
           </div>
-          <h2 className="font-display text-3xl sm:text-4xl text-[#1A1A1A] font-normal relative inline-block">
+          <h2 className="font-display text-3xl sm:text-4xl text-[#442D1C] font-normal relative inline-block">
             Cherished Worldwide
-            <span className="absolute -top-6 -right-16 transform rotate-[12deg] font-handwritten text-[#E87722] text-xl hidden sm:block">
+            <span className="absolute -top-6 -right-16 transform rotate-[12deg] font-handwritten text-[#84592B] text-xl hidden sm:block">
               Made with love!
             </span>
           </h2>
-          <p className="text-sm text-[#555] font-light max-w-lg mx-auto">
+          <p className="text-sm text-[#5A4231] font-light max-w-lg mx-auto">
             Read stories from patrons in London, New York, Toronto, San Francisco and beyond.
           </p>
         </div>
@@ -59,27 +59,27 @@ export function CustomerStories() {
           {testimonials.map((testimonial, idx) => (
             <div
               key={idx}
-              className="bg-white p-8 rounded-sm shadow-sm border border-black/5 hover:border-[#E87722]/30 transition-colors flex flex-col"
+              className="bg-white p-7 rounded-xs shadow-xs border border-[#E8D1A7]/40 hover:border-[#743014]/40 transition-colors flex flex-col"
             >
-              <div className="flex text-[#E87722] mb-4 space-x-1">
+              <div className="flex text-[#84592B] mb-4 space-x-1">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-3.5 h-3.5 fill-current" />
+                  <Star key={i} className="w-4 h-4 fill-current" />
                 ))}
               </div>
               
-              <blockquote className="flex-1 font-display text-lg text-[#1A1A1A] leading-relaxed mb-6">
-                "{testimonial.quote}"
+              <blockquote className="flex-1 font-serif text-[16px] text-[#442D1C] leading-relaxed mb-6 italic">
+                “{testimonial.quote}”
               </blockquote>
               
-              <div className="mt-auto border-t border-black/5 pt-4">
-                <div className="font-sans font-medium text-sm text-[#1A1A1A]">
+              <div className="mt-auto border-t border-[#442D1C]/10 pt-4">
+                <div className="font-sans font-semibold text-sm text-[#442D1C]">
                   {testimonial.name}
                 </div>
-                <div className="flex items-center text-[11px] text-[#888] mt-1 space-x-1 uppercase tracking-wider">
-                  <MapPin className="w-3 h-3 text-[#E87722]" />
+                <div className="flex items-center text-[11px] text-[#9D9167] mt-1 space-x-1 uppercase tracking-wider font-semibold">
+                  <MapPin className="w-3 h-3 text-[#743014]" />
                   <span>{testimonial.location}</span>
                 </div>
-                <div className="text-[11px] text-[#E87722] mt-2 font-medium">
+                <div className="text-[11px] text-[#743014] mt-2 font-medium">
                   {testimonial.product}
                 </div>
               </div>

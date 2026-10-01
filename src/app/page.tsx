@@ -117,7 +117,7 @@ export default async function HomePage() {
   ];
 
   return (
-    <div className="w-full bg-[#FFFCF8]">
+    <div className="w-full bg-[#FAF7F2]">
       {/* 1. Hero: Real Artisans and Storefront Info */}
       <HeroSection data={contentBlocks["home_hero"]} />
 
@@ -132,20 +132,23 @@ export default async function HomePage() {
       <OurWorkshopSection />
 
       {/* 4. Best Sellers (Real Products) */}
-      <section className="py-20 bg-[#FFFCF8] border-b border-black/8">
+      <section className="py-20 bg-[#FAF7F2] border-b border-[#442D1C]/10">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col md:flex-row md:items-end justify-between mb-12">
             <div>
-              <h2 className="font-display text-3xl sm:text-4xl text-[#1A1A1A] font-normal">
+              <span className="section-label bg-[#9D9167]/15 text-[#743014] px-3.5 py-1.5 rounded-full border border-[#9D9167]/30 text-xs font-semibold mb-3 inline-block">
+                Curated Guild Selection
+              </span>
+              <h2 className="font-display text-3xl sm:text-4xl text-[#442D1C] font-normal">
                 Signature Works of Haryana
               </h2>
             </div>
             <Link
               href="/shop"
-              className="mt-4 md:mt-0 inline-flex items-center text-[13px] uppercase tracking-widest text-[#1A1A1A] hover:text-[#E87722] font-sans font-medium transition-colors group"
+              className="mt-4 md:mt-0 inline-flex items-center text-[13px] uppercase tracking-widest text-[#442D1C] hover:text-[#743014] font-sans font-semibold transition-colors group"
             >
               <span>View Full Catalog</span>
-              <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform" />
+              <ArrowRight className="w-4 h-4 ml-1.5 group-hover:translate-x-1 transition-transform text-[#743014]" />
             </Link>
           </div>
 
@@ -169,13 +172,16 @@ export default async function HomePage() {
       {/* 8. Newsletter Dispatch */}
       <SwadeshiEmailDispatch />
 
-      {/* 9. Minimalist Editorial Call to Action */}
-      <section className="py-20 bg-[#1A1A1A] text-white relative text-center">
+      {/* 9. Minimalist Editorial Call to Action in Deep Cowhide Cocoa */}
+      <section className="py-20 bg-[#442D1C] text-white relative text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+          <span className="text-xs uppercase tracking-[0.25em] text-[#E8D1A7] font-semibold block">
+            Direct Social Commerce
+          </span>
           <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-white leading-[1.15]">
             “Bring authentic Indian heritage into your home while funding a woman's financial independence.”
           </h2>
-          <p className="text-base sm:text-lg text-gray-400 max-w-xl mx-auto leading-relaxed font-light mb-8">
+          <p className="text-base sm:text-lg text-[#E8D1A7]/85 max-w-xl mx-auto leading-relaxed font-light mb-8">
             All overseas orders ship via DHL Express with verified artisan certificates and zero import customs hassle.
           </p>
           <div className="pt-4 flex flex-col sm:flex-row items-center justify-center gap-4">
