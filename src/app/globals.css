@@ -13,17 +13,17 @@
 @layer base {
   :root {
     /* Core palette — warm & natural */
-    --cream:      #FFFCF8;
-    --cream-mid:  #F5F0E8;
-    --cream-dark: #EDE5D8;
-    --charcoal:   #1A1A1A;
-    --charcoal-60: rgba(26,26,26,0.6);
-    --charcoal-35: rgba(26,26,26,0.35);
-    --saffron:    #E87722;   /* iTokri's warm amber-orange accent */
-    --saffron-lt: #F5C89A;
-    --ink:        #2D2D2D;
-    --ink-mid:    #555555;
-    --ink-light:  #888888;
+    --cream:      #E8D1A7; /* Golden Batter */
+    --cream-mid:  #9D9167; /* Olive Harvest */
+    --cream-dark: #84592B; /* Toasted Caramel */
+    --charcoal:   #442D1C; /* Cowhide Cocoa */
+    --charcoal-60: rgba(68, 45, 28, 0.6);
+    --charcoal-35: rgba(68, 45, 28, 0.35);
+    --saffron:    #743014; /* Spiced Wine */
+    --saffron-lt: #84592B; /* Toasted Caramel */
+    --ink:        #442D1C;
+    --ink-mid:    #442D1C;
+    --ink-light:  #84592B;
     --border:     rgba(26,26,26,0.10);
     --border-mid: rgba(26,26,26,0.18);
   }
@@ -31,6 +31,7 @@
   html {
     -webkit-text-size-adjust: 100%;
     scroll-behavior: smooth;
+    font-size: 110%; /* Globally scale up rems */
   }
 
   body {
@@ -42,7 +43,7 @@
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     overflow-x: hidden;
-    font-size: 15px;
+    font-size: 18px; /* Bump base size */
     line-height: 1.6;
   }
 
@@ -292,7 +293,7 @@
 .badge-craft-saffron {
   border-color: var(--saffron);
   color: var(--saffron);
-  background: #E877220C;
+  background: #7430140C;
 }
 
 /* ══════ ANIMATIONS ══════ */

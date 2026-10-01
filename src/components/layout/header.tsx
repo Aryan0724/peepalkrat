@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import {
   ShoppingBag,
@@ -50,18 +51,18 @@ export function Header({ announcement }: { announcement?: any }) {
 
   return (
     <header className="sticky top-0 z-40 w-full">
-      {/* Main Header — iTokri style: warm cream, clean, minimal */}
+      {/* Main Header â€” iTokri style: warm cream, clean, minimal */}
       <div
         className={`w-full transition-all duration-300 border-b ${
           isScrolled ? "py-3 shadow-sm border-black/10" : "py-4 border-black/8"
         }`}
-        style={{ background: "#FFFCF8" }}
+        style={{ background: "#E8D1A7" }}
       >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between">
           {/* Mobile Menu Trigger */}
           <button
             onClick={() => setMobileMenuOpen(true)}
-            className="lg:hidden p-2 text-[#1A1A1A] hover:text-[#E87722] transition-colors"
+            className="lg:hidden p-2 text-[#442D1C] hover:text-[#743014] transition-colors"
             aria-label="Open mobile menu"
           >
             <Menu className="w-6 h-6" />
@@ -71,19 +72,19 @@ export function Header({ announcement }: { announcement?: any }) {
           <nav className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555]">
             <Link
               href="/shop"
-              className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/shop" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#442D1C] ${pathname === "/shop" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
             >
               Shop
             </Link>
             <Link
               href="/collections/panipat-heritage-weaves"
-              className={`transition-colors hover:text-[#1A1A1A] ${pathname.startsWith("/collections") ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#442D1C] ${pathname.startsWith("/collections") ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
             >
               Collections
             </Link>
             <Link
               href="/makers"
-              className={`transition-colors hover:text-[#1A1A1A] ${pathname.startsWith("/makers") ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
+              className={`transition-colors hover:text-[#442D1C] ${pathname.startsWith("/makers") ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
             >
               Artisans
             </Link>
@@ -93,28 +94,16 @@ export function Header({ announcement }: { announcement?: any }) {
           <div className="text-center">
             <Link href="/" className="inline-flex flex-col items-center group">
               <div className="flex items-center space-x-2">
-                {/* Peepal Leaf Logo (Matching Storefront Sign) */}
-                <svg
-                  viewBox="0 0 100 100"
-                  className="w-8 h-8 text-[#5E5063] group-hover:text-[#E87722] transition-colors"
-                  fill="currentColor"
-                  xmlns="http://www.w3.org/2000/svg"
-                >
-                  <path d="M50 95 C 45 80, 10 70, 10 40 C 10 15, 30 5, 50 20 C 70 5, 90 15, 90 40 C 90 70, 55 80, 50 95 Z" />
-                  <path
-                    d="M50 20 L50 90 M50 40 L30 30 M50 50 L25 45 M50 60 L30 65 M50 40 L70 30 M50 50 L75 45 M50 60 L70 65"
-                    stroke="#FFFCF8"
-                    strokeWidth="2"
-                    fill="none"
-                    strokeLinecap="round"
-                  />
-                  <path d="M50 20 L50 5" stroke="currentColor" strokeWidth="3" strokeLinecap="round" />
-                </svg>
-                <span className="block font-display text-2xl sm:text-3xl font-normal tracking-tight text-[#1A1A1A] group-hover:text-[#E87722] transition-colors pt-1">
-                  PeepalKraft
-                </span>
+                <Image
+                  src="/peepalkraft-logo.png"
+                  alt="PeepalKraft Logo"
+                  width={200}
+                  height={50}
+                  className="h-10 w-auto sm:h-12 object-contain"
+                  priority
+                />
               </div>
-              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium mt-0.5">
+              <span className="block text-[9px] uppercase tracking-[0.25em] text-[#888] font-medium mt-1">
                 Ambala City · Haryana
               </span>
             </Link>
@@ -126,20 +115,20 @@ export function Header({ announcement }: { announcement?: any }) {
             <div className="hidden lg:flex items-center space-x-8 text-[12px] font-medium tracking-[0.08em] uppercase text-[#555] mr-2">
               <Link
                 href="/community"
-                className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/community" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
+                className={`transition-colors hover:text-[#442D1C] ${pathname === "/community" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
               >
                 Community
               </Link>
               <Link
                 href="/our-story"
-                className={`transition-colors hover:text-[#1A1A1A] ${pathname === "/our-story" ? "text-[#1A1A1A] border-b border-[#1A1A1A] pb-0.5" : ""}`}
+                className={`transition-colors hover:text-[#442D1C] ${pathname === "/our-story" ? "text-[#442D1C] border-b border-[#442D1C] pb-0.5" : ""}`}
               >
                 Our Story
               </Link>
               <Link
                 href="/impact"
-                className={`transition-colors hover:text-[#1A1A1A] ${
-                  pathname === "/impact" ? "text-[#881C10] border-b-2 border-[#881C10] pb-0.5" : "text-[#0B132B]"
+                className={`transition-colors hover:text-[#442D1C] ${
+                  pathname === "/impact" ? "text-[#743014] border-b-2 border-[#743014] pb-0.5" : "text-[#442D1C]"
                 }`}
               >
                 Impact
@@ -174,8 +163,8 @@ export function Header({ announcement }: { announcement?: any }) {
                         setCurrency(c);
                         setCurrencyDropdownOpen(false);
                       }}
-                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-[#FAF6EE] transition-colors ${
-                        currency === c ? "text-[#881C10] font-semibold bg-[#FAF6EE]" : "text-charcoal"
+                      className={`w-full text-left px-3 py-1.5 text-xs flex items-center justify-between hover:bg-[#E8D1A7] transition-colors ${
+                        currency === c ? "text-[#743014] font-semibold bg-[#E8D1A7]" : "text-charcoal"
                       }`}
                     >
                       <span className="font-cinzel">{c}</span>
@@ -183,14 +172,14 @@ export function Header({ announcement }: { announcement?: any }) {
                         {c === "USD"
                           ? "$ (United States)"
                           : c === "GBP"
-                          ? "£ (United Kingdom)"
+                          ? "Â£ (United Kingdom)"
                           : c === "EUR"
-                          ? "€ (Europe)"
+                          ? "â‚¬ (Europe)"
                           : c === "CAD"
                           ? "CA$ (Canada)"
                           : c === "AUD"
                           ? "AU$ (Australia)"
-                          : "₹ (India)"}
+                          : "â‚¹ (India)"}
                       </span>
                     </button>
                   ))}
@@ -324,8 +313,8 @@ export function Header({ announcement }: { announcement?: any }) {
             </nav>
 
             <div className="border-t border-stone-200 pt-4 text-xs text-stone-500">
-              <p className="italic">“When needle and loom meet patience, our autonomy awakens.”</p>
-              <p className="text-[10px] text-stone-400 mt-2">© 2026 PeepalKraft Enterprise</p>
+              <p className="italic">â€œWhen needle and loom meet patience, our autonomy awakens.â€</p>
+              <p className="text-[10px] text-stone-400 mt-2">Â© 2026 PeepalKraft Enterprise</p>
             </div>
           </div>
         </div>
