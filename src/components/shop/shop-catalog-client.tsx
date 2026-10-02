@@ -253,37 +253,37 @@ export function ShopCatalogClient({
 
         <div
           ref={categoryStripRef}
-          className="flex items-start space-x-4 sm:space-x-6 overflow-x-auto pb-2 scroll-smooth snap-x px-1 scrollbar-none"
+          className="flex items-start space-x-5 sm:space-x-7 overflow-x-auto pt-5 pb-4 scroll-smooth snap-x px-2 scrollbar-none"
           style={{ scrollbarWidth: "none", msOverflowStyle: "none" }}
         >
           {/* "All Items" circular bubble */}
           <button
             onClick={() => setSelectedCategory("all")}
             className="group flex flex-col items-center flex-shrink-0 snap-start text-center focus:outline-none"
-            style={{ width: "80px" }}
+            style={{ width: "96px" }}
           >
             <div
-              className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
+              className={`relative w-20 h-20 sm:w-22 sm:h-22 rounded-full p-[3px] transition-all duration-300 ${
                 selectedCategory === "all"
-                  ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105"
-                  : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
+                  ? "bg-[#743014] ring-2 ring-[#743014] ring-offset-2 ring-offset-[#FAF7F2] scale-105 shadow-sm"
+                  : "bg-white border-2 border-stone-200 group-hover:border-[#743014] group-hover:scale-105"
               }`}
             >
               <div
                 className={`w-full h-full rounded-full flex items-center justify-center transition-colors ${
                   selectedCategory === "all"
-                    ? "bg-terracotta-700 text-white"
-                    : "bg-sandstone/40 text-charcoal group-hover:bg-sandstone/70"
+                    ? "bg-[#743014] text-white"
+                    : "bg-[#FAF7F2] text-[#442D1C] group-hover:bg-[#E8D1A7]/30"
                 }`}
               >
-                <Layers className="w-5 h-5" />
+                <Layers className="w-5 h-5 text-current" />
               </div>
             </div>
             <span
-              className={`mt-2 text-[11px] font-medium leading-tight transition-colors ${
+              className={`mt-2.5 text-xs font-medium leading-tight transition-colors ${
                 selectedCategory === "all"
-                  ? "text-terracotta-700 font-semibold"
-                  : "text-charcoal group-hover:text-terracotta-700"
+                  ? "text-[#743014] font-semibold"
+                  : "text-[#442D1C] group-hover:text-[#743014]"
               }`}
             >
               All Pieces
@@ -305,19 +305,19 @@ export function ShopCatalogClient({
                   }
                 }}
                 className="group flex flex-col items-center flex-shrink-0 snap-start text-center focus:outline-none"
-                style={{ width: "84px" }}
+                style={{ width: "96px" }}
               >
                 <div className="relative">
                   {cat.badge && (
-                    <span className="absolute -top-1.5 left-1/2 -translate-x-1/2 z-20 bg-terracotta-600 text-white text-[8px] font-bold uppercase tracking-wider px-1.5 py-0.2 rounded-full shadow-xs whitespace-nowrap">
+                    <span className="absolute -top-2.5 left-1/2 -translate-x-1/2 z-20 bg-[#743014] text-white text-[8.5px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full shadow-xs whitespace-nowrap">
                       {cat.badge}
                     </span>
                   )}
                   <div
-                    className={`relative w-16 h-16 sm:w-18 sm:h-18 rounded-full p-[3px] transition-all duration-300 ${
+                    className={`relative w-20 h-20 sm:w-22 sm:h-22 rounded-full p-[3px] transition-all duration-300 ${
                       isSelected
-                        ? "bg-terracotta-600 ring-2 ring-terracotta-600 ring-offset-2 ring-offset-[#FAF8F5] scale-105 shadow-sm"
-                        : "bg-white border-2 border-stone-200 group-hover:border-terracotta-500 group-hover:scale-105"
+                        ? "bg-[#743014] ring-2 ring-[#743014] ring-offset-2 ring-offset-[#FAF7F2] scale-105 shadow-sm"
+                        : "bg-white border-2 border-stone-200 group-hover:border-[#743014] group-hover:scale-105"
                     }`}
                   >
                     <div className="relative w-full h-full rounded-full overflow-hidden bg-stone-100">
@@ -326,7 +326,7 @@ export function ShopCatalogClient({
                           src={cat.image}
                           alt={cat.name}
                           fill
-                          sizes="(max-width: 640px) 64px, 72px"
+                          sizes="(max-width: 640px) 80px, 88px"
                           className="object-cover transition-transform duration-500 group-hover:scale-115"
                         />
                       ) : (
@@ -338,10 +338,10 @@ export function ShopCatalogClient({
                   </div>
                 </div>
                 <span
-                  className={`mt-2 text-[11px] leading-tight font-medium line-clamp-2 transition-colors ${
+                  className={`mt-2.5 text-xs leading-tight font-medium line-clamp-2 transition-colors ${
                     isSelected
-                      ? "text-terracotta-700 font-semibold"
-                      : "text-charcoal group-hover:text-terracotta-700"
+                      ? "text-[#743014] font-semibold"
+                      : "text-[#442D1C] group-hover:text-[#743014]"
                   }`}
                 >
                   {cat.name}

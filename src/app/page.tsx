@@ -44,31 +44,50 @@ export default async function HomePage() {
       id: "cat-1",
       name: "Hair Accessories",
       slug: "hair-accessories",
+      badge: "Trending",
       image: "/peepalkraft/products/hair-flower-double.jpg"
     },
     {
       id: "cat-2",
-      name: "Bag Charms",
+      name: "Bag Charms & Keys",
       slug: "bag-charms",
+      badge: "Gifting",
       image: "/peepalkraft/products/bag-charm.jpg"
     },
     {
       id: "cat-3",
-      name: "Latkans & Decor",
+      name: "Latkans & Festive Decor",
       slug: "latkans",
+      badge: "Festive",
       image: "/peepalkraft/products/latkans-display.jpg"
     },
     {
       id: "cat-4",
-      name: "Embroidered Skirts",
+      name: "Embroidered Apparel",
       slug: "skirts",
+      badge: "Handmade",
       image: "/peepalkraft/products/skirt-embroidered.jpg"
     },
     {
       id: "cat-5",
-      name: "Pompom Pins",
+      name: "Pompom Pins & Accents",
       slug: "pins",
+      badge: "Craft",
       image: "/peepalkraft/products/hair-pompom-pin.jpg"
+    },
+    {
+      id: "cat-6",
+      name: "Living & Decor",
+      slug: "living-decor",
+      badge: "Artisan",
+      image: "/peepalkraft/products/accessories-stand.jpg"
+    },
+    {
+      id: "cat-7",
+      name: "Festive Ornaments",
+      slug: "festive-ornaments",
+      badge: "Handloom",
+      image: "/peepalkraft/products/latkans-hanging.jpg"
     }
   ];
 
@@ -121,15 +140,15 @@ export default async function HomePage() {
       {/* 1. Hero: Real Artisans and Storefront Info */}
       <HeroSection data={contentBlocks["home_hero"]} />
 
-      {/* 2. Real Categories from images */}
+      {/* 2. Our Workshop - Trust Building */}
+      <OurWorkshopSection />
+
+      {/* 3. Real Categories - Explore Our Crafts relocated above Signature Works of Haryana */}
       <CircularCategoryStrip
         categories={showcaseCategories}
         subtitle="Handcrafted in Haryana"
         title="Explore Our Crafts"
       />
-
-      {/* 3. Our Workshop - Trust Building */}
-      <OurWorkshopSection />
 
       {/* 4. Best Sellers (Real Products) */}
       <section className="py-20 bg-[#FAF7F2] border-b border-[#442D1C]/10">

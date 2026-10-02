@@ -19,8 +19,8 @@ const ARTISAN_SPOTLIGHT = [
     name: "Master Tailoring Team",
     village: "Model Town, Ambala City",
     craft: "Garment Construction",
-    incomeBefore: "â‚¹1,200",
-    incomeAfter: "â‚¹8,500",
+    incomeBefore: "₹1,200",
+    incomeAfter: "₹8,500",
     years: "Working together as an empowered collective",
     image: "/peepalkraft/workshop/workshop-full-1.jpg",
   },
@@ -28,8 +28,8 @@ const ARTISAN_SPOTLIGHT = [
     name: "Diksha & Team",
     village: "Kanshi Nagar, Ambala City",
     craft: "Hand Embroidery & Finishing",
-    incomeBefore: "â‚¹800",
-    incomeAfter: "â‚¹7,200",
+    incomeBefore: "₹800",
+    incomeAfter: "₹7,200",
     years: "Crafting beautiful accessories & garments",
     image: "/peepalkraft/workshop/artisan-portrait-1.jpg",
   },
@@ -37,20 +37,20 @@ const ARTISAN_SPOTLIGHT = [
     name: "Artisan Collective",
     village: "Ambala City, Haryana",
     craft: "Fabric Cutting & Styling",
-    incomeBefore: "â‚¹950",
-    incomeAfter: "â‚¹9,000",
-    years: "Direct living wages â€” 100% financial independence",
+    incomeBefore: "₹950",
+    incomeAfter: "₹9,000",
+    years: "Direct living wages — 100% financial independence",
     image: "/peepalkraft/workshop/artisan-yellow-saree.jpg",
   },
 ];
 
 const TRUST_TICKER = [
   "Women Earning Living Wages in Ambala City",
-  "Express Worldwide Delivery Â· 48+ Countries",
+  "Express Worldwide Delivery · 48+ Countries",
   "Revenue Goes Directly to Artisans",
-  "Zero Middlemen Â· Direct Craft-to-Home",
-  "DHL Express 3â€“5 Days Â· Customs Pre-Cleared",
-  "100% Handmade Â· Haryana, India",
+  "Zero Middlemen · Direct Craft-to-Home",
+  "DHL Express 3–5 Days · Customs Pre-Cleared",
+  "100% Handmade · Haryana, India",
 ];
 
 export function HeroSection({ data }: HeroSectionProps) {
@@ -103,7 +103,7 @@ export function HeroSection({ data }: HeroSectionProps) {
       <section className="w-full bg-[#FAF7F2]">
         <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[92vh]">
 
-          {/* â•â•â•â• LEFT: Content â•â•â•â• */}
+          {/* ===== LEFT: Content ===== */}
           <div className="flex flex-col justify-center px-6 sm:px-10 lg:px-16 xl:px-20 py-12 sm:py-16 lg:py-20 order-1">
 
             {/* Craft origin tag with handwritten accent */}
@@ -122,7 +122,7 @@ export function HeroSection({ data }: HeroSectionProps) {
             {/* Primary headline with Dual Language */}
             <div className="mb-6 relative">
               <div className="font-display text-xl text-[#743014] mb-2 tracking-wide font-medium">
-                महिला सशक्तिकरण • हरियाणा
+                Women's Economic Empowerment · Haryana
               </div>
               <h1 className="font-display text-[2.8rem] sm:text-[3.5rem] lg:text-[4rem] xl:text-[4.6rem] leading-[1.06] text-[#442D1C]">
                 {data?.title || (
@@ -142,10 +142,10 @@ export function HeroSection({ data }: HeroSectionProps) {
 
             <p className="text-[#5A4231] text-base sm:text-lg font-light leading-relaxed max-w-lg mb-10">
               {data?.subtitle ||
-                "Authentic handcraft from women artisans in Ambala City, Haryana. Every purchase delivers a living wage directly â€” no middlemen, no charity."}
+                "Authentic handcraft from women artisans in Ambala City, Haryana. Every purchase delivers a living wage directly — no middlemen, no charity."}
             </p>
 
-            {/* Impact numbers â€” clean row */}
+            {/* Impact numbers — clean row */}
             <div className="flex flex-wrap gap-x-10 gap-y-5 mb-10 pb-10 border-b border-black/10">
               {[
                 { n: "100%", l: "Handmade" },
@@ -191,7 +191,7 @@ export function HeroSection({ data }: HeroSectionProps) {
               {subscribed ? (
                 <div className="flex items-center gap-2 text-[13px] text-emerald-700 font-medium">
                   <CheckCircle2 className="w-4 h-4" />
-                  You're in â€” first dispatch arrives this week.
+                  You're in — first dispatch arrives this week.
                 </div>
               ) : (
                 <form onSubmit={handleSubscribe} className="flex max-w-sm">
@@ -214,12 +214,12 @@ export function HeroSection({ data }: HeroSectionProps) {
                 </form>
               )}
               <p className="text-[11px] text-[#aaa] mt-2">
-                âœ‰ peepalkraft@gmail.com
+                ✉ peepalkraft@gmail.com
               </p>
             </div>
           </div>
 
-          {/* â•â•â•â• RIGHT: Artisan Spotlight Panel (Image Dominant) â•â•â•â• */}
+          {/* ===== RIGHT: Artisan Spotlight Panel (Image Dominant) ===== */}
           <div className="relative overflow-hidden min-h-[50vh] sm:min-h-[60vh] lg:min-h-0 order-2 bg-[#442D1C]">
             
             {/* Spinning Block-Print Seal of Authenticity in Golden Batter */}

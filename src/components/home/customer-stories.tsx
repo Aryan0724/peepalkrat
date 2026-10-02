@@ -28,20 +28,9 @@ export function CustomerStories() {
 
   return (
     <section className="py-20 bg-[#FAF7F2] relative overflow-hidden border-b border-[#442D1C]/10">
-      {/* Decorative illustration from iTokri uploaded by user */}
-      <div className="absolute top-20 right-10 lg:right-32 w-64 h-64 opacity-20 lg:opacity-10 pointer-events-none hidden md:block">
-        <Image
-          src="/peepalkraft/illustrations/women-on-rug.jpg"
-          alt="People on rug illustration"
-          fill
-          className="object-contain"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center max-w-2xl mx-auto mb-14 space-y-4">
           <div className="inline-flex items-center space-x-2 text-[12px] uppercase tracking-widest text-[#743014] font-sans font-semibold">
-            <span className="font-display text-[#743014] text-base mr-1 tracking-normal font-medium">दुनिया भर में •</span>
             <span>Global Diaspora Feedback</span>
           </div>
           <h2 className="font-display text-3xl sm:text-4xl text-[#442D1C] font-normal relative inline-block">

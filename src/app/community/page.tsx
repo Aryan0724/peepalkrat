@@ -82,24 +82,24 @@ export default function CommunityPage() {
   return (
     <div className="min-h-screen bg-[#FAF8F5] pb-24">
       {/* Editorial Hero */}
-      <div className="relative bg-[#1C1917] text-white py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center overflow-hidden">
-        <div className="absolute inset-0 opacity-15">
+      <div className="relative bg-[#1C1917] text-[#FAF7F2] py-24 px-4 sm:px-6 lg:px-8 border-b border-stone-800 text-center overflow-hidden">
+        <div className="absolute inset-0 opacity-20">
           <Image
-            src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=2000&q=80"
+            src="/peepalkraft/workshop/workshop-full-1.jpg"
             alt="Mewat women artisan collective"
             fill
             className="object-cover"
           />
         </div>
         <div className="relative z-10 max-w-4xl mx-auto space-y-4">
-          <div className="inline-flex items-center space-x-2 text-[#D4A338] text-xs uppercase tracking-[0.28em] font-semibold">
-            <Sparkles className="w-4 h-4" />
-            <span>The Sisterhood of Mewat • आवाज़-ए-मेवात</span>
+          <div className="inline-flex items-center space-x-2 text-[#E8D1A7] text-xs uppercase tracking-[0.28em] font-semibold">
+            <Sparkles className="w-4 h-4 text-[#E8D1A7]" />
+            <span>The Sisterhood of Mewat · Artisan Voices</span>
           </div>
-          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light leading-tight">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-normal leading-tight text-[#FAF7F2]">
             Financial Freedom from the Soil of Haryana
           </h1>
-          <p className="text-stone-300 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
+          <p className="text-[#FAF7F2]/90 text-sm sm:text-base max-w-2xl mx-auto font-light leading-relaxed">
             In Mewat, a woman holding a bank passbook is not just a commercial event. It is a social revolution. Explore the real journeys of our artisan leaders and leave a personal message of gratitude.
           </p>
         </div>
@@ -111,7 +111,7 @@ export default function CommunityPage() {
           <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-card space-y-4">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-stone-100">
               <Image
-                src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80"
+                src="/peepalkraft/workshop/artisan-portrait-1.jpg"
                 alt="Asmeena Begum in Nuh"
                 fill
                 className="object-cover"
@@ -133,7 +133,7 @@ export default function CommunityPage() {
           <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-card space-y-4">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-stone-100">
               <Image
-                src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80"
+                src="/peepalkraft/workshop/artisan-yellow-saree.jpg"
                 alt="Parveena Khan in Taoru"
                 fill
                 className="object-cover"
@@ -155,7 +155,7 @@ export default function CommunityPage() {
           <div className="bg-white p-6 rounded-sm border border-stone-200 shadow-card space-y-4">
             <div className="relative aspect-[4/3] rounded-sm overflow-hidden bg-stone-100">
               <Image
-                src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80"
+                src="/peepalkraft/workshop/artisan-ghagra.jpg"
                 alt="Rukhsana Bano in Punhana"
                 fill
                 className="object-cover"

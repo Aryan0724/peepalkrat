@@ -46,7 +46,7 @@ export function CulturalShowcase() {
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center space-x-2 text-[#DFBD69] text-[11px] uppercase tracking-[0.25em] font-cinzel font-semibold mb-3">
             <Compass className="w-4 h-4 text-[#DFBD69]" />
-            <span>स्वाधीनता एवं शिल्प भूगोल • Cultural Provenance</span>
+            <span>Heritage & Provenance · Haryana Geography</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-5xl font-light leading-tight text-[#FAF6EE]">
             The Living Craft Geography of Haryana

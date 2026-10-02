@@ -51,7 +51,7 @@ export function AnimatedImpactJourney() {
         <div className="max-w-3xl mx-auto text-center mb-16 space-y-3">
           <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white border border-[#C8A253]/50 text-xs text-[#881C10] font-cinzel font-semibold uppercase tracking-[0.2em] shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-[#C8A253]" />
-            <span>The Empowerment Continuum • स्वावलंबन यात्रा</span>
+            <span>The Empowerment Continuum · Artisan Journey</span>
           </div>
 
           <h2 className="font-serif text-3xl sm:text-5xl font-normal text-[#0B132B] leading-tight">

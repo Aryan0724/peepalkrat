@@ -166,14 +166,14 @@ export function Header({ announcement }: { announcement?: any }) {
                         {c === "USD"
                           ? "$ (United States)"
                           : c === "GBP"
-                          ? "Â£ (United Kingdom)"
+                          ? "£ (United Kingdom)"
                           : c === "EUR"
-                          ? "â‚¬ (Europe)"
+                          ? "€ (Europe)"
                           : c === "CAD"
                           ? "CA$ (Canada)"
                           : c === "AUD"
                           ? "AU$ (Australia)"
-                          : "â‚¹ (India)"}
+                          : "₹ (India)"}
                       </span>
                     </button>
                   ))}
@@ -307,8 +307,8 @@ export function Header({ announcement }: { announcement?: any }) {
             </nav>
 
             <div className="border-t border-stone-200 pt-4 text-xs text-stone-500">
-              <p className="italic">â€œWhen needle and loom meet patience, our autonomy awakens.â€</p>
-              <p className="text-[10px] text-stone-400 mt-2">Â© 2026 PeepalKraft Enterprise</p>
+              <p className="italic">“When needle and loom meet patience, our autonomy awakens.”</p>
+              <p className="text-[10px] text-stone-400 mt-2">© 2026 PeepalKraft Enterprise</p>
             </div>
           </div>
         </div>

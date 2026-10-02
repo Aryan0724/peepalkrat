@@ -25,7 +25,7 @@ export function MewatImpactPulse({
           <div className="max-w-2xl space-y-2">
             <div className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.25em] text-[#DFBD69] font-cinzel font-semibold">
               <Sparkles className="w-3.5 h-3.5 text-[#DFBD69]" />
-              <span>स्त्री शक्ति • मेवात का स्वाभिमान</span>
+              <span>Artisan Empowerment · The Pride of Mewat</span>
             </div>
             <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-normal leading-snug">
               Every Object Honors the Defiance & Economic Freedom of Mewat Women.

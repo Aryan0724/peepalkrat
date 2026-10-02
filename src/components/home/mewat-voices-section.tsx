@@ -22,18 +22,18 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
     name: "Asmeena Begum",
     role: "President, Nuh Women's Moonj Cooperative",
     cluster: "Nuh, Mewat, Haryana",
-    photo: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+    photo: "/peepalkraft/workshop/artisan-portrait-1.jpg",
     quote: "Before the loom, my voice was confined to the four walls of the courtyard. Today, my elder daughter is pursuing her B.Ed in Gurugram, funded entirely from my own bank passbook.",
     impactStory: "Led 28 women in Nuh to harvest wild canal reeds and build an independent bank balance.",
     daughtersSupported: "2 Daughters in Higher College",
     craftSpecialty: "Wild Moonj Reed Coiled Basketry & Tableware",
-    slug: "kamlesh-rani", // linking to existing maker profile or dedicated
+    slug: "kamlesh-rani",
   },
   {
     name: "Parveena Khan",
     role: "Master Needlework Artisan",
     cluster: "Taoru, Mewat, Haryana",
-    photo: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+    photo: "/peepalkraft/workshop/artisan-yellow-saree.jpg",
     quote: "Our Phulkari needles do not merely stitch flowers on unbleached silk. They stitch our autonomy. Every Rupee I earn stays in my control, deciding our home's nutrition and healthcare.",
     impactStory: "Trains teenage village girls in traditional counted-thread embroidery to prevent early forced marriages.",
     daughtersSupported: "Trained 35+ Young Women",
@@ -44,7 +44,7 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
     name: "Rukhsana Bano",
     role: "Studio Potter & Kiln Lead",
     cluster: "Punhana, Mewat, Haryana",
-    photo: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80",
+    photo: "/peepalkraft/workshop/artisan-ghagra.jpg",
     quote: "For decades, men owned the clay carts while women prepared the silt in secret. Today, our earthenware carries my stamped seal. In Punhana, women are recognized as masters of commerce.",
     impactStory: "Installed solar-powered potter wheels in Punhana village, tripling daily income.",
     daughtersSupported: "Household Debt Cleared",
@@ -55,7 +55,7 @@ const MEWAT_ARTISAN_VOICES: ArtisanVoice[] = [
     name: "Shakila Bibi",
     role: "Handloom Dhurrie Weaver",
     cluster: "Ferozepur Jhirka, Mewat, Haryana",
-    photo: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&w=800&q=80",
+    photo: "/peepalkraft/workshop/workshop-cutting.jpg",
     quote: "We formed our collective so no predatory middleman could take our margin. 72% of what a customer in Delhi or London pays arrives straight into our hands.",
     impactStory: "Coordinates 18 pit-looms weaving upcycled zero-waste cotton dhurries.",
     daughtersSupported: "First Generation Literate Family",
@@ -72,7 +72,7 @@ export function MewatVoicesSection() {
         <div className="text-center max-w-3xl mx-auto mb-16 space-y-3">
           <div className="inline-flex items-center space-x-2 text-xs uppercase tracking-[0.28em] text-[#B84824] font-semibold">
             <Sparkles className="w-3.5 h-3.5" />
-            <span>The Sisterhood of Mewat • नारी शक्ति</span>
+            <span>The Sisterhood of Mewat · Artisan Voices</span>
           </div>
           <h2 className="font-serif text-3xl sm:text-4xl text-charcoal font-normal leading-tight">
             Voices of Financial Independence

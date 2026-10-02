@@ -10,35 +10,32 @@ export function HaryanaFreedomSection() {
     {
       period: "1857",
       title: "The Aravalli Rebellion",
-      hindi: "मेवात का प्रथम स्वतंत्रता संग्राम",
+      subtitle: "Historic Resistance & Peasant Autonomy",
       description:
         "When the 1857 revolt swept across northern India, the Meo peasant warriors of Mewat and Rao Tula Ram of Ahirwal rose in fierce defiance against colonial garrisons, declaring their soil sovereign.",
       stat: "1857 Uprising",
       statLabel: "Historic Cradle of Revolt",
-      image:
-        "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=800&q=80",
+      image: "/peepalkraft/workshop/workshop-full-2.jpg",
     },
     {
       period: "Swadeshi Era",
       title: "The Loom as Defiance",
-      hindi: "विदेशी वस्त्र बहिष्कार एवं चरखा",
+      subtitle: "Hand-Spun Khadi & Indigenous Looms",
       description:
         "Colonial Manchester cloth was rejected for coarse, hand-spun Desi cotton. The pit-loom and charkha became instruments of non-violent rebellion, preserving Haryana's indigenous textile mastery.",
       stat: "100% Desi Khadi",
       statLabel: "Weapon of Self-Reliance",
-      image:
-        "https://images.unsplash.com/photo-1610030469983-98e550d6193c?auto=format&fit=crop&w=800&q=80",
+      image: "/peepalkraft/products/skirt-embroidered.jpg",
     },
     {
       period: "2026",
       title: "Stree Swaraj (Women's Sovereignty)",
-      hindi: "आधुनिक स्त्री स्वराज्य एवं स्वाभिमान",
+      subtitle: "Direct Living Wages & Financial Autonomy",
       description:
         "Today, the battleground is economic dignity. 142+ women in Mewat run the looms, sculpt clay, and weave Moonj grass—commanding their own bank accounts and leading the new wave of rural autonomy.",
       stat: "142+ Passbooks",
       statLabel: "Individual Financial Autonomy",
-      image:
-        "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80",
+      image: "/peepalkraft/workshop/artisan-portrait-1.jpg",
     },
   ];
 
@@ -99,7 +96,7 @@ export function HaryanaFreedomSection() {
                 {/* Content */}
                 <div className="p-6 space-y-2">
                   <span className="text-[11px] text-[#DFBD69] font-medium tracking-wide block font-serif">
-                    {ch.hindi}
+                    {ch.subtitle}
                   </span>
                   <h3 className="font-serif text-xl text-white font-medium group-hover:text-[#DFBD69] transition-colors">
                     {ch.title}
