@@ -14,10 +14,10 @@ export function OurWorkshopSection() {
           
           {/* Left: Images */}
           <div className="relative">
-            <div className="absolute -top-6 -left-4 font-handwritten text-[#E87722] text-2xl transform -rotate-6 z-20 bg-white/80 px-2">
+            <div className="absolute -top-6 -left-4 font-handwritten text-[#84592B] text-2xl transform -rotate-6 z-20 bg-white/90 px-3 py-0.5 rounded-xs border border-[#E8D1A7]/60 shadow-xs">
               Our Ambala City home
             </div>
-            <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] relative w-full lg:w-11/12 overflow-hidden bg-[#F5F0E8] border-stitch p-2">
+            <div className="aspect-[4/5] sm:aspect-square lg:aspect-[4/5] relative w-full lg:w-11/12 overflow-hidden bg-[#FAF7F2] border-stitch p-2">
               <div className="relative w-full h-full">
                 <Image 
                   src="/peepalkraft/store/storefront-1.jpg"
@@ -44,22 +44,22 @@ export function OurWorkshopSection() {
 
           {/* Right: Content */}
           <div className="flex flex-col justify-center">
-            <div className="flex items-center space-x-2 text-[#E87722] mb-6">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-center space-x-2 text-[#743014] mb-6">
+              <MapPin className="w-4 h-4 text-[#743014]" />
               <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em]">
                 Visit Our Physical Store
               </span>
             </div>
             
-            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#1A1A1A] leading-[1.1] mb-6">
+            <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl text-[#442D1C] leading-[1.1] mb-6">
               From our Ambala City workshop to the world.
             </h2>
             
-            <p className="text-[#555] text-base leading-relaxed font-light mb-6">
+            <p className="text-[#5A4231] text-base leading-relaxed font-light mb-6">
               Behind every PeepalKraft piece is a thriving workshop in Model Town, Ambala City. We aren't just an online store; we are a physical collective of women coming together every day to create, earn, and build independence.
             </p>
             
-            <p className="text-[#555] text-base leading-relaxed font-light mb-10">
+            <p className="text-[#5A4231] text-base leading-relaxed font-light mb-10">
               When you purchase a hand-embroidered bag charm, a vibrant skirt, or a detailed hair accessory, you are directly supporting the women working at the sewing machines just behind our storefront doors.
             </p>
 
@@ -69,7 +69,7 @@ export function OurWorkshopSection() {
                   Meet the Artisans
                 </button>
               </Link>
-              <div className="flex items-center justify-center sm:justify-start px-4 text-sm text-[#888]">
+              <div className="flex items-center justify-center sm:justify-start px-4 text-sm text-[#9D9167] font-medium">
                 #590, Kanshi Nagar, Model Town
               </div>
             </div>

@@ -109,7 +109,17 @@
 }
 
 /* ══════ COLOR TOKENS ══════ */
-.text-saffron  { color: var(--saffron); }
+.text-saffron  { color: var(--spiced-wine); }
+.text-spiced   { color: var(--spiced-wine); }
+.bg-spiced     { background-color: var(--spiced-wine); }
+.text-golden   { color: var(--golden); }
+.bg-golden     { background-color: var(--golden); }
+.text-cocoa    { color: var(--cocoa); }
+.bg-cocoa      { background-color: var(--cocoa); }
+.text-olive    { color: var(--olive); }
+.bg-olive      { background-color: var(--olive); }
+.text-caramel  { color: var(--caramel); }
+.bg-caramel    { background-color: var(--caramel); }
 .bg-cream      { background-color: var(--cream); }
 .bg-cream-mid  { background-color: var(--cream-mid); }
 .border-natural { border-color: var(--border); }
@@ -262,15 +272,15 @@
 
 /* ══════ HOMEPAGE SPECIFIC ══════ */
 
-/* Announcement ticker */
+/* Announcement ticker in Golden Batter (#E8D1A7) */
 .announcement-ticker {
-  background: var(--charcoal);
-  color: white;
-  font-size: 11px;
-  font-weight: 500;
+  background: var(--golden);
+  color: var(--cocoa);
+  font-size: 11.5px;
+  font-weight: 600;
   letter-spacing: 0.1em;
   text-align: center;
-  padding: 9px 16px;
+  padding: 10px 16px;
   text-transform: uppercase;
 }
 
@@ -293,10 +303,10 @@
 }
 .category-scroll::-webkit-scrollbar { display: none; }
 
-/* Impact strip — dark band */
+/* Impact strip — deep luxury Cowhide Cocoa band */
 .impact-band {
-  background: var(--charcoal);
-  color: white;
+  background: var(--cocoa);
+  color: var(--ivory);
 }
 
 /* Badge */

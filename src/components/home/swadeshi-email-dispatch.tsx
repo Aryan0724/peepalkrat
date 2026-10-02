@@ -74,14 +74,14 @@ export function SwadeshiEmailDispatch() {
                       value={email}
                       onChange={(e) => setEmail(e.target.value)}
                       placeholder="Enter your email..."
-                      className="w-full px-4 py-3 bg-white border border-[#E87722]/30 text-[#1A1A1A] text-sm focus:outline-none focus:border-[#E87722] font-sans transition-colors rounded-sm"
+                      className="w-full px-4 py-3 bg-white border border-[#E8D1A7] text-[#442D1C] text-sm focus:outline-none focus:border-[#743014] font-sans transition-colors rounded-xs shadow-xs"
                     />
-                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#E87722]/50" />
+                    <Mail className="absolute right-3.5 top-1/2 -translate-y-1/2 w-4 h-4 text-[#9D9167]" />
                   </div>
 
                   <button
                     type="submit"
-                    className="btn-saffron px-6 py-3 font-sans font-medium text-sm flex items-center justify-center space-x-2 shrink-0 rounded-sm"
+                    className="btn-saffron px-6 py-3 font-sans font-semibold text-sm flex items-center justify-center space-x-2 shrink-0 rounded-xs"
                   >
                     <span>Subscribe</span>
                     <Send className="w-3.5 h-3.5 ml-1" />

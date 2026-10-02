@@ -11,7 +11,7 @@ const stats = [
     label: "Average Monthly Income",
     sublabel: "Before → After joining PeepalKraft",
     note: "8× income growth in 18 months",
-    color: "#E87722",
+    color: "#E8D1A7",
   },
   {
     before: "0",
@@ -19,7 +19,7 @@ const stats = [
     label: "Women With Sole Bank Signing Authority",
     sublabel: "Own account. Own passbook. Their earnings.",
     note: "Neighborhoods of Ambala City, Haryana",
-    color: "#FFFCF8",
+    color: "#FAF7F2",
   },
   {
     before: "₹0",
@@ -27,7 +27,7 @@ const stats = [
     label: "Direct Wages Disbursed",
     sublabel: "Paid weekly. Zero middlemen. Zero deductions.",
     note: "Since inception — growing every month",
-    color: "#E87722",
+    color: "#E8D1A7",
   },
 ];
 
@@ -121,7 +121,7 @@ export function ImpactManifesto() {
   const t = testimonials[activeTestimonial];
 
   return (
-    <section className="bg-[#1A1A1A] text-[#FFFCF8] relative overflow-hidden border-b border-black/10">
+    <section className="bg-[#442D1C] text-[#FAF7F2] relative overflow-hidden border-b border-[#442D1C]/20">
       {/* Subtle grain texture overlay */}
       <div
         className="absolute inset-0 opacity-[0.03] pointer-events-none"
@@ -132,30 +132,30 @@ export function ImpactManifesto() {
       />
 
       {/* Top accent line */}
-      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E87722]/60 to-transparent" />
+      <div className="h-px w-full bg-gradient-to-r from-transparent via-[#E8D1A7]/60 to-transparent" />
 
       {/* ─── SECTION 1: Ambala City Location & Mission Context ─── */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 relative z-10">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
           {/* Left: Context */}
           <div className="space-y-6">
-            <div className="flex items-center space-x-2 text-[#E87722]">
-              <MapPin className="w-4 h-4" />
+            <div className="flex items-center space-x-2 text-[#E8D1A7]">
+              <MapPin className="w-4 h-4 text-[#E8D1A7]" />
               <span className="text-[11px] font-sans font-semibold uppercase tracking-[0.25em]">
                 Ambala City, Haryana, India
               </span>
             </div>
             <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl font-light leading-[1.08] text-white">
               One of Haryana's most{" "}
-              <em className="italic text-[#E87722]">
+              <em className="italic text-[#E8D1A7]">
                 historic
               </em>{" "}
               districts. Now, one of its most{" "}
-              <em className="italic text-[#E87722]">
+              <em className="italic text-[#E8D1A7]">
                 determined.
               </em>
             </h2>
-            <p className="text-gray-300 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#E87722]/50 pl-5">
+            <p className="text-[#FAF7F2]/80 text-sm sm:text-base leading-relaxed font-light max-w-lg border-l-2 border-[#E8D1A7]/60 pl-5">
               PeepalKraft is a direct intervention: placing craft earnings, bank 
               accounts, and market access directly in the hands of women 
               artisans in Ambala City who were previously invisible to the formal economy.
@@ -163,10 +163,10 @@ export function ImpactManifesto() {
             <div className="pt-2">
               <Link
                 href="/impact"
-                className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#E87722] hover:text-white transition-colors group"
+                className="inline-flex items-center text-[11px] uppercase tracking-[0.2em] font-sans font-semibold text-[#E8D1A7] hover:text-white transition-colors group"
               >
                 <span>Read the Full Impact Report</span>
-                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform text-[#E8D1A7]" />
               </Link>
             </div>
           </div>
@@ -175,11 +175,11 @@ export function ImpactManifesto() {
           <div className="relative">
             <div
               key={activeTestimonial}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 p-8 space-y-6"
+              className="bg-white/5 backdrop-blur-sm border border-[#E8D1A7]/20 p-8 space-y-6 rounded-xs"
               style={{ animation: "fadeSlideIn 0.5s ease-out" }}
             >
               {/* Income transformation */}
-              <div className="flex items-center space-x-6 pb-6 border-b border-white/10">
+              <div className="flex items-center space-x-6 pb-6 border-b border-[#E8D1A7]/20">
                 <div className="text-center">
                   <div className="text-xl font-display text-gray-400 line-through">
                     {t.incomeBefore}
@@ -188,12 +188,12 @@ export function ImpactManifesto() {
                     Before
                   </div>
                 </div>
-                <TrendingUp className="w-8 h-8 text-[#E87722] flex-shrink-0" />
+                <TrendingUp className="w-8 h-8 text-[#E8D1A7] flex-shrink-0" />
                 <div className="text-center">
-                  <div className="text-3xl font-display font-medium text-[#E87722]">
+                  <div className="text-3xl font-display font-medium text-[#E8D1A7]">
                     {t.incomeAfter}
                   </div>
-                  <div className="text-[10px] text-[#E87722] uppercase tracking-wider mt-1 font-sans">
+                  <div className="text-[10px] text-[#E8D1A7] uppercase tracking-wider mt-1 font-sans font-semibold">
                     Today
                   </div>
                 </div>
@@ -234,7 +234,7 @@ export function ImpactManifesto() {
                       onClick={() => setActiveTestimonial(i)}
                       className={`w-6 h-0.5 transition-all duration-300 ${
                         i === activeTestimonial
-                          ? "bg-[#E87722]"
+                          ? "bg-[#E8D1A7]"
                           : "bg-white/20 hover:bg-white/40"
                       }`}
                       aria-label={`View testimonial ${i + 1}`}

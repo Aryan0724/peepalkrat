@@ -154,8 +154,8 @@ export function HeroSection({ data }: HeroSectionProps) {
                 { n: "72%", l: "To Artisan" },
               ].map((s) => (
                 <div key={s.l}>
-                  <div className="font-display text-2xl sm:text-3xl text-[#1A1A1A]">{s.n}</div>
-                  <div className="text-[11px] font-medium tracking-[0.12em] uppercase text-[#888] mt-1">{s.l}</div>
+                  <div className="font-display text-2xl sm:text-3xl text-[#442D1C]">{s.n}</div>
+                  <div className="text-[11px] font-semibold tracking-[0.14em] uppercase text-[#9D9167] mt-1">{s.l}</div>
                 </div>
               ))}
             </div>
@@ -175,17 +175,17 @@ export function HeroSection({ data }: HeroSectionProps) {
               </Link>
             </div>
 
-            {/* Email signup â€” credibility */}
-            <div className="border-t border-black/8 pt-8">
+            {/* Email signup — credibility */}
+            <div className="border-t border-[#442D1C]/10 pt-8">
               <div className="flex items-baseline gap-3 mb-3">
-                <p className="text-[13px] font-semibold text-[#1A1A1A] tracking-wide">
+                <p className="text-[13px] font-semibold text-[#442D1C] tracking-wide">
                   The Artisan Dispatch
                 </p>
-                <span className="text-[11px] text-[#888]">
+                <span className="text-[11px] text-[#9D9167] font-medium">
                   4,200+ subscribers
                 </span>
               </div>
-              <p className="text-[12px] text-[#888] mb-4 font-light">
+              <p className="text-[13px] text-[#5A4231] mb-4 font-light">
                 New arrivals, artisan income milestones & early access drops. Weekly. No spam.
               </p>
               {subscribed ? (

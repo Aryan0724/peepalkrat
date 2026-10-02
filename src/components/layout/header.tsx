@@ -90,21 +90,16 @@ export function Header({ announcement }: { announcement?: any }) {
           </nav>
 
           {/* Centered Brand Identity */}
-          <div className="text-center py-1">
-            <Link href="/" className="inline-flex flex-col items-center group">
-              <div className="flex items-center justify-center">
-                <Image
-                  src="/peepalkraft-logo-dark.png"
-                  alt="PeepalKraft Logo"
-                  width={220}
-                  height={54}
-                  className="h-11 sm:h-13 w-auto object-contain transition-transform group-hover:scale-[1.02]"
-                  priority
-                />
-              </div>
-              <span className="block text-[10px] uppercase tracking-[0.28em] text-[#9D9167] font-semibold mt-1">
-                Ambala City · Haryana
-              </span>
+          <div className="text-center py-0.5">
+            <Link href="/" className="inline-flex items-center group py-1">
+              <Image
+                src="/peepalkraft-logo-black.png"
+                alt="PeepalKraft Logo"
+                width={240}
+                height={52}
+                className="h-9 sm:h-11 w-auto object-contain transition-transform group-hover:scale-[1.02]"
+                priority
+              />
             </Link>
           </div>
 
