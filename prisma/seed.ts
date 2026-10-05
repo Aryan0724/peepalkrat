@@ -1253,11 +1253,11 @@ async function main() {
   // 10. Seed Store Settings
   await prisma.siteSetting.createMany({
     data: [
-      { key: "store_name", value: "PeepalKrat", group: "GENERAL" },
-      { key: "store_tagline", value: "For the People. By the People.", group: "GENERAL" },
-      { key: "contact_email", value: "hello@peepalkrat.com", group: "GENERAL" },
-      { key: "contact_phone", value: "+91 180 264 0000", group: "GENERAL" },
-      { key: "headquarters", value: "Sector 25, Panipat, Haryana 132103, India", group: "GENERAL" },
+      { key: "store_name", value: "PeepalKraft", group: "GENERAL" },
+      { key: "store_tagline", value: "Swadeshi Craft Guild of Haryana", group: "GENERAL" },
+      { key: "contact_email", value: "peepalkraft1947@gmail.com", group: "GENERAL" },
+      { key: "contact_phone", value: "+91 9015112753", group: "GENERAL" },
+      { key: "headquarters", value: "Ambala City, Haryana 134003, India", group: "GENERAL" },
       { key: "free_shipping_threshold_inr", value: "2000", group: "SHIPPING" },
       { key: "standard_shipping_fee_inr", value: "150", group: "SHIPPING" },
       { key: "express_shipping_fee_inr", value: "250", group: "SHIPPING" },

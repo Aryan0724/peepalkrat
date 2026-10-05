@@ -27,14 +27,14 @@ export default function CheckoutPage() {
 
   // Form State
   const [formData, setFormData] = useState({
-    name: "Vikram Singhania",
-    email: "vikram.s@example.com",
-    phone: "+91 98112 34567",
-    line1: "Flat 802, Magnolia Towers, Golf Course Road",
-    line2: "Sector 54",
-    city: "Gurugram",
-    state: "Haryana",
-    postalCode: "122002",
+    name: "",
+    email: "",
+    phone: "",
+    line1: "",
+    line2: "",
+    city: "",
+    state: "",
+    postalCode: "",
     country: "India",
   });
 

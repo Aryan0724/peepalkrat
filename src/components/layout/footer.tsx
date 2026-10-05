@@ -227,8 +227,9 @@ export function Footer({
                 <p className="text-xs text-[#FAF7F2]/70 mt-0.5">Sector 25, Panipat 132103</p>
               </div>
               <div>
-                <span className="text-white font-medium block">Patron Care:</span>
-                <p className="text-xs text-[#E8D1A7] font-mono mt-0.5">peepalkraft@gmail.com</p>
+                <span className="text-white font-medium block">Patron Care & Orders:</span>
+                <p className="text-xs text-[#E8D1A7] font-mono mt-0.5">peepalkraft1947@gmail.com</p>
+                <p className="text-xs text-[#E8D1A7] font-mono mt-0.5">+91 9015112753</p>
               </div>
               <div className="pt-2 border-t border-[#E8D1A7]/15">
                 <span className="text-xs text-[#E8D1A7] font-medium leading-relaxed block">

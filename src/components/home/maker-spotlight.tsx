@@ -48,16 +48,6 @@ export function MakerSpotlight({ makers = [] }: MakerSpotlightProps) {
 
   return (
     <section className="py-24 bg-[#FAF7F2] relative overflow-hidden border-b border-[#442D1C]/10">
-      {/* Decorative illustration */}
-      <div className="absolute bottom-0 left-0 w-64 lg:w-96 aspect-square opacity-20 pointer-events-none hidden md:block">
-        <Image
-          src="/peepalkraft/illustrations/artisan-under-tree.jpg"
-          alt="Woman under tree illustration"
-          fill
-          className="object-contain object-bottom"
-        />
-      </div>
-
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-16">

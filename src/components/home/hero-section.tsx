@@ -213,8 +213,10 @@ export function HeroSection({ data }: HeroSectionProps) {
                   </button>
                 </form>
               )}
-              <p className="text-[11px] text-[#aaa] mt-2">
-                ✉ peepalkraft@gmail.com
+              <p className="text-[11px] text-[#84592B] mt-2 flex flex-wrap items-center gap-x-3 font-medium">
+                <span>✉ peepalkraft1947@gmail.com</span>
+                <span>·</span>
+                <span>📞 9015112753</span>
               </p>
             </div>
           </div>
